@@ -1,0 +1,3509 @@
+<header class="header" id="header">
+    <div class="container">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body {
+    font-family: 'Manrope', sans-serif; /* или другой выбранный шрифт */
+}
+
+h1, h2, h3 {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+}
+</style>
+        <a href="/" class="logo">
+            <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/logo-cap.png" alt="">
+        </a>
+
+        <nav class="menu">
+            <a href="#">О жилом квартале</a>
+            <a href="#">Инфраструктура</a>
+            <a href="#" class="projects-open">Проекты домов</a>
+            <a href="#">Благоустройство</a>
+            <a href="#">Контакты</a>
+        </nav>
+
+        <a class="phone" href="tel:+74852337660">
+
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                <path d="M22 16.92V20a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 11.2 18.8 19.5 19.5 0 0 1 5.2 12.8 19.8 19.8 0 0 1 2 4.18 2 2 0 0 1 4 2h3.09a2 2 0 0 1 2 1.72l.35 2.46a2 2 0 0 1-.57 1.72L7.09 11.7a16 16 0 0 0 5.21 5.21l1.8-1.78a2 2 0 0 1 1.72-.57l2.46.35A2 2 0 0 1 22 16.92z"
+                      fill="currentColor"/>
+            </svg>
+
+            +7 (4852) 33-76-60
+        </a>
+
+        <a href="#" class="btn request-btn-open">
+            Оставить заявку
+        </a>
+
+    </div>
+</header>
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Inter,sans-serif;
+}
+
+.container{
+    width:min(1600px, calc(100% - 40px));
+    margin:auto;
+}
+
+/* ========================= */
+
+.header{
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    z-index: 999;
+
+    background: rgba(255,255,255,.18);
+
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border-bottom:1px solid rgba(255,255,255,.18);
+    border-bottom-left-radius:22px;
+    border-bottom-right-radius:22px;
+
+    overflow:hidden;
+
+    transition:
+        background .35s,
+        backdrop-filter .35s,
+        box-shadow .35s,
+        border-radius .35s;
+
+}
+
+
+.header .container{
+
+    height:80px;
+
+    display:flex;
+    align-items:center;
+    gap:40px;
+
+    transition:.35s;
+
+}
+
+/* логотип */
+
+.logo img{
+
+    height:54px;
+    display:block;
+
+}
+
+/* меню */
+
+.menu{
+
+    display:flex;
+    gap:28px;
+
+    margin-left:20px;
+
+}
+
+.menu a{
+
+    color:#222;
+    text-decoration:none;
+
+    font-size:15px;
+    font-weight:500;
+
+    transition:.2s;
+
+}
+
+.menu a:hover{
+
+    color:#0f7a3b;
+
+}
+
+/* телефон */
+
+.phone{
+
+    margin-left:auto;
+
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    text-decoration:none;
+
+    color:#1f1f1f;
+
+    font-weight:600;
+
+}
+
+.phone svg{
+
+    color:#0c7c41;
+
+}
+
+/* кнопка */
+
+.btn{
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:15px 26px;
+
+    border-radius:8px;
+
+    background:#0b6d37;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+.btn:hover{
+
+    background:#095d2f;
+
+}
+
+/* ===================================== */
+/* состояние после скролла */
+
+.header.scrolled{
+
+    background:#fff;
+
+    backdrop-filter:none;
+    -webkit-backdrop-filter:none;
+
+    border-bottom:none;
+
+    border-bottom-left-radius:22px;
+    border-bottom-right-radius:22px;
+
+    box-shadow:0 15px 45px rgba(0,0,0,.08);
+
+}
+
+.header.scrolled .container{
+
+    height:82px;
+
+}
+</style>
+<script>
+const header = document.getElementById("header");
+
+function headerScroll() {
+
+    if (window.scrollY > 200) {
+        header.classList.add("scrolled");
+    } else {
+        header.classList.remove("scrolled");
+    }
+
+}
+
+window.addEventListener("scroll", headerScroll);
+headerScroll();
+</script>
+<section class="hero">
+
+    <div class="hero-slider">
+
+        <div class="slide active">
+            <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/slider/1.png" alt="">
+        </div>
+
+        <div class="slide">
+            <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/slider/2.png" alt="">
+        </div>
+
+        <div class="slide">
+            <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/slider/3.png" alt="">
+        </div>
+
+    </div>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+
+        <span class="hero-subtitle">
+            Современный коттеджный квартал
+        </span>
+
+        <h1>
+            Тихая гавань <br>
+            для Вашей семьи
+        </h1>
+
+        <p>
+            Комфортная жизнь среди природы,
+            современные коммуникации,
+            благоустроенная территория и удобная инфраструктура.
+        </p>
+
+        <div class="hero-buttons">
+<a href="#" class="btn-green projects-open">
+    Выбор недвижимости
+</a>
+
+<a href="#" class="btn-white" id="openConsultModal">
+    Получить консультацию
+</a>
+
+        </div>
+
+    </div>
+
+    <div class="slider-dots">
+
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+
+    </div>
+
+</section>
+<style>
+.hero{
+
+    position:relative;
+
+    width:100%;
+    height:82vh;
+
+    min-height:650px;
+    max-height:900px;
+
+    overflow:hidden;
+
+}
+
+.hero-slider{
+
+    position:absolute;
+    inset:0;
+
+}
+
+.slide{
+
+    position:absolute;
+    inset:0;
+
+    opacity:0;
+
+    transform:scale(1.08);
+
+    transition:
+            opacity 1.8s ease,
+            transform 7s linear;
+
+}
+
+.slide.active{
+
+    opacity:1;
+
+    transform:scale(1);
+
+}
+
+.slide img{
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+}
+
+.hero-overlay{
+
+    position:absolute;
+    inset:0;
+
+    background:
+    linear-gradient(
+            90deg,
+            rgba(255,255,255,.90) 0%,
+            rgba(255,255,255,.65) 28%,
+            rgba(255,255,255,.12) 60%,
+            rgba(0,0,0,.12) 100%
+    );
+
+}
+
+.hero-content{
+
+    position:relative;
+
+    z-index:10;
+
+    max-width:620px;
+
+    padding-top:210px;
+
+    margin-left:8%;
+
+}
+
+.hero-subtitle{
+
+    color:#2f8b55;
+
+    display:block;
+
+    font-size:18px;
+
+    margin-bottom:20px;
+
+}
+
+.hero h1{
+
+    font-size:72px;
+
+    line-height:1.1;
+
+    color:#184d2f;
+
+    margin-bottom:25px;
+
+    font-weight:700;
+
+}
+
+.hero p{
+
+    font-size:20px;
+
+    line-height:1.7;
+
+    color:#444;
+
+    margin-bottom:40px;
+
+}
+
+.hero-buttons{
+
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+
+}
+
+.btn-green{
+
+    padding:18px 34px;
+
+    background:#116b39;
+
+    color:#fff;
+
+    border-radius:8px;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.btn-green:hover{
+
+    background:#0d5a30;
+
+}
+
+.btn-white{
+
+    padding:18px 34px;
+
+    background:#fff;
+
+    color:#184d2f;
+
+    border-radius:8px;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+.btn-white:hover{
+
+    transform:translateY(-3px);
+
+}
+
+.slider-dots{
+
+    position:absolute;
+
+    bottom:40px;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    display:flex;
+
+    gap:12px;
+
+    z-index:20;
+
+}
+
+.dot{
+
+    width:11px;
+    height:11px;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.45);
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.dot.active{
+
+    background:#fff;
+
+    transform:scale(1.4);
+
+}
+
+@media(max-width:992px){
+
+.hero{
+
+    min-height:600px;
+
+}
+
+.hero-content{
+
+    margin:0 30px;
+    padding-top:170px;
+
+}
+
+.hero h1{
+
+    font-size:50px;
+
+}
+
+.hero p{
+
+    font-size:18px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.hero{
+
+    min-height:560px;
+
+}
+
+.hero h1{
+
+    font-size:38px;
+
+}
+
+.hero p{
+
+    font-size:16px;
+
+}
+
+.hero-buttons{
+
+    flex-direction:column;
+
+}
+
+.btn-green,
+.btn-white{
+
+    width:100%;
+    text-align:center;
+
+}
+
+}
+</style>
+<script>
+const slides = document.querySelectorAll(".slide");
+const dots = document.querySelectorAll(".dot");
+
+let current = 0;
+
+function showSlide(index){
+
+    slides.forEach(slide=>slide.classList.remove("active"));
+    dots.forEach(dot=>dot.classList.remove("active"));
+
+    slides[index].classList.add("active");
+    dots[index].classList.add("active");
+
+}
+
+function nextSlide(){
+
+    current++;
+
+    if(current >= slides.length){
+
+        current = 0;
+
+    }
+
+    showSlide(current);
+
+}
+
+let interval = setInterval(nextSlide,7000);
+
+dots.forEach((dot,index)=>{
+
+    dot.addEventListener("click",()=>{
+
+        current=index;
+
+        showSlide(current);
+
+        clearInterval(interval);
+
+        interval=setInterval(nextSlide,7000);
+
+    });
+
+});
+</script>
+<section class="advantages">
+
+    <div class="container advantages-wrapper">
+<div class="advantages-title">
+
+    <span>Почему выбирают нас</span>
+
+    <h2>
+        Всё необходимое
+        <br>
+        для комфортной жизни
+    </h2>
+
+    <p class="advantages-text">
+        Продуманная инфраструктура, современные инженерные решения,
+        благоустроенная территория и комфортная среда для жизни всей семьи.
+    </p>
+
+</div>
+        <div class="advantages-cards">
+
+            <div class="adv-card">
+
+                <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/icon/Sheilds.png" class="adv-icon" alt="">
+
+                <h3>Закрытая территория</h3>
+
+            </div>
+
+            <div class="adv-card">
+
+                <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/icon/KIDS.png" class="adv-icon" alt="">
+
+                <h3>Общественные пространства</h3>
+
+            </div>
+
+            <div class="adv-card">
+
+                <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/icon/map.png" class="adv-icon" alt="">
+
+                <h3>Расположение</h3>
+
+            </div>
+
+            <div class="adv-card">
+
+                <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/icon/Communications.png" class="adv-icon" alt="">
+
+                <h3>Централизированные коммуникации</h3>
+
+            </div>
+
+            <div class="adv-card">
+
+                <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/icon/ROAD.png" class="adv-icon" alt="">
+
+                <h3>Широкие асфальтированные улицы</h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<style>
+/* ===================================== */
+/* Блок преимуществ */
+
+.advantages{
+
+    position:relative;
+
+    margin-top:-30px;
+
+    z-index:30;
+
+    background:#fff;
+
+    border-top-left-radius:42px;
+    border-top-right-radius:42px;
+    padding: 30px 35px 30px 0px;
+
+    box-shadow:0 -10px 35px rgba(0,0,0,.04);
+
+}
+
+.advantages-wrapper{
+
+    display:flex;
+    align-items:flex-start;
+    gap:70px;
+
+}
+
+.advantages-title{
+
+    width:340px;
+    flex-shrink:0;
+
+}
+
+.advantages-title span{
+
+    display:block;
+
+    color:#2b8b53;
+
+    font-size:15px;
+
+    margin-bottom:18px;
+
+    font-weight:600;
+
+}
+
+.advantages-title h2{
+
+    font-size:26px;
+
+    line-height:1.2;
+
+    color:#19452d;
+
+}
+.advantages-text{
+
+    margin-top:18px;
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    color:#9b9b9b;
+
+    font-weight:400;
+
+    max-width:320px;
+
+}
+.advantages-cards{
+
+    display:flex;
+
+    gap:24px;
+
+    flex:1;
+
+}
+
+.adv-card{
+
+    flex:1;
+
+    min-height:220px;
+
+    background:#f8f8f8;
+
+    border-radius:22px;
+
+    padding:20px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:space-between;
+
+    transition:.3s;
+
+    cursor:pointer;
+
+}
+
+.adv-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 18px 35px rgba(0,0,0,.08);
+
+    background:#fff;
+
+}
+
+.adv-icon{
+    width: 72px;
+    height: 72px;
+    padding: 8px;
+    border-radius: 50%;
+    background: #0b6d37;
+    border: 1px solid rgba(255,255,255,.15);
+    object-fit: contain;
+    display: block;
+}
+
+.adv-card h3{
+
+    font-size:18px;
+
+    color:#184d2f;
+
+    line-height:1.35;
+
+    font-weight:600;
+
+}
+@media(max-width:1200px){
+
+    .advantages-wrapper{
+
+        flex-direction:column;
+
+    }
+
+    .advantages-title{
+
+        width:100%;
+
+    }
+
+}
+
+@media(max-width:900px){
+
+    .advantages-cards{
+
+        overflow-x:auto;
+
+        padding-bottom:10px;
+
+    }
+
+    .adv-card{
+
+        min-width:260px;
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .advantages{
+
+        margin-top:-50px;
+
+        padding:60px 0;
+
+        border-top-left-radius:28px;
+        border-top-right-radius:28px;
+
+    }
+
+    .advantages-title h2{
+
+        font-size:34px;
+
+    }
+
+}
+/* расположение фильтры + карта */
+
+.projects-map-layout{
+
+display:flex;
+
+gap:25px;
+
+height:calc(85vh - 100px);
+
+background:#f7f7f5;
+
+border-radius:30px;
+
+padding:25px;
+
+box-sizing:border-box;
+
+}
+
+
+
+/* фильтры */
+
+.projects-filters {
+
+width:270px;
+
+background:white;
+
+border-radius:20px;
+
+padding:25px;
+
+flex-shrink:0;
+
+box-shadow:0 10px 30px rgba(0,0,0,.05);
+
+}
+
+
+
+.projects-filters h3{
+
+margin-top:0;
+
+}
+
+
+
+.filter{
+
+width:100%;
+
+padding:12px;
+
+margin-bottom:12px;
+
+border:none;
+
+border-radius:15px;
+
+background:white;
+
+cursor:pointer;
+
+font-size:15px;
+
+}
+
+
+
+.filter.active{
+
+background:#2e7d32;
+
+color:white;
+
+}
+
+
+
+
+/* карта справа */
+
+.projects-map{
+
+flex:1;
+
+position:relative;
+
+overflow:hidden;
+
+}
+
+
+
+.projects-map img{
+
+width:100%;
+
+height:100%;
+
+object-fit:contain;
+
+border-radius:25px;
+
+}
+
+
+
+
+
+
+/* новая точка */
+
+.projects-point{
+
+    position:absolute;
+
+    cursor:pointer;
+
+    transform:translate(-50%,-50%);
+
+    z-index:5;
+
+    transition: z-index 0s ease .25s; /* задержка, чтобы z-index не падал до окончания анимации скрытия */
+
+}
+.projects-point:hover {
+    z-index: 100;
+    transition: z-index 0s ease 0s;
+}
+
+
+/* зеленый круг */
+
+
+.projects-point span{
+
+
+display:block;
+
+width:12px;
+
+height:12px;
+
+background:#39b54a;
+
+border-radius:50%;
+
+border:2px solid white;
+
+box-shadow:
+0 0 0 5px rgba(57,181,74,.25);
+
+
+transition:.3s;
+
+}
+
+
+
+
+.projects-point:hover span{
+
+
+transform:scale(1.4);
+
+}
+
+
+
+
+/* название дома */
+
+
+.projects-tooltip{
+
+
+position:absolute;
+
+left:20px;
+
+top:-15px;
+
+background:white;
+
+padding:8px 15px;
+
+border-radius:15px;
+
+font-size:13px;
+
+white-space:nowrap;
+
+box-shadow:0 8px 25px rgba(0,0,0,.15);
+
+
+/* скрываем */
+
+opacity:0;
+
+transform:translateX(-10px);
+
+pointer-events:none;
+
+transition:.25s;
+
+}
+
+
+
+
+.projects-point:hover 
+.projects-tooltip{
+
+
+opacity:1;
+
+transform:translateX(0);
+
+}
+.projects-point span:after{
+
+
+content:"";
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+background:#39b54a;
+
+border-radius:50%;
+
+left:0;
+
+top:0;
+
+animation:
+projectPulse 2s infinite;
+z-index: 999999;
+
+}
+
+
+@keyframes projectPulse{
+
+
+0%{
+
+transform:scale(1);
+
+opacity:.6;
+
+}
+
+
+100%{
+
+transform:scale(3);
+
+opacity:0;
+
+}
+
+
+}
+.projects-map-window{
+
+    overflow:auto;
+
+    /* скрываем полосу прокрутки */
+    scrollbar-width:none; /* Firefox */
+
+    -ms-overflow-style:none; /* IE и старый Edge */
+
+}
+
+
+/* Chrome, Safari, Opera */
+
+.projects-map-window::-webkit-scrollbar{
+
+    display:none;
+
+}
+</style>
+
+<!-- Модальное окно карты -->
+
+<div class="projects-modal" id="projectsMapModal">
+
+
+    <div class="projects-map-window">
+
+
+        <button class="projects-close">
+            ×
+        </button>
+
+
+        <h2>
+            Проекты домов
+        </h2>
+
+
+
+        <div class="projects-map-layout">
+
+
+
+            <!-- ФИЛЬТРЫ СЛЕВА -->
+
+            <div class="projects-filters">
+
+
+                <h3>
+                    Фильтр домов
+                </h3>
+
+
+                <button class="filter active">
+                    Все дома
+                </button>
+
+
+                <button class="filter">
+                    1 этаж
+                </button>
+
+
+                <button class="filter">
+                    2 этажа
+                </button>
+
+
+                <button class="filter">
+                    До 150 м²
+                </button>
+
+
+                <button class="filter">
+                    От 150 м²
+                </button>
+
+
+            </div>
+
+
+
+
+
+            <!-- КАРТА СПРАВА -->
+
+
+            <div class="projects-map">
+
+
+                <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/map/%D0%9A%D0%B0%D1%80%D1%82%D0%B0.png"
+                alt="Карта поселка">
+
+
+
+
+
+                <!-- Дом 1 -->
+
+                <div class="projects-point"
+                     style="left:38%; top:47%"
+                     data-house="house1"
+                     data-floor="1"
+                     data-area="120">
+
+
+                    <span></span>
+
+
+                    <div class="projects-tooltip">
+                        Дом Лесной
+                    </div>
+
+
+                </div>
+
+
+
+
+
+                <!-- Дом 2 -->
+
+
+                <div class="projects-point"
+                     style="left:42%; top:47%"
+                     data-house="house2"
+                     data-floor="1"
+                     data-area="180">
+
+
+                    <span></span>
+
+
+                    <div class="projects-tooltip">
+                        Дом Семейный
+                    </div>
+
+
+                </div>
+
+
+
+
+
+
+
+                <!-- Дом 3 -->
+
+
+                <div class="projects-point"
+                     style="left:47%; top:45%"
+                     data-house="house3"
+                     data-floor="1"
+                     data-area="220">
+
+
+                    <span></span>
+
+
+                    <div class="projects-tooltip">
+                        Двухэтажный дом
+                    </div>
+
+
+                </div>
+                <!-- Дом 4 -->
+
+
+                <div class="projects-point"
+                     style="left:48%; top:65%"
+                     data-house="house3"
+                     data-floor="2"
+                     data-area="220">
+
+
+                    <span></span>
+
+
+                    <div class="projects-tooltip">
+                        Двухэтажный дом
+                    </div>
+
+
+                </div>
+                    <div class="projects-tooltip">
+                        Двухэтажный дом
+                    </div>
+
+
+                </div>
+                <!-- Дом 5 -->
+
+
+                <div class="projects-point"
+                     style="left:62%; top:66%"
+                     data-house="house3"
+                     data-floor="2"
+                     data-area="220">
+
+
+                    <span></span>
+
+
+                    <div class="projects-tooltip">
+                        Двухэтажный дом
+                    </div>
+
+
+                </div>
+                <!-- Дом 6 -->
+
+
+                <div class="projects-point"
+                     style="left:65%; top:66%"
+                     data-house="house3"
+                     data-floor="2"
+                     data-area="220">
+
+
+                    <span></span>
+
+
+                    <div class="projects-tooltip">
+                        Двухэтажный дом
+                    </div>
+
+
+                </div>
+                <!-- Дом 7 -->
+
+
+                <div class="projects-point"
+                     style="left:69%; top:65%"
+                     data-house="house3"
+                     data-floor="2"
+                     data-area="220">
+
+
+                    <span></span>
+
+
+                    <div class="projects-tooltip">
+                        Двухэтажный дом
+                    </div>
+
+
+                </div>
+                <!-- Дом 8 -->
+
+
+                <div class="projects-point"
+                     style="left:72%; top:63%"
+                     data-house="house3"
+                     data-floor="2"
+                     data-area="220">
+
+
+                    <span></span>
+
+
+                    <div class="projects-tooltip">
+                        Двухэтажный дом
+                    </div>
+
+
+                </div>
+
+
+
+            </div>
+
+
+
+        </div>
+
+
+
+    </div>
+
+
+</div>
+
+
+
+
+<!-- Окно дома -->
+
+<div class="projects-modal" id="projectsHouseModal">
+
+
+<div class="projects-house-window">
+
+
+<button class="projects-house-close">
+    ×
+</button>
+
+
+
+<div class="projects-gallery">
+
+
+<img id="projectsMainImage"
+src="img/house1.jpg">
+
+
+<div class="projects-thumbs">
+
+<img src="img/plan1.jpg">
+
+<img src="img/plan2.jpg">
+
+<img src="img/plan3.jpg">
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="projects-info">
+
+
+<h2 id="projectsTitle">
+Дом Лесной
+</h2>
+
+
+<p id="projectsDescription">
+
+Описание дома. Здесь будет подробное описание проекта.
+
+</p>
+
+
+
+<a href="#" class="projects-sales" id="openSalesModal">
+    Отдел продаж
+</a>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+<style>
+/* Кнопка */
+
+.projects-open{
+    cursor:pointer;
+}
+
+
+
+/* Модалка */
+
+.projects-modal{
+
+display:none;
+
+position:fixed;
+
+z-index:9999;
+
+inset:0;
+
+background:rgba(0,0,0,.65);
+
+align-items:center;
+
+justify-content:center;
+
+}
+
+
+
+/* окно карты */
+.projects-map-window{
+
+width:90%;
+
+max-width:1400px;
+
+height:85vh;
+
+background:#fff;
+
+border-radius:30px;
+
+padding:35px;
+
+position:relative;
+
+overflow:auto;
+
+}
+
+
+
+.projects-map-window h2{
+
+text-align:center;
+
+margin-bottom:25px;
+
+}
+
+
+
+.projects-map{
+
+position:relative;
+
+}
+
+
+
+.projects-map img{
+
+width:100%;
+
+height:calc(85vh - 120px);
+
+object-fit:contain;
+
+display:block;
+
+border-radius:25px;
+
+}
+
+
+
+/* точки */
+
+.projects-point{
+
+position:absolute;
+
+transform:translate(-50%,-50%);
+
+cursor:pointer;
+
+}
+
+
+
+.projects-point span{
+
+width:18px;
+
+height:18px;
+
+background:#e53935;
+
+display:block;
+
+border-radius:50%;
+
+border:4px solid white;
+
+box-shadow:0 0 15px #000;
+
+}
+
+
+
+.projects-point b{
+
+position:absolute;
+
+left:35px;
+
+top:-10px;
+
+background:#fff;
+
+padding:8px 15px;
+
+border-radius:20px;
+
+white-space:nowrap;
+
+font-size:14px;
+
+box-shadow:0 5px 20px #0003;
+
+}
+
+
+
+.projects-close,
+.projects-house-close{
+
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    background: #116b39;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: 0.25s;
+    z-index: 10;
+}
+
+
+
+
+
+/* карточка дома */
+
+
+.projects-house-window{
+    width: 90%;
+    max-width: 1100px;
+    background: #fff;
+    border-radius: 30px;
+    padding: 40px;
+    display: flex;
+    gap: 40px;
+    position: relative;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+}	
+
+
+
+.projects-gallery{
+    width: 50%;
+    overflow: hidden;
+}
+
+
+
+.projects-gallery > img{
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    background: #f8f8f8;
+    display: block;
+    border-radius: 20px;
+}
+
+
+
+.projects-thumbs{
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+
+.projects-thumbs img{
+    width: 90px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 12px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: 0.25s;
+}
+.projects-thumbs img:hover{
+    border-color: #0b6d37;
+}
+
+
+
+.projects-info{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.projects-info h2{
+    font-size: 32px;
+    color: #184d2f;
+    margin-bottom: 20px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.projects-info p{
+    font-size: 16px;
+    line-height: 1.7;
+    color: #fff;
+    margin-bottom: auto;
+    background: #116b39;
+    padding: 12;
+    border-radius: 12px;
+}
+
+
+
+.projects-sales{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    background: #116b39;
+    color: #fff;
+    padding: 16px 32px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+    box-shadow: 0 8px 20px rgba(11,109,55,0.2);
+    width: fit-content;
+}
+.projects-sales:hover{
+    background: #0d5a30;
+    transform: translateY(-2px);
+}
+
+/* Крестик закрытия */
+.projects-house-close{
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    background: #116b39;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: 0.25s;
+    z-index: 10;
+}
+
+.projects-house-close:hover{
+    background: #116b39;
+    transform: rotate(90deg);
+}
+
+
+
+@media(max-width:800px){
+
+.projects-house-window{
+
+flex-direction:column;
+
+}
+
+
+.projects-gallery,
+.projects-info{
+
+width:100%;
+
+}
+
+}
+.projects-gallery{
+
+overflow:hidden;
+
+border-radius:20px;
+
+background:#fff;
+
+}
+
+
+.projects-gallery>img{
+
+    width:100%;
+
+    height:380px;
+
+    object-fit:contain;
+
+    background:#fff;
+
+    display:block;
+
+    border-radius:20px;
+
+    clip-path:inset(0 0 0 0 round 20px);
+
+}
+@media(max-width: 800px){
+    .projects-house-window{
+        flex-direction: column;
+        padding: 25px;
+        gap: 25px;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    
+    .projects-gallery,
+    .projects-info{
+        width: 100%;
+    }
+
+    .projects-gallery > img{
+        height: 260px;
+    }
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function(){
+
+const mapModal = document.getElementById("projectsMapModal");
+const houseModal = document.getElementById("projectsHouseModal"); // <--- Добавили объявление модалки дома
+const openMapBtns = document.querySelectorAll(".projects-open");
+
+openMapBtns.forEach(btn => {
+    btn.addEventListener("click", function(e) {
+        e.preventDefault();
+        mapModal.style.display = "flex";
+    });
+});
+
+const closeMapBtn = document.querySelector(".projects-close");
+if(closeMapBtn) {
+    closeMapBtn.onclick = function(){
+        mapModal.style.display = "none";
+    };
+}
+
+const houses = {
+    house1: {
+        title: "Дом Лесной",
+        description: "Дом площадью 120 м². Кухня-гостиная, 3 спальни, терраса.",
+        images: ["img/house1.jpg"] // <--- Исправлено на массив, чтобы не было ошибки у foreach
+    },
+    house2: {
+        title: "Дом Семейный",
+        description: "Комфортный семейный дом с большой гостиной и вторым этажом.",
+        images: ["img/house2.jpg"] // <--- Исправлено на массив
+    },
+    house3: {
+        title: "Двухэтажный дом",
+        description: `
+Площадь дома: 149.86 м²<br>
+Этажность: 2 этажа<br>
+3 спальни + 1 мастер спальня<br>
+3 санузла<br>
+Полноценная котельная<br>
+Кладовая под лестницей<br>
+Остекленная теплая терраса: 10,77м<br>
+Удобная стальная лестница с шириной марша 1 метр<br>
+Балкон<br>
+Толстые и теплые стены из керамического кирпича 640мм<br>
+Холодный чердак и полноценный 2 этаж<br>
+Высота потолков: 3 метра<br>
+Индивидуальное газовое отопление<br>
+Теплые полы 1 и 2 этаж
+        `,
+        images: [
+            "https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/house/%D0%B4%D0%B2%D1%83%D1%85%D1%8D%D1%82%D0%B0%D0%B6%D0%BD%D1%8B%D0%B9.png",
+            "https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/house/%D0%B4%D0%B2%D1%83%D1%85%D1%8D%D1%82%D0%B0%D0%B6%D0%BD%D1%8B%D0%B9-1-%D1%8D%D1%82%D0%B0%D0%B6-%D0%BF%D0%BB%D0%B0%D0%BD.png",
+            "https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/house/%D0%B4%D0%B2%D1%83%D1%85%D1%8D%D1%82%D0%B0%D0%B6%D0%BD%D1%8B%D0%B9-2-%D1%8D%D1%82%D0%B0%D0%B6-%D0%BF%D0%BB%D0%B0%D0%BD.png"
+        ]
+    },
+    house4: {
+        title: "Двухэтажный дом",
+        description: `
+Площадь дома: 149.86 м²<br>
+Этажность: 2 этажа<br>
+3 спальни + 1 мастер спальня<br>
+3 санузла<br>
+Полноценная котельная<br>
+Кладовая под лестницей<br>
+Остекленная теплая терраса: 10,77м<br>
+Удобная стальная лестница с шириной марша 1 метр<br>
+Балкон<br>
+Толстые и теплые стены из керамического кирпича 640мм<br>
+Холодный чердак и полноценный 2 этаж<br>
+Высота потолков: 3 метра<br>
+Индивидуальное газовое отопление<br>
+Теплые полы 1 и 2 этаж
+        `,
+        images: [
+            "https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/house/%D0%B4%D0%B2%D1%83%D1%85%D1%8D%D1%82%D0%B0%D0%B6%D0%BD%D1%8B%D0%B9.png",
+            "https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/house/%D0%B4%D0%B2%D1%83%D1%85%D1%8D%D1%82%D0%B0%D0%B6%D0%BD%D1%8B%D0%B9-1-%D1%8D%D1%82%D0%B0%D0%B6-%D0%BF%D0%BB%D0%B0%D0%BD.png",
+            "https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/house/%D0%B4%D0%B2%D1%83%D1%85%D1%8D%D1%82%D0%B0%D0%B6%D0%BD%D1%8B%D0%B9-2-%D1%8D%D1%82%D0%B0%D0%B6-%D0%BF%D0%BB%D0%B0%D0%BD.png"
+        ]
+    }
+};
+
+document.querySelectorAll(".projects-point").forEach(point => {
+    point.onclick = function() {
+        let house = houses[this.dataset.house];
+        if(!house) return;
+
+        document.getElementById("projectsTitle").innerHTML = house.title;
+        document.getElementById("projectsDescription").innerHTML = house.description;
+        document.getElementById("projectsMainImage").src = house.images[0];
+
+        // миниатюры
+        let thumbs = document.querySelector(".projects-thumbs");
+        thumbs.innerHTML = "";
+
+        house.images.forEach(img => {
+            let image = document.createElement("img");
+            image.src = img;
+            image.onclick = function() {
+                document.getElementById("projectsMainImage").src = this.src;
+            };
+            thumbs.appendChild(image);
+        });
+
+        mapModal.style.display = "none";
+        houseModal.style.display = "flex";
+    };
+});
+
+const closeHouseBtn = document.querySelector(".projects-house-close");
+if(closeHouseBtn) {
+    closeHouseBtn.onclick = function(){
+        houseModal.style.display = "none";
+        mapModal.style.display = "flex";
+    };
+}
+
+// ==========================
+// ФИЛЬТРЫ ДОМОВ
+// ==========================
+document.querySelectorAll(".filter").forEach(button => {
+    button.onclick = function() {
+        document.querySelectorAll(".filter").forEach(btn => {
+            btn.classList.remove("active");
+        });
+        this.classList.add("active");
+
+        let filter = this.innerText;
+
+        document.querySelectorAll(".projects-point").forEach(point => {
+            let floor = point.dataset.floor;
+            let area = Number(point.dataset.area);
+
+            point.style.display = "block";
+
+            if(filter == "Все дома") {
+                point.style.display = "block";
+            }
+            if(filter == "1 этаж" && floor != "1") {
+                point.style.display = "none";
+            }
+            if(filter == "2 этажа" && floor != "2") {
+                point.style.display = "none";
+            }
+            if(filter == "До 150 м²" && area > 150) {
+                point.style.display = "none";
+            }
+            if(filter == "От 150 м²" && area < 150) {
+                point.style.display = "none";
+            }
+        });
+    };
+});
+// ==========================
+// ОТКРЫТИЕ МОДАЛКИ ЗАЯВКИ (Обе кнопки)
+// ==========================
+function openRequestModal(e) {
+    e.preventDefault();
+    if (mapModal) mapModal.style.display = "none";
+    if (houseModal) houseModal.style.display = "none";
+    if (requestModal) requestModal.style.display = "flex"; 
+}
+
+// Кнопка 1 (Получить консультацию)
+const openConsultBtn = document.getElementById("openConsultModal");
+if (openConsultBtn) {
+    openConsultBtn.addEventListener("click", openRequestModal);
+}
+
+// Кнопка 2 (Отдел продаж в карточке дома)
+const openSalesBtn = document.getElementById("openSalesModal");
+if (openSalesBtn) {
+    openSalesBtn.addEventListener("click", openRequestModal);
+}
+
+// Кнопки открытия через класс (если где-то еще дублируется .request-btn-open)
+const requestOpenBtns = document.querySelectorAll(".request-btn-open");
+requestOpenBtns.forEach(btn => {
+    btn.addEventListener("click", openRequestModal);
+});
+
+// Закрытие модалки заявки по крестику
+const requestCloseBtn = document.getElementById("requestClose");
+if (requestCloseBtn && requestModal) {
+    requestCloseBtn.addEventListener("click", function() {
+        requestModal.style.display = "none";
+    });
+}
+
+// Закрытие модалки заявки по клику вне фона
+if (requestModal) {
+    requestModal.addEventListener("click", function(e) {
+        if (e.target === requestModal) {
+            requestModal.style.display = "none";
+        }
+    });
+}
+// Инфраструктура
+const infraMap = document.getElementById("infraMap");
+const infraModal = document.getElementById("infraModal");
+const infraModalImage = document.getElementById("infraModalImage");
+const infraClose = document.querySelector(".infra-close");
+
+if (infraMap && infraModal && infraModalImage && infraClose) {
+    infraMap.onclick = function () {
+        infraModalImage.src = this.src;
+        infraModal.classList.add("active");
+    };
+
+    infraClose.onclick = function () {
+        infraModal.classList.remove("active");
+    };
+
+    infraModal.onclick = function (e) {
+        if (e.target === infraModal) {
+            infraModal.classList.remove("active");
+        }
+    };
+}
+
+});
+</script>
+<section class="advantages infrastructure">
+
+    <div class="container advantages-wrapper">
+        <div class="advantages-title">
+            <span>Инфраструктура рядом</span>
+            <p class="advantages-text">
+                «Семейный берег» расположен в гармонии с городской средой: знаковые места Ярославля, торговые центры, культурные объекты и точки отдыха находятся в нескольких минутах пути. Удобная транспортная доступность позволяет быстро добраться до важных локаций города, сохраняя ощущение уединённости и спокойствия.
+            </p>
+<div class="infrastructure-map">
+    <img
+        src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/map/%D0%9A%D0%B0%D1%80%D1%82%D0%B02.png"
+        alt="Карта инфраструктуры"
+        id="infraMap">
+</div>
+        </div>
+
+        <div class="project-advantages">
+
+            <div class="project-adv-card">
+                <div class="project-adv-img">
+                    <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/structure/1.jfif" alt="Зоопарк">
+                </div>
+                <h3>
+                    Зоопарк
+                    <span>16 минут</span>
+                </h3>
+            </div>
+
+            <div class="project-adv-card">
+                <div class="project-adv-img">
+                    <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/structure/2.jfif" alt="Исторический центр города">
+                </div>
+                <h3>
+                    Исторический центр города
+                    <span>19 минут</span>
+                </h3>
+            </div>
+
+            <div class="project-adv-card">
+                <div class="project-adv-img">
+                    <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/structure/3.webp" alt="Ярославль-Главный">
+                </div>
+                <h3>
+                    Ярославль-Главный (вокзал)
+                    <span>16 минут</span>
+                </h3>
+            </div>
+
+            <div class="project-adv-card">
+                <div class="project-adv-img">
+                    <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/structure/4.webp" alt="ТРЦ Вернисаж">
+                </div>
+                <h3>
+                    ТРЦ Вернисаж
+                    <span>20 минут</span>
+                </h3>
+            </div>
+
+            <div class="project-adv-card">
+                <div class="project-adv-img">
+                    <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/structure/5.jpeg" alt="ТРЦ Альтаир">
+                </div>
+                <h3>
+                    ТРЦ Альтаир
+                    <span>19 минут</span>
+                </h3>
+            </div>
+
+            <div class="project-adv-card">
+                <div class="project-adv-img">
+                    <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/structure/6.jfif" alt="Термоленд">
+                </div>
+                <h3>
+                    Термоленд (СПА)
+                    <span>19 минут</span>
+                </h3>
+            </div>
+
+            <div class="project-adv-card">
+                <div class="project-adv-img">
+                    <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/structure/7.jfif" alt="Глобус">
+                </div>
+                <h3>
+                    Глобус (гипермаркет)
+                    <span>27 минут</span>
+                </h3>
+            </div>
+
+            <div class="project-adv-card">
+                <div class="project-adv-img">
+                    <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/structure/8.jfif" alt="Лента">
+                </div>
+                <h3>
+                    Лента (гипермаркет)
+                    <span>29 минут</span>
+                </h3>
+            </div>
+
+        </div>
+    </div>
+</section>
+<style>
+.project-advantages {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+.infrastructure {
+    margin-top: 0;
+    padding-bottom: 90px;
+    border-top-left-radius: 42px;
+    border-top-right-radius: 42px;
+    
+}
+
+
+.project-adv-card {
+    height: 280px;
+    border-radius: 25px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 25px;
+    color: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,.08);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.project-adv-img {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+.project-adv-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.project-adv-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,.75));
+    z-index: 1;
+    transition: background 0.4s ease;
+}
+
+.project-adv-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,.25);
+}
+.project-adv-card:hover .project-adv-img img {
+    transform: scale(1.1); /* Плавное увеличение самой картинки без искажения пропорций */
+}
+.project-adv-card:hover::before {
+    background: linear-gradient(transparent, rgba(0,0,0,.85));
+}
+
+.project-adv-card h3 {
+    position: relative;
+    z-index: 2;
+    font-size: 24px;
+    line-height: 1.2;
+    margin: 0;
+    color: #fff;
+}
+
+
+.project-adv-1{
+
+background-image:url("https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/structure/1.jfif");
+
+}
+
+
+.project-adv-2{
+
+background-image:url("https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/structure/2.jfif");
+
+}
+
+
+.project-adv-3{
+
+background-image:url("https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/structure/3.webp");
+
+}
+
+
+.project-adv-4{
+
+background-image:url("https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/structure/4.webp");
+
+}
+.project-adv-5{
+
+background-image:url("https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/structure/5.jpeg");
+
+}
+.project-adv-6{
+
+background-image:url("https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/structure/6.jfif");
+
+}
+.project-adv-7{
+
+background-image:url("https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/structure/7.jfif");
+
+}
+.project-adv-8{
+
+background-image:url("https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/structure/8.jfif");
+
+}
+.project-adv-card h3 span {
+    display: block;
+    margin-top: 8px;
+    font-size: 16px;
+    font-weight: 400;
+    color: #ccc;
+    transition: color .3s ease;
+}
+
+.project-adv-card:hover h3 span {
+    color: #fff;
+}
+
+@media(max-width: 1200px) {
+    .project-advantages {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 650px) {
+    .project-advantages {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+<div class="infra-modal" id="infraModal">
+    <span class="infra-close">&times;</span>
+
+    <img
+        class="infra-modal-image"
+        id="infraModalImage"
+        src=""
+        alt="">
+</div>
+<style>
+.infrastructure-map{
+    margin-top:30px;
+    width:100%;
+}
+
+.infrastructure-map img{
+    display:block;
+    width:100%;
+    border-radius:20px;
+    cursor:pointer;
+    transition:.35s;
+    box-shadow:0 12px 30px rgba(0,0,0,.12);
+    height: 275px;
+}
+
+.infrastructure-map img:hover{
+    transform:translateY(-3px);
+    box-shadow:0 18px 40px rgba(0,0,0,.18);
+}
+
+/* Модальное окно */
+
+.infra-modal{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.88);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    opacity:0;
+    visibility:hidden;
+    transition:.3s;
+    z-index:99999;
+    padding:40px;
+}
+
+.infra-modal.active{
+    opacity:1;
+    visibility:visible;
+}
+
+.infra-modal-image{
+    max-width:95%;
+    max-height:90vh;
+    border-radius:20px;
+    box-shadow:0 25px 60px rgba(0,0,0,.45);
+}
+
+.infra-close{
+    position:absolute;
+    top:25px;
+    right:35px;
+    color:#fff;
+    font-size:48px;
+    line-height:1;
+    cursor:pointer;
+    user-select:none;
+    transition:.25s;
+}
+
+.infra-close:hover{
+    transform:scale(1.15);
+}
+
+@media(max-width:768px){
+
+    .infra-modal{
+        padding:15px;
+    }
+
+    .infra-close{
+        top:15px;
+        right:20px;
+        font-size:40px;
+    }
+
+    .infrastructure-map img{
+        border-radius:16px;
+    }
+
+    .infra-modal-image{
+        border-radius:16px;
+    }
+}
+</style>
+<!-- Модальное окно "Оставить заявку" -->
+<div class="request-modal" id="requestModal">
+    <div class="request-modal-content">
+        <button class="request-close-btn" id="requestClose">&times;</button>
+        
+        <div class="request-img-wrap">
+            <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/slider/1.png" alt="Отдел продаж">
+        </div>
+
+        <h2>Для обратной связи с отделом продаж необходимо заполнить данные поля</h2>
+
+        <form id="requestForm">
+            <div class="request-field">
+                <label>Как к вам обращаться?</label>
+                <input type="text" id="reqName" placeholder="Введите ваше имя" required>
+            </div>
+
+            <div class="request-field">
+                <label>Ваш номер телефона</label>
+                <input type="tel" id="reqPhone" placeholder="+7 (___) ___-__-__" required>
+            </div>
+
+            <div class="request-field">
+                <label>Текстовое поле для ввода комментария либо вопроса (необязательно)</label>
+                <textarea id="reqComment" placeholder="Ваш комментарий или вопрос"></textarea>
+            </div>
+
+            <div class="request-checkboxes">
+                <label class="custom-checkbox">
+                    <input type="checkbox" id="reqPolicy1" required>
+                    <span class="checkmark"></span>
+                    Ознакомлен с Политикой конфиденциальности
+                </label>
+                <label class="custom-checkbox">
+                    <input type="checkbox" id="reqPolicy2" required>
+                    <span class="checkmark"></span>
+                    Соглашаюсь с политикой в отношении обработки персональных данных
+                </label>
+            </div>
+
+            <button type="submit" class="request-submit-btn" id="reqSubmitBtn" disabled>Отправить заявку</button>
+        </form>
+    </div>
+</div>
+
+<style>
+/* Стили для модального окна "Оставить заявку" */
+.request-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.request-modal-content {
+    background: #fff;
+    width: 100%;
+    max-width: 540px;
+    border-radius: 24px;
+    padding: 15px;
+    position: relative;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+    animation: modalScaleUp 0.3s ease;
+    box-sizing: border-box;
+    margin: auto;
+}
+
+@keyframes modalScaleUp {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.request-close-btn {
+    position: absolute;
+    right: 25px;
+    top: 25px;
+    background: #116b39;
+    border: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    font-size: 18px;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    transition: 0.25s;
+    z-index: 10;
+}
+
+.request-close-btn:hover {
+    background: #116b39;
+    transform: rotate(90deg);
+}
+
+.request-img-wrap {
+    width: 100%;
+    height: 160px;
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.request-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.request-modal-content h2 {
+    font-size: 18px;
+    color: #184d2f;
+    line-height: 1.4;
+    margin-bottom: 24px;
+    font-weight: 600;
+}
+
+.request-field {
+    margin-bottom: 16px;
+}
+
+.request-field label {
+    display: block;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 6px;
+    font-weight: 500;
+}
+
+.request-field input,
+.request-field textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.request-field input:focus,
+.request-field textarea:focus {
+    border-color: #0b6d37;
+}
+
+.request-field textarea {
+    resize: vertical;
+    height: 80px;
+}
+
+.request-checkboxes {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.custom-checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 13px;
+    color: #555;
+    cursor: pointer;
+    user-select: none;
+    line-height: 1.4;
+}
+
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0.1;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: relative;
+    height: 18px;
+    width: 18px;
+    background-color: #eee;
+    border-radius: 4px;
+    flex-shrink: 0;
+    transition: background 0.2s;
+}
+
+.custom-checkbox:hover input ~ .checkmark {
+    background-color: #ccc;
+}
+
+.custom-checkbox input:checked ~ .checkmark {
+    background-color: #0b6d37;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.custom-checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.custom-checkbox .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.request-submit-btn {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: #cccccc;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: not-allowed;
+    transition: background 0.3s;
+}
+
+.request-submit-btn.active {
+    background: #0b6d37;
+    cursor: pointer;
+}
+
+.request-submit-btn.active:hover {
+    background: #095d2f;
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const modal = document.getElementById("requestModal");
+    const openBtns = document.querySelectorAll(".request-btn-open");
+    const closeBtn = document.getElementById("requestClose");
+    
+    const nameInput = document.getElementById("reqName");
+    const phoneInput = document.getElementById("reqPhone");
+    const policy1 = document.getElementById("reqPolicy1");
+    const policy2 = document.getElementById("reqPolicy2");
+    const submitBtn = document.getElementById("reqSubmitBtn");
+
+    // Открытие модалки по клику на кнопку в шапке
+    openBtns.forEach(btn => {
+        btn.addEventListener("click", function(e) {
+            e.preventDefault();
+            modal.style.display = "flex";
+        });
+    });
+
+    // Закрытие по крестику
+    closeBtn.addEventListener("click", function() {
+        modal.style.display = "none";
+    });
+
+    // Закрытие по клику вне модалки
+    modal.addEventListener("click", function(e) {
+        if (e.target === modal) {
+            modal.style.display = "none";
+        }
+    });
+
+    // Функция проверки заполненности обязательных полей
+    function validateForm() {
+        const isNameFilled = nameInput.value.trim() !== "";
+        const isPhoneFilled = phoneInput.value.trim() !== "";
+        const isPolicy1Checked = policy1.checked;
+        const isPolicy2Checked = policy2.checked;
+
+        if (isNameFilled && isPhoneFilled && isPolicy1Checked && isPolicy2Checked) {
+            submitBtn.classList.add("active");
+            submitBtn.removeAttribute("disabled");
+        } else {
+            submitBtn.classList.remove("active");
+            submitBtn.setAttribute("disabled", "true");
+        }
+    }
+
+    // Слушатели событий для полей ввода и чекбоксов
+    nameInput.addEventListener("input", validateForm);
+    phoneInput.addEventListener("input", validateForm);
+    policy1.addEventListener("change", validateForm);
+    policy2.addEventListener("change", validateForm);
+
+    // Обработка отправки формы
+    document.getElementById("requestForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+        if (submitBtn.classList.contains("active")) {
+            alert("Заявка успешно отправлена!");
+            modal.style.display = "none";
+            this.reset();
+            validateForm();
+        }
+    });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const requestModal = document.getElementById("requestModal");
+    const openRequestBtns = document.querySelectorAll(".request-btn-open");
+    const closeRequestBtn = document.getElementById("requestClose");
+
+    // Открытие модалки по клику на кнопки с классом request-btn-open
+    openRequestBtns.forEach(btn => {
+        btn.addEventListener("click", function(e) {
+            e.preventDefault();
+            requestModal.style.display = "flex";
+        });
+    });
+
+    // Закрытие по крестику
+    if (closeRequestBtn) {
+        closeRequestBtn.addEventListener("click", function() {
+            requestModal.style.display = "none";
+        });
+    }
+
+    // Закрытие при клике вне области модального окна (по фонy)
+    requestModal.addEventListener("click", function(e) {
+        if (e.target === requestModal) {
+            requestModal.style.display = "none";
+        }
+    });
+});
+</script>
+<!-- Блок: Проекты домов (перед подвалом) -->
+<section class="house-gallery-section" id="houseGallerySection">
+    <div class="container">
+        
+        <!-- Верхняя строка: Заголовок, Кнопка карты и Стрелки -->
+        <div class="house-gallery-header">
+            <h2 class="house-gallery-title">Проекты домов</h2>
+            
+            <div class="house-header-actions">
+                <!-- Кнопка "Карта коттеджного квартала" в стиле сайта -->
+                <a href="#" class="btn projects-open house-map-btn">
+                    Карта коттеджного квартала
+                </a>
+                
+                <div class="house-gallery-nav">
+                    <button class="house-gallery-btn house-prev-btn" aria-label="Назад">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                    </button>
+                    <button class="house-gallery-btn house-next-btn" aria-label="Вперед">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Галерея с кастомным скроллом и осветлением краев -->
+        <div class="house-gallery-wrap">
+            <div class="house-gallery-track" id="houseGalleryTrack">
+                
+                <!-- Элемент 1 -->
+                <div class="house-gallery-item" data-title="Дом Лесной" data-desc="Современный проект площадью 120 м². Просторная кухня-гостиная, 3 спальни, эргономичная планировка и уютная терраса." data-img="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/slider/1.png">
+                    <div class="house-img-container">
+                        <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/slider/1.png" alt="Дом Лесной">
+                    </div>
+                    <h3 class="house-item-title">Дом «Лесной»</h3>
+                    <p class="house-item-desc">120 м² • 3 спальни • Терраса</p>
+                </div>
+
+                <!-- Элемент 2 -->
+                <div class="house-gallery-item" data-title="Дом Семейный" data-desc="Комфортный семейный коттедж с большой гостиной, панорамными окнами и функциональной зоной хранения." data-img="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/slider/2.png">
+                    <div class="house-img-container">
+                        <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/slider/2.png" alt="Дом Семейный">
+                    </div>
+                    <h3 class="house-item-title">Дом «Семейный»</h3>
+                    <p class="house-item-desc">150 м² • 4 спальни • Гараж</p>
+                </div>
+
+                <!-- Элемент 3 -->
+                <div class="house-gallery-item" data-title="Двухэтажный особняк" data-desc="Площадь дома: 149.86 м². Керамический кирпич 640мм, индивидуальное газовое отопление, теплые полы на обоих этажах." data-img="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/slider/3.png">
+                    <div class="house-img-container">
+                        <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/slider/3.png" alt="Двухэтажный особняк">
+                    </div>
+                    <h3 class="house-item-title">Двухэтажный особняк</h3>
+                    <p class="house-item-desc">175 м² • Второй свет • Мастер-спальня</p>
+                </div>
+
+                <!-- Элемент 4 -->
+                <div class="house-gallery-item" data-title="Дом Уютный" data-desc="Компактный и практичный одноэтажный дом для ценителей загородной тишины. Энергоэффективные стеклопакеты." data-img="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/slider/house.png">
+                    <div class="house-img-container">
+                        <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/slider/house.png" alt="Дом Уютный">
+                    </div>
+                    <h3 class="house-item-title">Дом «Уютный»</h3>
+                    <p class="house-item-desc">98 м² • 2 спальни • Навес для авто</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Изолированная модалка для просмотра проекта из нового блока -->
+<div class="house-custom-modal" id="houseCustomModal">
+    <div class="house-custom-modal-content">
+        <button class="house-custom-close" id="houseCustomClose">&times;</button>
+        <div class="house-custom-modal-body">
+            <div class="house-custom-img-wrap">
+                <img id="houseCustomModalImg" src="" alt="Проект дома">
+            </div>
+            <div class="house-custom-info">
+                <h3 id="houseCustomModalTitle"></h3>
+                <p id="houseCustomModalDesc"></p>
+                <a href="#" class="btn request-btn-open" style="margin-top:20px; width:fit-content;">Узнать стоимость</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Основной контейнер блока */
+.house-gallery-section {
+    background: #ffffff;
+    padding: 60px 0 80px 0;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    box-shadow: 0 -10px 40px rgba(0,0,0,0.04);
+    margin-top: 40px;
+    position: relative;
+}
+
+.house-gallery-section .container {
+    width: min(1600px, calc(100% - 40px));
+    margin: auto;
+}
+
+/* Шапка блока (заголовок + действия справа) */
+.house-gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.house-gallery-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #116b39; /* Фирменный зеленый цвет */
+    margin: 0;
+}
+
+.house-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Стили кнопки карты в шапке (использует ваш класс .btn, но адаптирована по высоте) */
+.house-map-btn {
+    padding: 12px 24px;
+    font-size: 15px;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+.house-gallery-nav {
+    display: flex;
+    gap: 12px;
+}
+
+.house-gallery-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid #dcdcdc;
+    background: #ffffff;
+    color: #116b39;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.house-gallery-btn:hover {
+    background: #116b39;
+    color: #ffffff;
+    border-color: #116b39;
+    transform: translateY(-2px);
+}
+
+/* Обертка галереи с эффектом осветления (затухания) краев */
+.house-gallery-wrap {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Эффект осветления по бокам */
+.house-gallery-wrap::before,
+.house-gallery-wrap::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.house-gallery-wrap::before {
+    left: 0;
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+}
+
+.house-gallery-wrap::after {
+    right: 0;
+    background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+}
+
+/* Трек прокрутки */
+.house-gallery-track {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+    padding: 10px 4px;
+}
+
+.house-gallery-track::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+}
+
+/* Карточка элемента галереи */
+.house-gallery-item {
+    flex: 0 0 380px;
+    background: #fcfcfc;
+    border-radius: 20px;
+    padding: 16px;
+    border: 1px solid #eaeaea;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.house-gallery-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    border-color: #116b39;
+}
+
+/* Контейнер изображения */
+.house-img-container {
+    width: 100%;
+    height: 260px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #f0f0f0;
+    margin-bottom: 16px;
+}
+
+.house-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.house-gallery-item:hover .house-img-container img {
+    transform: scale(1.06);
+}
+
+/* Фирменный заголовок под картинкой */
+.house-item-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #116b39;
+    margin: 0 0 6px 0;
+}
+
+/* Мелкий серый шрифт описание */
+.house-item-desc {
+    font-size: 13px;
+    color: #777777;
+    margin: 0;
+    font-weight: 400;
+}
+
+/* Стили для кастомной модалки */
+.house-custom-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.house-custom-modal-content {
+    background: #fff;
+    width: 100%;
+    max-width: 900px;
+    border-radius: 24px;
+    padding: 35px;
+    position: relative;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+    animation: houseScaleIn 0.3s ease;
+}
+
+@keyframes houseScaleIn {
+    from { transform: scale(0.92); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.house-custom-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #116b39;
+    color: #fff;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+    z-index: 10;
+}
+
+.house-custom-close:hover {
+    transform: rotate(90deg);
+}
+
+.house-custom-modal-body {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.house-custom-img-wrap {
+    flex: 1.2;
+    height: 400px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.house-custom-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.house-custom-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.house-custom-info h3 {
+    font-size: 26px;
+    color: #116b39;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.house-custom-info p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Адаптивность */
+@media(max-width: 850px) {
+    .house-custom-modal-body {
+        flex-direction: column;
+    }
+    .house-custom-img-wrap {
+        height: 250px;
+        width: 100%;
+    }
+    .house-gallery-item {
+        flex: 0 0 300px;
+    }
+    .house-header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const track = document.getElementById("houseGalleryTrack");
+    const prevBtn = document.querySelector(".house-prev-btn");
+    const nextBtn = document.querySelector(".house-next-btn");
+
+    // Логика стрелок пролистывания галереи
+    if (track && prevBtn && nextBtn) {
+        const scrollAmount = 400;
+
+        prevBtn.addEventListener("click", () => {
+            track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+
+        nextBtn.addEventListener("click", () => {
+            track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+    }
+
+    // Логика открытия модального окна при клике на элемент галереи
+    const modal = document.getElementById("houseCustomModal");
+    const modalImg = document.getElementById("houseCustomModalImg");
+    const modalTitle = document.getElementById("houseCustomModalTitle");
+    const modalDesc = document.getElementById("houseCustomModalDesc");
+    const closeBtn = document.getElementById("houseCustomClose");
+
+    document.querySelectorAll(".house-gallery-item").forEach(item => {
+        item.addEventListener("click", function() {
+            const imgSrc = this.getAttribute("data-img");
+            const title = this.getAttribute("data-title");
+            const desc = this.getAttribute("data-desc");
+
+            modalImg.src = imgSrc;
+            modalTitle.textContent = title;
+            modalDesc.textContent = desc;
+            
+            modal.style.display = "flex";
+        });
+    });
+
+    if (closeBtn) {
+        closeBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+        });
+    }
+
+    if (modal) {
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    }
+});
+</script>
+<!-- Нижний блок (Подвал) -->
+<footer class="site-footer">
+    <div class="container">
+        
+        <div class="footer-grid">
+            
+            <!-- Левый блок -->
+            <div class="footer-col-left">
+                <a href="/" class="footer-logo">
+                    <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/logo-cap.png" alt="ЖК Семейный берег">
+                </a>
+                <div class="footer-contacts-title">Контактная информация</div>
+                <div class="footer-contacts-list">
+                    <a href="tel:+74852337660">+7 (4852) 33-76-60 <span style="color:#666;">Отдел продаж</span></a>
+                    <a href="tel:+74852335576">+7 (4852) 33-55-76 <span style="color:#666;">Отдел продаж</span></a>
+                    <a href="tel:+79109737660">+7 (910) 973-76-60 <span style="color:#666;">Отдел продаж</span></a>
+                    <a href="mailto:esalej.vsk@mail.ru">esalej.vsk@mail.ru</a>
+                    <div class="footer-address">г. Ярославль, ул. Ярославская, 9а</div>
+                    <div class="footer-schedule">
+                        пн–пт: 9:00–19:00<br>
+                        сб: 9:00–17:00
+                    </div>
+                </div>
+            </div>
+
+            <!-- Центральный блок (изображение со скругленными углами) -->
+            <div class="footer-col-center">
+                <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/slider/house.png" alt="ЖК Семейный берег" class="footer-center-img">
+            </div>
+
+            <!-- Правый блок (3-й) - Навигация и соцсети -->
+            <div class="footer-col-right">
+                <div class="footer-nav-title">Навигация</div>
+                <div class="footer-nav-list">
+                    <a href="#" class="footer-nav-item">О жилом квартале</a>
+                    <a href="#" class="footer-nav-item">Инфраструктура</a>
+                    <a href="#" class="footer-nav-item">Проекты домов</a>
+                    <a href="#" class="footer-nav-item">Благоустройство</a>
+                    <a href="#" class="footer-nav-item">Контакты</a>
+                </div>
+                
+                <!-- Иконки соцсетей -->
+                <div class="footer-socials">
+                    <a href="#" class="footer-social-icon" target="_blank" aria-label="Telegram">
+                        <img src="https://api.iconify.design/ic:baseline-telegram.svg?color=%230b6d37" alt="Telegram">
+                    </a>
+                    <a href="#" class="footer-social-icon" target="_blank" aria-label="VK">
+                        <img src="https://api.iconify.design/mdi:vk.svg?color=%230b6d37" alt="VK">
+                    </a>
+                    <a href="#" class="footer-social-icon" target="_blank" aria-label="WhatsApp">
+                        <img src="https://api.iconify.design/ic:baseline-whatsapp.svg?color=%230b6d37" alt="WhatsApp">
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Разделитель (сужение и прозрачные края) -->
+        <div class="footer-divider"></div>
+
+        <!-- Мелкий серый текст по центру -->
+        <div class="footer-disclaimer">
+            Информация на сайте носит ознакомительный характер и не является публичной офертой, определяемой положениями статьи 437 п.2 ГК РФ.<br>
+            Всю необходимую информацию уточняйте у менеджеров нашей компании.
+        </div>
+
+        <!-- Две горизонтальные ссылки -->
+        <div class="footer-policy-links">
+            <a href="#">Политика конфиденциальности</a>
+            <a href="#">Договор публичной оферты</a>
+        </div>
+
+        <!-- Нижний серый текст по центру -->
+        <div class="footer-copyright">
+            © 2026. ЖК "Семейный берег"
+        </div>
+
+    </div>
+</footer>
+
+<style>
+/* Стили изолированы префиксом и не пересекаются с вашими файлами */
+.site-footer {
+    background: #ffffff;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.06);
+    padding: 30px 0 30px 0;
+    margin-top: 60px;
+    color: #333333;
+}
+
+.site-footer .container {
+    width: min(1600px, calc(100% - 40px));
+    margin: auto;
+}
+
+.footer-grid {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+/* Левый блок */
+.footer-col-left {
+    flex: 1;
+    max-width: 320px;
+    padding-left: 10px;
+}
+
+.footer-logo img {
+    height: 54px;
+    display: block;
+    margin-bottom: 80px;
+}
+
+.footer-contacts-title {
+    color: #0b6d37;
+    font-size: 17px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.footer-contacts-list {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #444444;
+}
+
+.footer-contacts-list a {
+    color: #444444;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-contacts-list a:hover {
+    color: #0b6d37;
+}
+
+.footer-address {
+    margin-top: 12px;
+    color: #555555;
+}
+
+.footer-schedule {
+    margin-top: 8px;
+    color: #666666;
+    font-size: 13px;
+}
+
+/* Центральный блок со скругленным изображением */
+.footer-col-center {
+    flex: 1.2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-center-img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 24px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+    display: block;
+}
+
+/* Правый блок (3-й) - Навигация */
+.footer-col-right {
+    flex: 1;
+    max-width: 300px;
+}
+
+.footer-nav-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #184d2f;
+    margin-bottom: 20px;
+}
+
+.footer-nav-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.footer-nav-item {
+    display: block;
+    padding: 10px 16px;
+    border: 1px solid #e0e8e2;
+    border-radius: 12px;
+    color: #333333;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.25s ease;
+    background: #fafcfb;
+}
+
+.footer-nav-item:hover {
+    border-color: #0b6d37;
+    color: #0b6d37;
+    background: #ffffff;
+    transform: translateX(4px);
+}
+
+/* Иконки соцсетей */
+.footer-socials {
+    display: flex;
+    gap: 12px;
+}
+
+.footer-social-icon {
+    width: 40px;
+    height: 40px;
+    border: 1px solid #0b6d37;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    transition: all 0.25s ease;
+    padding: 8px;
+}
+
+.footer-social-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+.footer-social-icon:hover {
+    background: #0b6d37;
+    transform: translateY(-3px);
+}
+
+.footer-social-icon:hover img {
+    filter: brightness(0) invert(1);
+}
+
+/* Разделитель с сужением и прозрачными краями */
+.footer-divider {
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(90deg, rgba(11,109,55,0) 0%, rgba(11,109,55,0.25) 15%, rgba(11,109,55,0.25) 85%, rgba(11,109,55,0) 100%);
+    margin: 40px 0 25px 0;
+}
+
+/* Мелкий серый текст по центру */
+.footer-disclaimer {
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.6;
+    color: #888888;
+    max-width: 900px;
+    margin: 0 auto 15px auto;
+}
+
+/* Две горизонтальные ссылки ниже */
+.footer-policy-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 20px;
+}
+
+.footer-policy-links a {
+    font-size: 13px;
+    color: #666666;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.footer-policy-links a:hover {
+    color: #0b6d37;
+    text-decoration: underline;
+}
+
+/* Нижний серый копирайт */
+.footer-copyright {
+    text-align: center;
+    font-size: 13px;
+    color: #999999;
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 1024px) {
+    .footer-grid {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 35px;
+    }
+    .footer-col-left, .footer-col-right {
+        max-width: 100%;
+        padding-left: 0;
+    }
+    .footer-contacts-list {
+        align-items: center;
+    }
+    .footer-nav-item {
+        text-align: center;
+    }
+    .footer-socials {
+        justify-content: center;
+    }
+}
+</style>
