@@ -1219,9 +1219,6 @@ opacity:0;
         <div class="projects-map-layout">
 
 
-
-            <!-- ФИЛЬТРЫ СЛЕВА -->
-
             <div class="projects-filters">
 
 
@@ -1493,7 +1490,6 @@ src="img/house1.jpg">
 </div>
 </div>
 <style>
-/* Кнопка */
 
 .projects-open{
     cursor:pointer;
@@ -1501,7 +1497,6 @@ src="img/house1.jpg">
 
 
 
-/* Модалка */
 
 .projects-modal{
 
@@ -1924,12 +1919,6 @@ const houses = {
         title: "Дом Лесной",
         description: "Дом площадью 120 м². Кухня-гостиная, 3 спальни, терраса.",
         images: ["img/house1.jpg"],
-link: "/projects/lesnoy"
-    },
-    house2: {
-        title: "Дом Семейный",
-        description: "Комфортный семейный дом с большой гостиной и вторым этажом.",
-        images: ["img/house2.jpg"],
 link: "/projects/lesnoy"
     },
     house3: {
@@ -2800,7 +2789,6 @@ document.addEventListener("DOMContentLoaded", function() {
             <h2 class="house-gallery-title">Проекты</h2>
             
             <div class="house-header-actions">
-                <!-- Кнопка "Карта коттеджного квартала" в стиле сайта -->
                 <a href="#" class="btn projects-open house-map-btn">
                     Карта коттеджного квартала
                 </a>
@@ -2817,22 +2805,24 @@ document.addEventListener("DOMContentLoaded", function() {
         </div>
 
         <div class="house-gallery-wrap">
-            <div class="house-gallery-track" id="houseGalleryTrack">
-                <div class="house-gallery-item" data-title="Одноэтажный дом" data-desc="Современный проект площадью 120 м². Просторная кухня-гостиная, 3 спальни, эргономичная планировка и уютная терраса." data-img="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/slider/1.png">
-                    <div class="house-img-container">
-                        <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%9E%D0%B4%D0%BD%D0%BE%D1%8D%D1%82%D0%B0%D0%B6%D0%BD%D1%8B%D0%B9.png" alt="Одноэтажный дом">
-                    </div>
-                    <h3 class="house-item-title">Одноэтажный дом</h3>
-                    <p class="house-item-desc">120 м² • 3 спальни • Терраса</p>
-                </div>
+    <div class="house-gallery-track" id="houseGalleryTrack">
+        <!-- Карточка 1 -->
+        <div class="house-gallery-item" data-house-id="house1">
+            <div class="house-img-container">
+                <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%9E%D0%B4%D0%BD%D0%BE%D1%8D%D1%82%D0%B0%D0%B6%D0%BD%D1%8B%D0%B9.png" alt="Одноэтажный дом">
+            </div>
+            <h3 class="house-item-title">Одноэтажный дом</h3>
+            <p class="house-item-desc">120 м² • 3 спальни • Терраса</p>
+        </div>
 
-                <div class="house-gallery-item" data-title="Двухэтажный дом" data-desc="Комфортный семейный коттедж с большой гостиной, панорамными окнами и функциональной зоной хранения." data-img="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/slider/2.png">
-                    <div class="house-img-container">
-                        <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%B4%D0%B2%D1%83%D1%85%D1%8D%D1%82%D0%B0%D0%B6%D0%BD%D1%8B%D0%B92.png" alt="Двухэтажный дом">
-                    </div>
-                    <h3 class="house-item-title">Двухэтажный дом</h3>
-                    <p class="house-item-desc">150 м² • 4 спальни • Гараж</p>
-                </div>
+        <!-- Карточка 2 -->
+        <div class="house-gallery-item" data-house-id="house3">
+            <div class="house-img-container">
+                <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%B4%D0%B2%D1%83%D1%85%D1%8D%D1%82%D0%B0%D0%B6%D0%BD%D1%8B%D0%B92.png" alt="Двухэтажный дом">
+            </div>
+            <h3 class="house-item-title">Двухэтажный дом</h3>
+            <p class="house-item-desc">150 м² • 4 спальни • Гараж</p>
+        </div>
 
                 <div class="house-gallery-item" data-title="Детская и игровая площадка" data-desc="Площадь дома: 149.86 м². Керамический кирпич 640мм, индивидуальное газовое отопление, теплые полы на обоих этажах." data-img="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/slider/3.png">
                     <div class="house-img-container">
