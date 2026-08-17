@@ -2802,10 +2802,10 @@ document.addEventListener("DOMContentLoaded", function() {
             </div>
         </div>
 
-        <div class="house-gallery-wrap">
+ <div class="house-gallery-wrap">
     <div class="house-gallery-track" id="houseGalleryTrack">
-        <!-- Карточка 1 -->
-        <div class="house-gallery-item" data-house-id="house1">
+        
+        <div class="house-gallery-item" data-url="/projects/odnotazhniy.html">
             <div class="house-img-container">
                 <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%9E%D0%B4%D0%BD%D0%BE%D1%8D%D1%82%D0%B0%D0%B6%D0%BD%D1%8B%D0%B9.png" alt="Одноэтажный дом">
             </div>
@@ -2813,8 +2813,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <p class="house-item-desc">120 м² • 3 спальни • Терраса</p>
         </div>
 
-        <!-- Карточка 2 -->
-        <div class="house-gallery-item" data-house-id="house3">
+        <div class="house-gallery-item" data-url="/projects/dvukhtazhniy.html">
             <div class="house-img-container">
                 <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%B4%D0%B2%D1%83%D1%85%D1%8D%D1%82%D0%B0%D0%B6%D0%BD%D1%8B%D0%B92.png" alt="Двухэтажный дом">
             </div>
@@ -2822,43 +2821,27 @@ document.addEventListener("DOMContentLoaded", function() {
             <p class="house-item-desc">150 м² • 4 спальни • Гараж</p>
         </div>
 
-                <div class="house-gallery-item" data-title="Детская и игровая площадка" data-desc="Площадь дома: 149.86 м². Керамический кирпич 640мм, индивидуальное газовое отопление, теплые полы на обоих этажах." data-img="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/slider/3.png">
-                    <div class="house-img-container">
-                        <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%98%D0%B3%D1%80%D0%BE%D0%B2%D0%B0%D1%8F.png" alt="Игровая площадка">
-                    </div>
-                    <h3 class="house-item-title">Детская и игровая площадка</h3>
-                    <p class="house-item-desc">175 м² • Второй свет • Мастер-спальня</p>
-                </div>
-
-                <div class="house-gallery-item" data-title="Воркаут зона и зона отдыха" data-desc="Компактный и практичный одноэтажный дом для ценителей загородной тишины. Энергоэффективные стеклопакеты." data-img="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/slider/house.png">
-                    <div class="house-img-container">
-                        <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%92%D0%BE%D1%80%D0%BA%D0%B0%D1%83%D1%82-%D0%B7%D0%BE%D0%BD%D0%B0.png" alt="Воркаут зона">
-                    </div>
-                    <h3 class="house-item-title">Воркаут зона и зона отдыха</h3>
-                    <p class="house-item-desc">98 м² • 2 спальни • Навес для авто</p>
-                </div>
-
+        <div class="house-gallery-item" data-url="/projects/igrovaya.html">
+            <div class="house-img-container">
+                <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%98%D0%B3%D1%80%D0%BE%D0%B2%D0%B0%D1%8F.png" alt="Игровая площадка">
             </div>
+            <h3 class="house-item-title">Детская и игровая площадка</h3>
+            <p class="house-item-desc">175 м² • Второй свет • Мастер-спальня</p>
         </div>
+
+        <div class="house-gallery-item" data-url="/projects/workout.html">
+            <div class="house-img-container">
+                <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%92%D0%BE%D1%80%D0%BA%D0%B0%D1%83%D1%82-%D0%B7%D0%BE%D0%BD%D0%B0.png" alt="Воркаут зона">
+            </div>
+            <h3 class="house-item-title">Воркаут зона и зона отдыха</h3>
+            <p class="house-item-desc">98 м² • 2 спальни • Навес для авто</p>
+        </div>
+
+    </div>
+</div>
 
     </div>
 </section>
-
-<div class="house-custom-modal" id="houseCustomModal">
-    <div class="house-custom-modal-content">
-        <button class="house-custom-close" id="houseCustomClose">&times;</button>
-        <div class="house-custom-modal-body">
-            <div class="house-custom-img-wrap">
-                <img id="houseCustomModalImg" src="" alt="Проект дома">
-            </div>
-            <div class="house-custom-info">
-                <h3 id="houseCustomModalTitle"></h3>
-                <p id="houseCustomModalDesc"></p>
-                <a href="#" class="btn request-btn-open" style="margin-top:20px; width:fit-content;">Узнать стоимость</a>
-            </div>
-        </div>
-    </div>
-</div>
 
 <style>
 .house-gallery-section {
@@ -3129,7 +3112,6 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 }
 </style>
-
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     const track = document.getElementById("houseGalleryTrack");
@@ -3148,12 +3130,6 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
-    const modal = document.getElementById("houseCustomModal");
-    const modalImg = document.getElementById("houseCustomModalImg");
-    const modalTitle = document.getElementById("houseCustomModalTitle");
-    const modalDesc = document.getElementById("houseCustomModalDesc");
-    const closeBtn = document.getElementById("houseCustomClose");
-
     let isScrolling = false;
 
     if (track) {
@@ -3164,37 +3140,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
     document.querySelectorAll(".house-gallery-item").forEach(item => {
         item.addEventListener("click", function(e) {
+            // Если пользователь скроллил трек мышкой/тачпадом, не переходим по ссылке
             if (isScrolling) return;
 
-            const imgSrc = this.getAttribute("data-img");
-            const title = this.getAttribute("data-title");
-            const desc = this.getAttribute("data-desc");
-
-            if (modalImg) modalImg.src = imgSrc || "";
-            if (modalTitle) modalTitle.textContent = title || "";
-            if (modalDesc) modalDesc.textContent = desc || "";
-            
-            if (modal) modal.style.display = "flex";
-        });
-    });
-
-    if (closeBtn) {
-        closeBtn.addEventListener("click", () => {
-            if (modal) modal.style.display = "none";
-        });
-    }
-    if (modal) {
-        modal.addEventListener("click", (e) => {
-            if (e.target === modal) {
-                modal.style.display = "none";
+            const url = this.getAttribute("data-url");
+            if (url) {
+                window.location.href = url;
             }
         });
-    }
-
-    document.addEventListener("keydown", (e) => {
-        if (e.key === "Escape" && modal && modal.style.display === "flex") {
-            modal.style.display = "none";
-        }
     });
 });
 </script>
