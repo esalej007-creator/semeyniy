@@ -3795,7 +3795,7 @@ document.addEventListener("DOMContentLoaded", function() {
  <div class="house-gallery-wrap">
     <div class="house-gallery-track" id="houseGalleryTrack">
         
-        <div class="house-gallery-item" data-url="/projects/odnotazhniy.html">
+        <div class="house-gallery-item" data-url="/one">
             <div class="house-img-container">
                 <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%9E%D0%B4%D0%BD%D0%BE%D1%8D%D1%82%D0%B0%D0%B6%D0%BD%D1%8B%D0%B9.png" alt="Одноэтажный дом">
             </div>
@@ -3811,7 +3811,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <p class="house-item-desc">150 м² • 4 спальни • Гараж</p>
         </div>
 
-        <div class="house-gallery-item" data-url="/projects/igrovaya.html">
+        <div class="house-gallery-item" data-modal-image="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%98%D0%B3%D1%80%D0%BE%D0%B2%D0%B0%D1%8F.png" data-modal-title="Детская и игровая площадка">
             <div class="house-img-container">
                 <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%98%D0%B3%D1%80%D0%BE%D0%B2%D0%B0%D1%8F.png" alt="Игровая площадка">
             </div>
@@ -3819,7 +3819,7 @@ document.addEventListener("DOMContentLoaded", function() {
     <p class="house-item-desc">Безопасное покрытие • Зонирование по возрастам • Отдых для родителей</p>
 </div>
 
-<div class="house-gallery-item" data-url="/projects/workout.html">
+<div class="house-gallery-item" data-modal-image="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%92%D0%BE%D1%80%D0%BA%D0%B0%D1%83%D1%82-%D0%B7%D0%BE%D0%BD%D0%B0.png" data-modal-title="Воркаут зона и зона отдыха">
     <div class="house-img-container">
         <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%92%D0%BE%D1%80%D0%BA%D0%B0%D1%83%D1%82-%D0%B7%D0%BE%D0%BD%D0%B0.png" alt="Воркаут зона">
     </div>
@@ -4131,8 +4131,23 @@ document.addEventListener("DOMContentLoaded", function() {
         item.addEventListener("click", function(e) {
             if (isScrolling) return;
 
+            const modalImage = this.getAttribute("data-modal-image");
+            const modalTitle = this.getAttribute("data-modal-title") || "";
             const url = this.getAttribute("data-url");
-            if (url) {
+
+            if (modalImage) {
+                const imageModal = document.getElementById("projectImageModal");
+                const imageModalImg = document.getElementById("projectImageModalImg");
+                const imageModalTitle = document.getElementById("projectImageModalTitle");
+
+                if (imageModal && imageModalImg) {
+                    imageModalImg.src = modalImage;
+                    imageModalImg.alt = modalTitle;
+                    if (imageModalTitle) imageModalTitle.textContent = modalTitle;
+                    imageModal.classList.add("is-open");
+                    document.body.classList.add("project-modal-open");
+                }
+            } else if (url) {
                 window.location.href = url;
             }
         });
@@ -6177,3 +6192,41 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 }
 </style>
+
+
+
+<!-- Модалка для изображений игровой площадки и воркаута -->
+<style>
+#projectImageModal{display:none;position:fixed;inset:0;z-index:12000;padding:24px;background:rgba(0,0,0,.65);backdrop-filter:blur(4px);align-items:center;justify-content:center}
+#projectImageModal.is-open{display:flex}
+.project-image-modal-content{position:relative;width:min(100%,1180px);max-height:90vh;background:#fff;border-radius:24px;padding:12px;box-sizing:border-box;box-shadow:0 20px 50px rgba(0,0,0,.25);animation:modalScaleUp .3s ease}
+.project-image-modal-close{position:absolute;top:-15px;right:-15px;width:36px;height:36px;padding:0;margin:0;border:none;border-radius:50%;background:#116b39;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,.2);z-index:5;transition:transform .25s ease}
+.project-image-modal-close::before,.project-image-modal-close::after{content:"";position:absolute;top:50%;left:50%;width:16px;height:2px;background:#fff;border-radius:2px}
+.project-image-modal-close::before{transform:translate(-50%,-50%) rotate(45deg)}
+.project-image-modal-close::after{transform:translate(-50%,-50%) rotate(-45deg)}
+.project-image-modal-close:hover{transform:rotate(90deg)}
+.project-image-modal-figure{margin:0;max-height:calc(90vh - 24px)}
+#projectImageModalImg{display:block;width:100%;max-height:calc(90vh - 70px);object-fit:contain;border-radius:16px}
+#projectImageModalTitle{margin:12px 8px 4px;color:#184d2f;font-size:20px;font-weight:600;text-align:center}
+body.project-modal-open{overflow:hidden}
+@media(max-width:600px){#projectImageModal{padding:16px}.project-image-modal-content{padding:8px;border-radius:18px}.project-image-modal-close{top:-10px;right:-6px;width:34px;height:34px}#projectImageModalImg{max-height:calc(90vh - 60px);border-radius:12px}#projectImageModalTitle{font-size:16px;margin:10px 6px 4px}}
+</style>
+<div class="project-image-modal" id="projectImageModal" aria-hidden="true">
+  <div class="project-image-modal-content" role="dialog" aria-modal="true" aria-labelledby="projectImageModalTitle">
+    <button type="button" class="project-image-modal-close" id="projectImageModalClose" aria-label="Закрыть"></button>
+    <figure class="project-image-modal-figure">
+      <img id="projectImageModalImg" src="" alt="">
+      <figcaption id="projectImageModalTitle"></figcaption>
+    </figure>
+  </div>
+</div>
+<script>
+document.addEventListener("DOMContentLoaded",function(){
+ const modal=document.getElementById("projectImageModal");
+ const close=document.getElementById("projectImageModalClose");
+ function closeModal(){if(!modal)return;modal.classList.remove("is-open");document.body.classList.remove("project-modal-open")}
+ if(close)close.addEventListener("click",closeModal);
+ if(modal)modal.addEventListener("click",function(e){if(e.target===modal)closeModal()});
+ document.addEventListener("keydown",function(e){if(e.key==="Escape"&&modal&&modal.classList.contains("is-open"))closeModal()});
+});
+</script>
