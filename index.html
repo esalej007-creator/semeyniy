@@ -49,10 +49,9 @@
                 +7 (910) 973-76-60
             </a>
 
-            <div class="mobile-socials" aria-label="Социальные сети">
-                <a href="https://web.max.ru/89638359" class="mobile-social-btn" target="_blank" rel="noopener" aria-label="Социальная сеть 1">
-                    <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/icon/max.png" alt="">
-            </div>
+            <a href="presentation.pdf" class="mobile-presentation-btn" target="_blank" rel="noopener">
+                Презентация
+            </a>
 
             <a href="#" class="btn request-btn-open btn-mob">
                 Оставить заявку
@@ -341,8 +340,8 @@ headerScroll();
     Выбор недвижимости
 </a>
 
-<a href="#" class="btn-white" id="openConsultModal">
-    Получить консультацию
+<a href="presentation.pdf" class="btn-white presentation-btn" target="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/house/%D0%91%D1%83%D0%BA%D0%BB%D0%B5%D1%82%20%D0%9A%D0%9F%20%D0%A1%D0%B5%D0%BC%D0%B5%D0%B9%D0%BD%D1%8B%D0%B9%20%D0%B1%D0%B5%D1%80%D0%B5%D0%B3%20%D1%84%D0%B8%D0%BD%D0%B0%D0%BB.pdf" rel="noopener">
+    Презентация
 </a>
 
         </div>
@@ -5144,37 +5143,27 @@ document.addEventListener("DOMContentLoaded", function () {
         margin-bottom: 18px;
     }
 
-    .mobile-menu .mobile-socials {
+    .mobile-menu .mobile-presentation-btn {
+        width: 100%;
+        min-height: 50px;
         display: flex;
         align-items: center;
-        gap: 10px;
-        margin: 0 0 22px;
-    }
-
-    .mobile-menu .mobile-social-btn {
-        width: 48px;
-        height: 48px;
-        display: inline-flex;
-        align-items: center;
         justify-content: center;
-        padding: 8px;
+        margin: 0 0 22px;
+        padding: 14px 20px;
         background: #fff;
         border: 1.5px solid #116b39;
         border-radius: 11px;
         box-sizing: border-box;
+        color: #116b39;
+        font-size: 16px;
+        font-weight: 600;
         text-decoration: none;
         transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
     }
 
-    .mobile-menu .mobile-social-btn img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-
-    .mobile-menu .mobile-social-btn:hover,
-    .mobile-menu .mobile-social-btn:active {
+    .mobile-menu .mobile-presentation-btn:hover,
+    .mobile-menu .mobile-presentation-btn:active {
         background: #f5fbf7;
         box-shadow: 0 5px 14px rgba(17,107,57,.12);
         transform: translateY(-1px);
