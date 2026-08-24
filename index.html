@@ -894,7 +894,60 @@ dots.forEach((dot,index)=>{
     }
 }
 
+@media(max-width:900px) {
+    .advantages-cards {
+        overflow-x: auto;
+        padding-bottom: 15px;
+        
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: -20px;
+        margin-right: -20px;
+        
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; 
+    }
+    
+    .advantages-cards::-webkit-scrollbar {
+        display: none;
+    }
 
+    .advantages-cards::after {
+        content: '';
+        padding-right: 4px;
+    }
+
+    .adv-card {
+        flex: 0 0 auto; 
+        min-width: 260px;
+    }
+}
+
+@media(max-width:768px) {
+    .advantages {
+        margin-top: -50px;
+        padding: 60px 0; 
+        border-top-left-radius: 28px;
+        border-top-right-radius: 28px;
+    }
+
+    .advantages-title {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .advantages-title h2 {
+        font-size: 34px;
+    }
+    
+    .advantages-cards {
+        gap: 16px; 
+    }
+
+    .adv-card {
+        min-width: 240px; 
+    }
+}
 .projects-map-layout {
     background: #f7f7f5;
     border-radius: 20px;
