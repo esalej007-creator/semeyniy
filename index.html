@@ -300,20 +300,21 @@ headerScroll();
 </script>
 <section class="hero">
 
-    <div class="hero-slider">
+    <div class="hero-video" aria-hidden="true">
+        <video id="desktopHeroVideo" class="hero-video-media"
+               muted autoplay loop playsinline preload="metadata" src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/icon/0824.mp4"></video>
+    </div>
 
+    <div class="hero-slider">
         <div class="slide active">
             <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/slider/1.png" alt="">
         </div>
-
         <div class="slide">
             <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/slider/2.png" alt="">
         </div>
-
         <div class="slide">
             <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/slider/3.png" alt="">
         </div>
-
     </div>
 
     <div class="hero-overlay"></div>
@@ -377,6 +378,31 @@ headerScroll();
     position:absolute;
     inset:0;
 
+}
+
+.hero-video{
+    position:absolute;
+    inset:0;
+    z-index:0;
+    overflow:hidden;
+    background:#f4f4f4;
+}
+
+.hero-video-media{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:cover;
+}
+
+@media(max-width:992px){
+    .hero-video{ display:none; }
+    .hero-slider{ display:block; }
+}
+
+@media(min-width:993px){
+    .hero-slider,
+    .slider-dots{ display:none; }
 }
 
 .slide{
@@ -643,50 +669,50 @@ bottom:150px;
 <script>
 const slides = document.querySelectorAll(".slide");
 const dots = document.querySelectorAll(".dot");
+const desktopHeroVideo = document.getElementById("desktopHeroVideo");
+
 
 let current = 0;
+let interval = null;
 
 function showSlide(index){
-
-    slides.forEach(slide=>slide.classList.remove("active"));
-    dots.forEach(dot=>dot.classList.remove("active"));
-
+    if (!slides.length) return;
+    slides.forEach(slide => slide.classList.remove("active"));
+    dots.forEach(dot => dot.classList.remove("active"));
     slides[index].classList.add("active");
-    dots[index].classList.add("active");
-
+    if (dots[index]) dots[index].classList.add("active");
 }
 
-function nextSlide(){
-
-    current++;
-
-    if(current >= slides.length){
-
-        current = 0;
-
-    }
-
-    showSlide(current);
-
+function startMobileSlider(){
+    if (window.innerWidth > 992 || slides.length < 2) return;
+    if (interval) clearInterval(interval);
+    interval = setInterval(() => {
+        current = (current + 1) % slides.length;
+        showSlide(current);
+    }, 7000);
 }
-
-let interval = setInterval(nextSlide,7000);
 
 dots.forEach((dot,index)=>{
-
     dot.addEventListener("click",()=>{
-
-        current=index;
-
+        current = index;
         showSlide(current);
-
-        clearInterval(interval);
-
-        interval=setInterval(nextSlide,7000);
-
+        startMobileSlider();
     });
-
 });
+
+function handleHeroMode(){
+    const desktop = window.innerWidth > 992;
+    if (desktop) {
+        if (interval) { clearInterval(interval); interval = null; }
+        if (desktopHeroVideo && desktopHeroVideo.src) desktopHeroVideo.play().catch(() => {});
+    } else {
+        if (desktopHeroVideo) desktopHeroVideo.pause();
+        startMobileSlider();
+    }
+}
+
+window.addEventListener("resize", handleHeroMode);
+handleHeroMode();
 </script>
 <section class="advantages" id="advantages">
 
@@ -854,43 +880,58 @@ dots.forEach((dot,index)=>{
 }
 
 @media(max-width:900px) {
-    .advantages-cards {
-        overflow-x: auto;
-        padding-bottom: 15px;
-        
-        -webkit-overflow-scrolling: touch;
-        
-        scrollbar-width: none; 
-    }
-    
-    .advantages-cards::-webkit-scrollbar {
-        display: none;
+    /* Сохраняем обычные боковые отступы container,
+       но разрешаем карточкам скроллиться внутри него */
+    .advantages-wrapper {
+        min-width: 0;
     }
 
+    .advantages-cards {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        overflow-y:hidden;
+        padding:0 0 15px;
+        gap:16px;
+        -webkit-overflow-scrolling:touch;
+        overscroll-behavior-x:contain;
+        touch-action:pan-x;
+        scrollbar-width:none;
+    }
+
+    .advantages-cards::-webkit-scrollbar { display:none; }
+
     .adv-card {
-        flex: 0 0 auto; 
-        min-width: 260px;
+        flex:0 0 260px;
+        width:260px;
+        min-width:260px;
     }
 }
 
 @media(max-width:768px) {
     .advantages {
-        margin-top: 30px;
-        padding: 60px 0; 
-        border-top-left-radius: 28px;
-        border-top-right-radius: 28px;
+        margin-top:30px;
+        padding:60px 0;
+        border-top-left-radius:28px;
+        border-top-right-radius:28px;
     }
 
-    .advantages-title h2 {
-        font-size: 34px;
-    }
-    
+    .advantages-title h2 { font-size:34px; }
+
     .advantages-cards {
-        gap: 16px; 
+        width:calc(100vw - 40px);
+        max-width:none;
+        margin-right:-20px;
+        padding-right:20px;
     }
 
     .adv-card {
-        min-width: 240px; 
+        flex:0 0 240px;
+        width:240px;
+        min-width:240px;
     }
 }
 .projects-map-layout {
@@ -5307,8 +5348,6 @@ document.addEventListener("DOMContentLoaded", function () {
 </style>
 
 
-
-<!-- Модалка для изображений игровой площадки и воркаута -->
 <style>
 #projectImageModal{display:none;position:fixed;inset:0;z-index:12000;padding:24px;background:rgba(0,0,0,.65);backdrop-filter:blur(4px);align-items:center;justify-content:center}
 #projectImageModal.is-open{display:flex}
