@@ -846,7 +846,7 @@ dots.forEach((dot,index)=>{
 @media(max-width:1200px) {
     .advantages-wrapper {
         flex-direction: column;
-         gap: 20px;
+        gap: 20px;
     }
     .advantages-title {
         width: 100%;
@@ -857,53 +857,10 @@ dots.forEach((dot,index)=>{
     .advantages-cards {
         overflow-x: auto;
         padding-bottom: 15px;
-        
-        -webkit-overflow-scrolling: touch;
-        
-        scrollbar-width: none; 
-    }
-    
-    .advantages-cards::-webkit-scrollbar {
-        display: none;
-    }
-
-    .adv-card {
-        flex: 0 0 auto; 
-        min-width: 260px;
-    }
-}
-
-@media(max-width:768px) {
-    .advantages {
-        margin-top: 5px;
-        padding: 60px 0; 
-        border-top-left-radius: 28px;
-        border-top-right-radius: 28px;
-    }
-
-    .advantages-title h2 {
-        font-size: 34px;
-    }
-    
-    .advantages-cards {
-        gap: 16px; 
-    }
-
-    .adv-card {
-        min-width: 240px; 
-    }
-}
-
-@media(max-width:900px) {
-    .advantages-cards {
-        overflow-x: auto;
-        padding-bottom: 15px;
-        
         padding-left: 20px;
         padding-right: 20px;
         margin-left: -20px;
         margin-right: -20px;
-        
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none; 
     }
