@@ -2242,8 +2242,19 @@ const openMapBtns = document.querySelectorAll(".projects-open");
 openMapBtns.forEach(btn => {
     btn.addEventListener("click", function(e) {
         e.preventDefault();
-        const pageMap = document.getElementById("projectsMapSection");
-        if (pageMap) pageMap.scrollIntoView({ behavior: "smooth", block: "start" });
+
+        if (window.innerWidth <= 768) {
+            if (mapModal) {
+                mapModal.style.display = "flex";
+                document.body.style.overflow = "hidden";
+            }
+        } else {
+            const pageMap = document.getElementById("projectsMapSection");
+            if (pageMap) pageMap.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
+        }
     });
 });
 
@@ -2251,6 +2262,7 @@ const closeMapBtn = document.querySelector(".projects-close");
 if(closeMapBtn) {
     closeMapBtn.onclick = function(){
         mapModal.style.display = "none";
+        document.body.style.overflow = "";
     };
 }
 
