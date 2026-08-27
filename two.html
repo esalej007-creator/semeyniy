@@ -1783,53 +1783,6 @@ document.addEventListener('DOMContentLoaded', function () {
     </p>
 
 </div>
-        <div class="advantages-cards">
-
-            <div class="adv-card">
-
-                <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/icon/Sheilds-k.png" class="adv-icon" alt="">
-
-                <h3>Закрытая территория</h3>
-
-            </div>
-
-            <div class="adv-card">
-
-                <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/icon/KIDS-k.png" class="adv-icon" alt="">
-
-                <h3>Общественные пространства</h3>
-
-            </div>
-
-            <div class="adv-card">
-
-                <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/icon/map-grey-k.png" class="adv-icon" alt="">
-
-                <h3>Расположение</h3>
-
-            </div>
-
-            <div class="adv-card">
-
-                <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/icon/Communications-k.png" class="adv-icon" alt="">
-
-                <h3>Централизированные коммуникации</h3>
-
-            </div>
-
-            <div class="adv-card">
-
-                <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/icon/ROAD-k.png" class="adv-icon" alt="">
-
-                <h3>Широкие асфальтированные улицы</h3>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
 <style>
 .advantages {
     position: relative;
@@ -2040,12 +1993,6 @@ document.addEventListener('DOMContentLoaded', function () {
     position: relative;
     width: 100%;
     line-height: 0;
-}
-.projects-map-image img {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-width: 100%;
 }	
 
 .projects-point {
@@ -2070,21 +2017,6 @@ document.addEventListener('DOMContentLoaded', function () {
     transform: scale(1.4);
 }
 
-.projects-tooltip {
-    position: absolute;
-    left: 20px;
-    top: -15px;
-    background: white;
-    padding: 10px 18px;
-    border-radius: 15px;
-    font-size: 13px;
-    white-space: nowrap;
-    box-shadow: 0 8px 25px rgba(0,0,0,.15);
-    opacity: 0;
-    transform: translateX(-10px);
-    pointer-events: none;
-    transition: .25s;
-}
 
 .projects-point:hover .projects-tooltip {
     opacity: 1;
@@ -3079,8 +3011,8 @@ link: "/projects/lesnoy"
 Площадь дома: 134.03 м²<br>
 Этажность: 1 этаж<br>
 3 спальни<br>
-гардеробная<br>
 2 санузла<br>
+Гардеробная<br>
 Полноценная котельная<br>
 Открытая терасса: 17.57 м²<br>
 Холодный чердак<br>
@@ -3512,11 +3444,6 @@ background-image:url("https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-
     color: #fff;
 }
 
-@media(max-width: 1200px) {
-    .project-advantages {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
 
 @media(max-width: 650px) {
     .project-advantages {
@@ -4029,6 +3956,7 @@ display: block;
 }
 .projects-map-copy > p{
     margin-top: 18px;
+    margin-bottom: 5px;
     font-size: 15px;
     line-height: 1.8;
     color: #9b9b9b;
@@ -4047,6 +3975,7 @@ display: block;
     border:1px solid #eaeaea;
     border-radius:20px;
     padding:10px;
+text-decoration: none;
     cursor:pointer;
     user-select:none;
     transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
@@ -4091,7 +4020,6 @@ display: block;
 }
 .projects-map-controls{
     width:100%;
-    margin:0 0 16px;
 }
 .projects-page-filters{
     display:flex;
@@ -4100,7 +4028,6 @@ display: block;
     width:max-content;
     max-width:100%;
     margin:0 0 15px;
-    padding:5px;
     background:#f5f1ed;
     border:1px solid #e8dfd7;
     border-radius:15px;
@@ -4267,8 +4194,8 @@ display: block;
     padding:7px 10px;
     border-radius:9px;
     background:#fff;
-    color:#272421;
-    font:600 10px/1.2 Inter,Manrope,sans-serif;
+    color:#000;
+    font:600 12px/1.2 Inter,Manrope,sans-serif;
     white-space:nowrap;
     box-shadow:0 10px 28px rgba(0,0,0,.14);
     opacity:0;
@@ -4343,6 +4270,77 @@ display: block;
 @media(max-width:520px){
     .projects-map-house-gallery{grid-template-columns:1fr}
 }
+.projects-house-actions {
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+    width:100%;
+    max-width:100%;
+    margin:15px 0 0;
+    background:#f5f1ed;
+    border:1px solid #e8dfd7;
+    border-radius:15px;
+    padding:8px 10px;
+    box-sizing:border-box;
+}
+.projects-house-buttons {
+    display:flex;
+    align-items:center;
+    gap:9px;
+}
+.projects-house-btn {
+    flex:1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:38px;
+    padding:0 16px;
+    border-radius:11px;
+    background:#ad876d;
+    color:#fff;
+    text-decoration:none;
+    font-size:14px;
+    font-weight:600;
+    white-space:nowrap;
+}
+
+
+.projects-house-btn:hover {
+    background:#8f6c56;
+}
+
+
+/* телефоны */
+
+.projects-house-phones {
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+    padding-left:5px;
+}
+
+
+.projects-phone {
+    display:flex;
+    align-items:center;
+    gap:10px;
+    color:#000;
+    font-size:15px;
+    font-weight:600;
+    text-decoration:none;
+}
+
+
+.projects-phone svg {
+    width:22px;
+    height:22px;
+    fill:#55a64d;
+}
+
+
+.projects-phone:hover {
+    color:#7f7f7f;
+}
 </style>
 <section class="projects-map-section" id="projectsMapSection">
     <div class="projects-map-card">
@@ -4355,24 +4353,62 @@ display: block;
 Нажимайте на точки на карте, чтобы подробно познакомиться с каждым проектом: посмотреть фотографии дома, узнать его площадь и этажность, а также изучить основные характеристики и особенности планировки.</p>
 
         <div class="projects-map-house-gallery" aria-label="Проекты домов">
-          <article class="projects-map-house-card" data-map-house="house2">
+          <a href="/one" class="projects-map-house-card">
             <div class="projects-map-house-image">
               <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%9E%D0%B4%D0%BD%D0%BE%D1%8D%D1%82%D0%B0%D0%B6%D0%BD%D1%8B%D0%B9.png" alt="Одноэтажный дом">
             </div>
             <h3>Одноэтажный дом</h3>
             <p>134,03 м² • 3 спальни • Терраса</p>
-          </article>
+          </a>
 
-          <article class="projects-map-house-card" data-map-house="house3">
-            <div class="projects-map-house-image">
-              <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%B4%D0%B2%D1%83%D1%85%D1%8D%D1%82%D0%B0%D0%B6%D0%BD%D1%8B%D0%B92.png" alt="Двухэтажный дом">
-            </div>
-            <h3>Двухэтажный дом</h3>
-            <p>149,86 м² • 4 спальни • Гараж</p>
-          </article>
-        </div>
+<a href="/two" class="projects-map-house-card">
+    <div class="projects-map-house-image">
+      <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%B4%D0%B2%D1%83%D1%85%D1%8D%D1%82%D0%B0%D0%B6%D0%BD%D1%8B%D0%B92.png" alt="Двухэтажный дом">
+    </div>
+    <h3>Двухэтажный дом</h3>
+    <p>149,86 м² • 4 спальни • Гараж</p>
+  </a>
+
       </div>
+<div class="projects-house-actions">
 
+    <div class="projects-house-buttons">
+        <a href="https://max.ru/u/f9LHodD0cOLl3rR4lsdUmxPGccaeskkOOjA7sZhnfN7I8YDYjVEDwptWSUY" class="projects-house-btn">
+            Отдел продаж
+        </a>
+
+        <a href="#site-footer" class="projects-house-btn">
+            Контакты
+        </a>
+
+        <a href="#" class="projects-house-btn" id="openpopup-it">
+            Ипотека
+        </a>
+    </div>
+
+
+    <div class="projects-house-phones">
+
+        <a href="tel:+79999999999" class="projects-phone">
+            <svg viewBox="0 0 24 24">
+                <path d="M6.6 10.8c1.6 3.2 3.4 5 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.2 1.1l-2.2 2.2z"/>
+            </svg>
+
+            +7 (4852) 33-76-60
+        </a>
+
+
+        <a href="tel:+78888888888" class="projects-phone">
+            <svg viewBox="0 0 24 24">
+                <path d="M6.6 10.8c1.6 3.2 3.4 5 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.4 21 3 13.6 3 4c0-.6.4-1 1-1h3.4c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.2 1.1l-2.2 2.2z"/>
+            </svg>
+
+            +7 (910) 973-76-60
+        </a>
+
+    </div>
+</div>
+</div>
       <div class="projects-map-visual">
         <div class="projects-map-controls">
           <div class="projects-page-filters" aria-label="Фильтр домов">
@@ -4393,7 +4429,6 @@ display: block;
             </div>
           </div>
         </div>
-
         <div class="projects-map-layout projects-page-map">
           <div class="projects-map-image">
                 
@@ -4733,404 +4768,16 @@ display: block;
                 </div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
-
-<section class="house-gallery-section" id="houseGallerySection">
-    <div class="container">
-        
-        <div class="house-gallery-header">
-            <h2 class="house-gallery-title">Проекты</h2>
-            
-            <div class="house-header-actions">
-                <!-- Кнопка "Карта коттеджного квартала" в стиле сайта -->
-                <a href="#" class="btn projects-open house-map-btn">
-                    Карта коттеджного квартала
-                </a>
-                
-                <div class="house-gallery-nav">
-                    <button class="house-gallery-btn house-prev-btn" aria-label="Назад">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
-                    </button>
-                    <button class="house-gallery-btn house-next-btn" aria-label="Вперед">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-
- <div class="house-gallery-wrap">
-    <div class="house-gallery-track" id="houseGalleryTrack">
-        
-        <div class="house-gallery-item" data-url="/one">
-            <div class="house-img-container">
-                <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%9E%D0%B4%D0%BD%D0%BE%D1%8D%D1%82%D0%B0%D0%B6%D0%BD%D1%8B%D0%B9.png" alt="Одноэтажный дом">
-            </div>
-            <h3 class="house-item-title">Одноэтажный дом</h3>
-            <p class="house-item-desc">134,03 м² • 3 спальни • Терраса</p>
-        </div>
-
-        <div class="house-gallery-item" data-url="/two">
-            <div class="house-img-container">
-                <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%B4%D0%B2%D1%83%D1%85%D1%8D%D1%82%D0%B0%D0%B6%D0%BD%D1%8B%D0%B92.png" alt="Двухэтажный дом">
-            </div>
-            <h3 class="house-item-title">Двухэтажный дом</h3>
-            <p class="house-item-desc">149,86 м² • 4 спальни • Гараж</p>
-        </div>
-
-        <div class="house-gallery-item" data-modal-image="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%98%D0%B3%D1%80%D0%BE%D0%B2%D0%B0%D1%8F.png" data-modal-title="Детская и игровая площадка">
-            <div class="house-img-container">
-                <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%98%D0%B3%D1%80%D0%BE%D0%B2%D0%B0%D1%8F.png" alt="Игровая площадка">
-            </div>
-            <h3 class="house-item-title">Детская и игровая площадка</h3>
-    <p class="house-item-desc">Безопасное покрытие • Зонирование по возрастам • Отдых для родителей</p>
-</div>
-
-<div class="house-gallery-item" data-modal-image="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%92%D0%BE%D1%80%D0%BA%D0%B0%D1%83%D1%82-%D0%B7%D0%BE%D0%BD%D0%B0.png" data-modal-title="Воркаут зона и зона отдыха">
-    <div class="house-img-container">
-        <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%92%D0%BE%D1%80%D0%BA%D0%B0%D1%83%D1%82-%D0%B7%D0%BE%D0%BD%D0%B0.png" alt="Воркаут зона">
-    </div>
-    <h3 class="house-item-title">Воркаут зона и зона отдыха</h3>
-    <p class="house-item-desc">Уличные тренажеры • Лаунж-пространство • Спортивная площадка</p>
-</div>
-
-    </div>
-</div>
-
-    </div>
-</section>
-
-<style>
-.house-gallery-section {
-    background: #ffffff;
-    padding: 30px 0 80px 0;
-    border-top-left-radius: 35px;
-    border-top-right-radius: 35px;
-    box-shadow: 0 -10px 40px rgba(0,0,0,0.04);
-    position: relative;
-    z-index: 35;
-}
-
-.house-gallery-section .container {
-    width: min(1600px, calc(100% - 40px));
-    margin: auto;
-}
-
-.house-gallery-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
-    gap: 20px;
-    flex-wrap: wrap;
-}
-
-.house-gallery-title {
-    font-size: 32px;
-    font-weight: 700;
-    color: #000; 
-    margin: 0;
-}
-
-.house-header-actions {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-.house-map-btn {
-    padding: 12px 24px;
-    font-size: 15px;
-    border-radius: 8px;
-    white-space: nowrap;
-}
-
-.house-gallery-nav {
-    display: flex;
-    gap: 12px;
-}
-
-.house-gallery-btn {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border: 1px solid #dcdcdc;
-    background: #ffffff;
-    color: #ad876d;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.25s ease;
-}
-
-.house-gallery-btn:hover {
-    background: #7f7f7f;
-    color: #ffffff;
-    border-color: #7f7f7f;
-    transform: translateY(-2px);
-}
-
-.house-gallery-wrap {
-    position: relative;
-    overflow: hidden;
-}
-
-.house-gallery-wrap::before,
-.house-gallery-wrap::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    width: 80px;
-    z-index: 5;
-    pointer-events: none;
-}
-
-.house-gallery-wrap::before {
-    left: 0;
-    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-}
-
-.house-gallery-wrap::after {
-    right: 0;
-    background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
-}
-
-.house-gallery-track {
-    display: flex;
-    gap: 24px;
-    overflow-x: auto;
-    scroll-behavior: smooth;
-    scrollbar-width: none; 
-    -ms-overflow-style: none;
-    padding: 10px 4px;
-}
-
-.house-gallery-track::-webkit-scrollbar {
-    display: none;
-}
-
-.house-gallery-item {
-    flex: 0 0 380px;
-    background: #fcfcfc;
-    border-radius: 20px;
-    padding: 16px;
-    border: 1px solid #eaeaea;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.house-gallery-item:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-    border-color: #ad876d;
-}
-
-.house-img-container {
-    width: 100%;
-    height: 260px;
-    border-radius: 14px;
-    overflow: hidden;
-    background: #f0f0f0;
-    margin-bottom: 16px;
-}
-
-.house-img-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
-}
-
-.house-gallery-item:hover .house-img-container img {
-    transform: scale(1.06);
-}
-
-.house-item-title {
-    font-size: 18px;
-    font-weight: 700;
-    color: #000;
-    margin: 0 0 6px 0;
-}
-
-.house-item-desc {
-    font-size: 13px;
-    color: #777777;
-    margin: 0;
-    font-weight: 400;
-}
-
-.house-custom-modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 100000;
-    background: rgba(0,0,0,0.7);
-    backdrop-filter: blur(5px);
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-}
-
-.house-custom-modal-content {
-    background: #fff;
-    width: 100%;
-    max-width: 900px;
-    border-radius: 24px;
-    padding: 35px;
-    position: relative;
-    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
-    animation: houseScaleIn 0.3s ease;
-}
-
-@keyframes houseScaleIn {
-    from { transform: scale(0.92); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
-}
-
-.house-custom-close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: #116b39;
-    color: #fff;
-    border: none;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    font-size: 20px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.2s;
-    z-index: 10;
-}
-
-.house-custom-close:hover {
-    transform: rotate(90deg);
-}
-
-.house-custom-modal-body {
-    display: flex;
-    gap: 30px;
-    align-items: center;
-}
-
-.house-custom-img-wrap {
-    flex: 1.2;
-    height: 400px;
-    border-radius: 16px;
-    overflow: hidden;
-}
-
-.house-custom-img-wrap img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.house-custom-info {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.house-custom-info h3 {
-    font-size: 26px;
-    color: #116b39;
-    margin-bottom: 15px;
-    font-weight: 700;
-}
-
-.house-custom-info p {
-    font-size: 15px;
-    color: #555;
-    line-height: 1.6;
-    margin: 0;
-}
-
-@media(max-width: 850px) {
-    .house-custom-modal-body {
-        flex-direction: column;
-    }
-    .house-custom-img-wrap {
-        height: 250px;
-        width: 100%;
-    }
-    .house-gallery-item {
-        flex: 0 0 360px;
-    }
-    .house-header-actions {
-        width: 100%;
-        justify-content: space-between;
-    }
-}
-</style>
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    const track = document.getElementById("houseGalleryTrack");
-    const prevBtn = document.querySelector(".house-prev-btn");
-    const nextBtn = document.querySelector(".house-next-btn");
-
-    if (track && prevBtn && nextBtn) {
-        const scrollAmount = 400;
-
-        prevBtn.addEventListener("click", () => {
-            track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
-        });
-
-        nextBtn.addEventListener("click", () => {
-            track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
-        });
-    }
-
-    let isScrolling = false;
-
-    if (track) {
-        track.addEventListener("mousedown", () => { isScrolling = false; });
-        track.addEventListener("mousemove", () => { isScrolling = true; });
-        track.addEventListener("scroll", () => { isScrolling = true; });
-    }
-
-    document.querySelectorAll(".house-gallery-item").forEach(item => {
-        item.addEventListener("click", function(e) {
-            if (isScrolling) return;
-
-            const modalImage = this.getAttribute("data-modal-image");
-            const modalTitle = this.getAttribute("data-modal-title") || "";
-            const url = this.getAttribute("data-url");
-
-            if (modalImage) {
-                const imageModal = document.getElementById("projectImageModal");
-                const imageModalImg = document.getElementById("projectImageModalImg");
-                const imageModalTitle = document.getElementById("projectImageModalTitle");
-
-                if (imageModal && imageModalImg) {
-                    imageModalImg.src = modalImage;
-                    imageModalImg.alt = modalTitle;
-                    if (imageModalTitle) imageModalTitle.textContent = modalTitle;
-                    imageModal.classList.add("is-open");
-                    document.body.classList.add("project-modal-open");
-                }
-            } else if (url) {
-                window.location.href = url;
-            }
-        });
-    });
-});
-</script>
-
 <section class="landscape-section" id="landscaping">
 
     <div class="landscape-container">
 
         <div class="landscape-image">
             <img
-                src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/3.png"
+                src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/house/%D0%A3%D0%BB%D0%B8%D1%86%D0%B0-%D0%B8-%D0%B4%D0%BE%D0%BC%D0%B01.png"
                 alt="Благоустройство территории"
             >
             <div class="landscape-image-overlay"></div>
@@ -5288,7 +4935,7 @@ document.addEventListener("DOMContentLoaded", function() {
     border-top-right-radius: 35px;
     box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.04);
     position: relative;
-    z-index: 34;
+    z-index: 35;
 }
 
 
@@ -5987,6 +5634,394 @@ document.addEventListener("DOMContentLoaded", function() {
 }
 
 </style>
+<section class="house-gallery-section" id="houseGallerySection">
+    <div class="container">
+        
+        <div class="house-gallery-header">
+            <h2 class="house-gallery-title">Галерея</h2>
+            
+            <div class="house-header-actions">
+                <!-- Кнопка "Карта коттеджного квартала" в стиле сайта -->
+                <a href="#" class="btn projects-open house-map-btn">
+                    Карта коттеджного квартала
+                </a>
+                
+                <div class="house-gallery-nav">
+                    <button class="house-gallery-btn house-prev-btn" aria-label="Назад">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
+                    </button>
+                    <button class="house-gallery-btn house-next-btn" aria-label="Вперед">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+ <div class="house-gallery-wrap">
+    <div class="house-gallery-track" id="houseGalleryTrack">
+        
+        <div class="house-gallery-item" data-modal-image="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%9F%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D0%BA%D0%B01.png" data-modal-title="Детская и игровая площадка">
+            <div class="house-img-container">
+                <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%9F%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D0%BA%D0%B01.png" alt="Игровая площадка">
+            </div>
+            <h3 class="house-item-title">Благоустройство и площадки</h3>
+    <p class="house-item-desc">Ограждения • Зонирование по возрастам • Отдых для детей и родителей</p>
+</div>
+
+        <div class="house-gallery-item" data-modal-image="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/house/%D0%A3%D0%BB%D0%B8%D1%86%D0%B0-%D0%B8-%D0%B4%D0%BE%D0%BC%D0%B01.png" data-modal-title="Детская и игровая площадка">
+            <div class="house-img-container">
+                <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/house/%D0%A3%D0%BB%D0%B8%D1%86%D0%B0-%D0%B8-%D0%B4%D0%BE%D0%BC%D0%B01.png" alt="Игровая площадка">
+            </div>
+            <h3 class="house-item-title">Уютные и безопасные улицы</h3>
+    <p class="house-item-desc">Улицы квартала удобные и безопасные , широкие
+и асфальтированные проезды, просторные тротуары, освещение для безопасности в темное время суток.</p>
+</div>
+
+        <div class="house-gallery-item" data-modal-image="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%98%D0%B3%D1%80%D0%BE%D0%B2%D0%B0%D1%8F.png" data-modal-title="Детская и игровая площадка">
+            <div class="house-img-container">
+                <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%98%D0%B3%D1%80%D0%BE%D0%B2%D0%B0%D1%8F.png" alt="Игровая площадка">
+            </div>
+            <h3 class="house-item-title">Детская и игровая площадка</h3>
+    <p class="house-item-desc">Безопасное покрытие • Зонирование по возрастам • Отдых для родителей</p>
+</div>
+
+<div class="house-gallery-item" data-modal-image="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%92%D0%BE%D1%80%D0%BA%D0%B0%D1%83%D1%82-%D0%B7%D0%BE%D0%BD%D0%B0.png" data-modal-title="Воркаут зона и зона отдыха">
+    <div class="house-img-container">
+        <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%92%D0%BE%D1%80%D0%BA%D0%B0%D1%83%D1%82-%D0%B7%D0%BE%D0%BD%D0%B0.png" alt="Воркаут зона">
+    </div>
+    <h3 class="house-item-title">Воркаут зона и зона отдыха</h3>
+    <p class="house-item-desc">Уличные тренажеры • Лаунж-пространство • Спортивная площадка</p>
+</div>
+
+    </div>
+</div>
+
+    </div>
+</section>
+
+<style>
+.house-gallery-section {
+    background: #ffffff;
+    padding: 30px 0 80px 0;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    box-shadow: 0 -10px 40px rgba(0,0,0,0.04);
+    position: relative;
+    z-index: 35;
+}
+
+.house-gallery-section .container {
+    width: min(1600px, calc(100% - 40px));
+    margin: auto;
+}
+
+.house-gallery-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.house-gallery-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #000; 
+    margin: 0;
+}
+
+.house-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.house-map-btn {
+    padding: 12px 24px;
+    font-size: 15px;
+    border-radius: 8px;
+    white-space: nowrap;
+}
+
+.house-gallery-nav {
+    display: flex;
+    gap: 12px;
+}
+
+.house-gallery-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    border: 1px solid #dcdcdc;
+    background: #ffffff;
+    color: #ad876d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.house-gallery-btn:hover {
+    background: #7f7f7f;
+    color: #ffffff;
+    border-color: #7f7f7f;
+    transform: translateY(-2px);
+}
+
+.house-gallery-wrap {
+    position: relative;
+    overflow: hidden;
+}
+
+.house-gallery-wrap::before,
+.house-gallery-wrap::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.house-gallery-wrap::before {
+    left: 0;
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+}
+
+.house-gallery-wrap::after {
+    right: 0;
+    background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+}
+
+.house-gallery-track {
+    display: flex;
+    gap: 24px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+    padding: 10px 4px;
+}
+
+.house-gallery-track::-webkit-scrollbar {
+    display: none;
+}
+
+.house-gallery-item {
+    flex: 0 0 380px;
+    background: #fcfcfc;
+    border-radius: 20px;
+    padding: 16px;
+    border: 1px solid #eaeaea;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.house-gallery-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    border-color: #ad876d;
+}
+
+.house-img-container {
+    width: 100%;
+    height: 260px;
+    border-radius: 14px;
+    overflow: hidden;
+    background: #f0f0f0;
+    margin-bottom: 16px;
+}
+
+.house-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.house-gallery-item:hover .house-img-container img {
+    transform: scale(1.06);
+}
+
+.house-item-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 6px 0;
+}
+
+.house-item-desc {
+    font-size: 13px;
+    color: #777777;
+    margin: 0;
+    font-weight: 400;
+}
+
+.house-custom-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100000;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.house-custom-modal-content {
+    background: #fff;
+    width: 100%;
+    max-width: 900px;
+    border-radius: 24px;
+    padding: 35px;
+    position: relative;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+    animation: houseScaleIn 0.3s ease;
+}
+
+@keyframes houseScaleIn {
+    from { transform: scale(0.92); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.house-custom-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #116b39;
+    color: #fff;
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+    z-index: 10;
+}
+
+.house-custom-close:hover {
+    transform: rotate(90deg);
+}
+
+.house-custom-modal-body {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.house-custom-img-wrap {
+    flex: 1.2;
+    height: 400px;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.house-custom-img-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.house-custom-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.house-custom-info h3 {
+    font-size: 26px;
+    color: #116b39;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.house-custom-info p {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+    margin: 0;
+}
+
+@media(max-width: 850px) {
+    .house-custom-modal-body {
+        flex-direction: column;
+    }
+    .house-custom-img-wrap {
+        height: 250px;
+        width: 100%;
+    }
+    .house-gallery-item {
+        flex: 0 0 360px;
+    }
+    .house-header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const track = document.getElementById("houseGalleryTrack");
+    const prevBtn = document.querySelector(".house-prev-btn");
+    const nextBtn = document.querySelector(".house-next-btn");
+
+    if (track && prevBtn && nextBtn) {
+        const scrollAmount = 400;
+
+        prevBtn.addEventListener("click", () => {
+            track.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+
+        nextBtn.addEventListener("click", () => {
+            track.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+    }
+
+    let isScrolling = false;
+
+    if (track) {
+        track.addEventListener("mousedown", () => { isScrolling = false; });
+        track.addEventListener("mousemove", () => { isScrolling = true; });
+        track.addEventListener("scroll", () => { isScrolling = true; });
+    }
+
+    document.querySelectorAll(".house-gallery-item").forEach(item => {
+        item.addEventListener("click", function(e) {
+            if (isScrolling) return;
+
+            const modalImage = this.getAttribute("data-modal-image");
+            const modalTitle = this.getAttribute("data-modal-title") || "";
+            const url = this.getAttribute("data-url");
+
+            if (modalImage) {
+                const imageModal = document.getElementById("projectImageModal");
+                const imageModalImg = document.getElementById("projectImageModalImg");
+                const imageModalTitle = document.getElementById("projectImageModalTitle");
+
+                if (imageModal && imageModalImg) {
+                    imageModalImg.src = modalImage;
+                    imageModalImg.alt = modalTitle;
+                    if (imageModalTitle) imageModalTitle.textContent = modalTitle;
+                    imageModal.classList.add("is-open");
+                    document.body.classList.add("project-modal-open");
+                }
+            } else if (url) {
+                window.location.href = url;
+            }
+        });
+    });
+});
+</script>
+
+
 <footer class="site-footer" id="site-footer">
     <div class="container">
         
@@ -6055,7 +6090,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <style>
 .site-footer {
     position: relative;
-    z-index: 34;
+    z-index: 36;
     margin-top: -40px; 
     background: #ffffff;
     border-top-left-radius: 35px;
@@ -7150,14 +7185,14 @@ document.addEventListener("DOMContentLoaded", function () {
 #projectImageModal{display:none;position:fixed;inset:0;z-index:12000;padding:24px;background:rgba(0,0,0,.65);backdrop-filter:blur(4px);align-items:center;justify-content:center}
 #projectImageModal.is-open{display:flex}
 .project-image-modal-content{position:relative;width:min(100%,1180px);max-height:90vh;background:#fff;border-radius:24px;padding:12px;box-sizing:border-box;box-shadow:0 20px 50px rgba(0,0,0,.25);animation:modalScaleUp .3s ease}
-.project-image-modal-close{position:absolute;top:-15px;right:-15px;width:36px;height:36px;padding:0;margin:0;border:none;border-radius:50%;background:#116b39;cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,.2);z-index:5;transition:transform .25s ease}
+.project-image-modal-close{position:absolute;top:-15px;right:-15px;width:36px;height:36px;padding:0;margin:0;border:none;border-radius:50%;background:#ad876d; cursor:pointer;box-shadow:0 4px 10px rgba(0,0,0,.2);z-index:5;transition:transform .25s ease}
 .project-image-modal-close::before,.project-image-modal-close::after{content:"";position:absolute;top:50%;left:50%;width:16px;height:2px;background:#fff;border-radius:2px}
 .project-image-modal-close::before{transform:translate(-50%,-50%) rotate(45deg)}
 .project-image-modal-close::after{transform:translate(-50%,-50%) rotate(-45deg)}
 .project-image-modal-close:hover{transform:rotate(90deg)}
 .project-image-modal-figure{margin:0;max-height:calc(90vh - 24px)}
 #projectImageModalImg{display:block;width:100%;max-height:calc(90vh - 70px);object-fit:contain;border-radius:16px}
-#projectImageModalTitle{margin:12px 8px 4px;color:#184d2f;font-size:20px;font-weight:600;text-align:center}
+#projectImageModalTitle{margin:12px 8px 4px;color:#000;font-size:20px;font-weight:600;text-align:center}
 body.project-modal-open{overflow:hidden}
 @media(max-width:600px){#projectImageModal{padding:16px}.project-image-modal-content{padding:8px;border-radius:18px}.project-image-modal-close{top:-10px;right:-6px;width:34px;height:34px}#projectImageModalImg{max-height:calc(90vh - 60px);border-radius:12px}#projectImageModalTitle{font-size:16px;margin:10px 6px 4px}}
 </style>
@@ -7273,7 +7308,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 #projectsMapSection .projects-map-card {
     display: grid !important;
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    grid-template-columns: minmax(300px, .72fr) minmax(600px, 1.28fr) !important;
     gap: 54px !important;
     align-items: center !important;
 
@@ -7313,8 +7348,6 @@ document.addEventListener("DOMContentLoaded", function () {
 }
 
 #projectsMapSection .projects-page-map {
-    width: min(100%, 760px) !important;
-    max-width: 760px !important;
     margin: 0 !important;
     padding: 8px !important;
     box-sizing: border-box !important;
@@ -7327,21 +7360,6 @@ document.addEventListener("DOMContentLoaded", function () {
     overflow: visible !important;
 }
 
-#projectsMapSection .projects-page-map .projects-map-image > img {
-    display: block !important;
-    width: 100% !important;
-    height: auto !important;
-}
-
-/* Маленькие точки + мягкий постоянный импульс */
-#projectsMapSection .projects-point span {
-    width: 18px !important;
-    height: 18px !important;
-    min-width: 18px !important;
-    min-height: 18px !important;
-    font-size: 8px !important;
-    line-height: 18px !important;
-}
 
 #projectsMapSection .projects-point::before {
     content: "" !important;
@@ -7458,7 +7476,6 @@ document.addEventListener("DOMContentLoaded", function () {
     width:100% !important;
 }
 
-/* Фильтры теперь непосредственно над картой */
 #projectsMapSection .projects-page-filters{
     order:0 !important;
     margin:0 0 14px 0 !important;
@@ -7470,21 +7487,20 @@ document.addEventListener("DOMContentLoaded", function () {
 #projectsMapSection .projects-page-map{
     order:1 !important;
     width:100% !important;
-    max-width:760px !important;
+    max-width:980px !important;
     align-self:flex-start !important;
 }
 
-/* Делаем точки действительно небольшими, чтобы не перекрывали дома */
 #projectsMapSection .projects-point{
     width:14px !important;
     height:14px !important;
 }
 
 #projectsMapSection .projects-point span{
-    width:13px !important;
-    height:13px !important;
-    min-width:13px !important;
-    min-height:13px !important;
+    width:11px !important;
+    height:11px !important;
+    min-width:11px !important;
+    min-height:11px !important;
     border-width:1.5px !important;
     font-size:6px !important;
     line-height:13px !important;
@@ -7550,7 +7566,7 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 });
 </script>
-<style>
+    <style>
 #projectsMapSection .projects-point {
     z-index: 20 !important;
 }
@@ -7563,3 +7579,461 @@ document.addEventListener("DOMContentLoaded", function(){
     z-index: 999 !important;
 }
 </style>
+
+
+<script id="projects-map-final-fix">
+document.addEventListener("DOMContentLoaded", function(){
+
+    document.querySelectorAll("#projectsMapSection .projects-map-house-card").forEach(function(card){
+        card.style.cursor = "pointer";
+        card.addEventListener("click", function(){
+            const key = this.getAttribute("data-map-house");
+            const house = window.houses ? window.houses[key] : null;
+            const modal = document.getElementById("projectsHouseModal");
+            if(!house || !modal) return;
+
+            const title=document.getElementById("projectsTitle");
+            const desc=document.getElementById("projectsDescription");
+            const img=document.getElementById("projectsMainImage");
+            const link=document.getElementById("projectsDetailsLink");
+
+            if(title) title.innerHTML=house.title;
+            if(desc) desc.innerHTML=house.description;
+            if(img) img.src=house.images[0];
+            if(link) link.href=house.link || "#";
+
+            const thumbs=document.querySelector(".projects-thumbs");
+            if(thumbs){
+                thumbs.innerHTML="";
+                house.images.forEach(function(src){
+                    const im=document.createElement("img");
+                    im.src=src;
+                    im.onclick=function(){img.src=this.src};
+                    thumbs.appendChild(im);
+                });
+            }
+            modal.style.display="flex";
+        });
+    });
+    const visual=document.querySelector("#projectsMapSection .projects-map-visual");
+    const mapModal=document.getElementById("projectsFullMapModal");
+    const mapHolder=document.getElementById("projectsFullMapHolder");
+    const mapClose=document.querySelector("#projectsFullMapModal .projects-full-map-close");
+
+    if(visual && mapModal && mapHolder){
+        visual.addEventListener("click", function(e){
+            // если нажали на точку - оставляем открытие дома
+            if(e.target.closest(".projects-point")) return;
+
+            const map=document.querySelector("#projectsMapSection .projects-map-image");
+            if(!map) return;
+
+            mapHolder.innerHTML="";
+            const clone=map.cloneNode(true);
+            clone.style.width="100%";
+            clone.style.height="100%";
+            mapHolder.appendChild(clone);
+
+            // переносим клики точек в увеличенную карту
+            clone.querySelectorAll(".projects-point").forEach(function(point){
+                point.addEventListener("click", function(ev){
+                    ev.stopPropagation();
+                    const original=document.querySelector('#projectsMapSection .projects-point[data-house="'+this.dataset.house+'"]');
+                    if(original) original.click();
+                });
+            });
+
+            mapModal.classList.add("is-open");
+            document.body.classList.add("project-modal-open");
+        });
+    }
+
+    if(mapClose){
+        mapClose.addEventListener("click", function(){
+            mapModal.classList.remove("is-open");
+            document.body.classList.remove("project-modal-open");
+        });
+    }
+});
+</script>
+<div id="popup-family" class="popup">
+  <div class="popup-content">
+    <button class="modal-close-icon">&times;</button>
+
+    <div class="popup-main">
+      <!-- Левая колонка: Изображение на всю высоту -->
+      <div class="popup-left">
+        <div class="popup-left-img"></div>
+      </div>
+      <div class="popup-right">
+        
+        <div class="popup-top-bar">
+          <div class="popup-contact-inline">
+            <a href="tel:+74852337660">+7 (4852) 33-76-60</a>
+            <a href="tel:+79109737660">+7 (910) 973-76-60</a>
+            <span>Отдел продаж</span>
+          </div>
+
+          <div class="popup-socials">
+            <a href="https://web.max.ru/89638359" target="_blank" class="social-btn" title="WhatsApp">
+              <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/icon/maxgr.png" alt="WhatsApp">
+            </a>
+          </div>
+        </div>
+
+        <hr class="contact-separator">
+
+        <div class="title-wrapper">
+          <h2 class="vacancy-title">Льготы для покупателей</h2>
+        </div>
+
+        <div class="vacancy-text">
+          <p class="vacancy-subtitle">Доступные программы финансирования:</p>
+          <ul class="benefit-list">
+            <li><b>Семейная ипотека:</b> от 6% — один ребенок до 7 лет либо два несовершеннолетних ( также если в семье ребенок инвалид до 18 лет).</li>
+            <li><b>IT-ипотека:</b> от 6% — для сотрудников аккредитованных IT-компаний.</li>
+            <li><b>Коммерческая / Базовая:</b> индивидуальные условия от ведущих банков-партнеров.</li>
+          </ul>
+          
+          <p class="vacancy-note">Работаем с материнским капиталом, подробности уточняйте у отдела продаж</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<style>
+body { font-family: 'TildaSans', system-ui, -apple-system, sans-serif; }
+
+.popup {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  opacity: 0;
+  transform: scale(0.98);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+.popup.show { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  opacity: 1; 
+  transform: scale(1); 
+}
+
+.popup-content {
+  max-width: 960px;
+  width: 90%;
+  max-height: 85vh;
+  margin: auto;
+  padding: 16px;
+  background: #ffffff;
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+.popup-main {
+  display: flex;
+  gap: 36px;
+  align-items: stretch;
+}
+
+/* Левая колонка с картинкой */
+.popup-left {
+  flex: 0 0 38%;
+  display: flex;
+}
+
+.popup-left-img {
+  width: 100%;
+  min-height: 100%;
+  border-radius: 16px;
+  background-image: url('https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/211.jfif');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.popup-right {
+  flex: 1;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.popup-top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding-right: 48px; 
+}
+
+.popup-contact-inline {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.popup-contact-inline a {
+  color: #000;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.3;
+  transition: color 0.2s ease;
+}
+.popup-contact-inline a:hover {
+  color: #7f7f7f;
+}
+.popup-contact-inline span {
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+.popup-socials {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.social-btn {
+  width: 38px;
+  height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1.5px solid #000;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 7px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  text-decoration: none;
+}
+
+.social-btn img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.social-btn:hover {
+  transform: translateY(-2px);
+  background: #f0fdfa;
+  box-shadow: 0 4px 12px rgba(139, 94, 60, 0.18);
+  border-color: #7f7f7f;
+}
+
+.contact-separator {
+  border: none;
+  height: 1px;
+  background: #e2e8f0; 
+  margin: 16px 0 20px 0; 
+}
+
+.title-wrapper {
+  margin-bottom: 18px;
+}
+
+.vacancy-title {
+  display: inline-block;
+  background: #ad876d;
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: 700;
+  padding: 10px 20px;
+  border-radius: 12px;
+  margin: 0;
+  box-shadow: 0 4px 12px rgba(17, 96, 83, 0.2);
+  letter-spacing: -0.01em;
+}
+
+/* Текстовый блок */
+.vacancy-text { 
+  font-size: 15px; 
+  line-height: 1.6; 
+  color: #334155; 
+}
+
+.vacancy-subtitle {
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 10px 0;
+}
+
+.benefit-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 16px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.benefit-list li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.benefit-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #116053;
+}
+
+.benefit-list b {
+  color: #0f172a;
+}
+
+.vacancy-note {
+  font-style: italic;
+  font-size: 14px;
+  color: #64748b;
+  margin: 0;
+  padding-top: 8px;
+  border-top: 1px dashed #e2e8f0;
+}
+
+.popup-bg {
+  position: absolute;
+  bottom: -20px; 
+  right: -50px;
+  width: 320px;
+  height: 200px;
+  background-image: url('https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/Ipoteka.jfif');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  filter: blur(2px);
+  opacity: 0.12;
+  z-index: -1;
+  pointer-events: none; 
+}
+
+.modal-close-icon {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 26px;
+  height: 26px;
+  background: #ad876d;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s ease;
+  z-index: 100;
+  line-height: 1;
+}
+
+.modal-close-icon:hover {
+  color: #7f7f7f;
+  transform: rotate(90deg);
+}
+
+
+@media (max-width: 860px) {
+  .popup-content {
+    padding: 28px 20px 24px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+
+  .popup-main {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .popup-left {
+    display: none; 
+  }
+
+  .popup-top-bar {
+    padding-right: 40px;
+  }
+
+  .vacancy-title {
+    font-size: 18px;
+    padding: 8px 16px;
+    display: block;
+    text-align: center;
+  }
+}
+
+@media (max-width: 520px) {
+  .popup-top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .popup-socials {
+    align-self: flex-start;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  function qsa(root, sel) { return Array.from((root || document).querySelectorAll(sel)); }
+
+  qsa(document, '.card').forEach(card => {
+    card.addEventListener('click', (e) => {
+      e.preventDefault();
+      const popupId = 'popup-' + card.dataset.popup;
+      const popup = document.getElementById(popupId);
+      if (popup) popup.classList.add('show');
+    });
+  });
+
+  const openPopupIt = document.getElementById('openpopup-it');
+  const popupFamily = document.getElementById('popup-family');
+  if (openPopupIt && popupFamily) {
+    openPopupIt.addEventListener('click', function (e) {
+      e.preventDefault();
+      popupFamily.classList.add('show');
+    });
+  }
+  qsa(document, 'a[href^="#popup-"]').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      const popupId = this.getAttribute('href').substring(1);
+      const popup = document.getElementById(popupId);
+      if (popup) popup.classList.add('show');
+    });
+  });
+  qsa(document, '.modal-close-icon').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const modal = this.closest('.popup');
+      if (modal) modal.classList.remove('show');
+    });
+  });
+
+  qsa(document, '.popup').forEach(popup => {
+    popup.addEventListener('click', e => {
+      if (e.target === popup) popup.classList.remove('show');
+    });
+  });
+});
+</script>
