@@ -174,7 +174,7 @@ body{
     display: block;
     width: 28px;
     height: 3px;
-    background: #184d2f;
+    background: #000;
     border-radius: 2px;
     transition: 0.3s;
 }
@@ -220,7 +220,7 @@ body{
 .mobile-menu-divider {
     width: 100%;
     height: 2px;
-    background: #0b6d37;
+    background: #ad876d;
     border-radius: 2px;
 }
 
@@ -264,7 +264,7 @@ body{
 
 .mob-link {
     font-size: 20px;
-    color: #184d2f;
+    color: #000;
     text-decoration: none;
     font-weight: 600;
     margin-bottom: 20px;
@@ -435,7 +435,7 @@ body{
     width: 100%;
     margin-top: 4px;
     padding: 11px 16px;
-    background-color: #116b39;
+    background-color: #ad876d;
     color: #ffffff;
     font-size: 14px;
     font-weight: 600;
@@ -459,9 +459,9 @@ body{
     align-items: center;
     justify-content: center;
     width: 100%;
-    background-color: transparent;
-    border: 1.5px solid #116b39;
-    color: #116b39;
+    background-color: fff;
+    border: 1.5px solid #ad876d;
+    color: #000;
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
@@ -691,13 +691,17 @@ headerScroll();
 
 .hero p{
 
-    font-size:20px;
-
-    line-height:1.7;
-
-    color:#7f7f7f;
-
-    margin-bottom:40px;
+    font-size: 20px;
+    line-height: 1.7;
+    color: #7f7f7f;
+    margin-bottom: 40px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 20px;
+    padding: 20px 26px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.4);
 
 }
 
@@ -1799,9 +1803,11 @@ width: 200%;
         <button class="projects-house-close">×</button>
 
         <div class="projects-gallery">
-            <img id="projectsMainImage" src="" alt="Основное фото">
-            <div class="projects-thumbs">
+            <div class="projects-main-image-wrap">
+                <img id="projectsMainImage" src="" alt="Основное фото">
+                <div class="projects-price-badge" id="projectsPriceBadge">13 700 000 ₽</div>
             </div>
+            <div class="projects-thumbs"></div>
         </div>
 
         <div class="projects-info">
@@ -1870,23 +1876,18 @@ justify-content:center;
 }
 
 .projects-map-window{
+    width: min(1600px, calc(100% - 40px));
+    height: 85vh;
 
-width:90%;
+    margin: auto;
 
-max-width:1400px;
+    background: #fff;
+    border-radius: 30px;
+    padding: 35px;
 
-height:85vh;
-
-background:#fff;
-
-border-radius:30px;
-
-padding:35px;
-
-position:relative;
-
-overflow:auto;
-
+    position: relative;
+    overflow: auto;
+    box-sizing: border-box;
 }
 
 
@@ -2241,7 +2242,8 @@ const openMapBtns = document.querySelectorAll(".projects-open");
 openMapBtns.forEach(btn => {
     btn.addEventListener("click", function(e) {
         e.preventDefault();
-        mapModal.style.display = "flex";
+        const pageMap = document.getElementById("projectsMapSection");
+        if (pageMap) pageMap.scrollIntoView({ behavior: "smooth", block: "start" });
     });
 });
 
@@ -2336,10 +2338,14 @@ document.querySelectorAll(".projects-point, .mobile-project-card").forEach(eleme
         let house = houses[houseKey];
         if(!house) return;
 
-        document.getElementById("projectsTitle").innerHTML = house.title;
+        const pointNumber = this.dataset.number;
+        const titlePrefix = pointNumber ? `№${pointNumber} · ` : "";
+        document.getElementById("projectsTitle").innerHTML = titlePrefix + house.title;
         document.getElementById("projectsDescription").innerHTML = house.description;
         document.getElementById("projectsMainImage").src = house.images[0];
         document.getElementById("projectsDetailsLink").href = house.link;
+        const priceBadge = document.getElementById("projectsPriceBadge");
+        if (priceBadge) priceBadge.textContent = this.dataset.floor === "2" ? "15 500 000 ₽" : "13 700 000 ₽";
 
         // Миниатюры
         let thumbs = document.querySelector(".projects-thumbs");
@@ -2363,7 +2369,8 @@ const closeHouseBtn = document.querySelector(".projects-house-close");
 if(closeHouseBtn) {
     closeHouseBtn.onclick = function(){
         houseModal.style.display = "none";
-        mapModal.style.display = "flex";
+        const pageMap = document.getElementById("projectsMapSection");
+        if (pageMap) pageMap.scrollIntoView({ behavior: "smooth", block: "start" });
     };
 }
 
@@ -2571,7 +2578,6 @@ if (infraMap && infraModal && infraModalImage && infraClose) {
 }
 .infrastructure {
     margin-top: 0;
-    padding-bottom: 90px;
     border-top-left-radius: 42px;
     border-top-right-radius: 42px;
     
@@ -2824,7 +2830,7 @@ background-image:url("https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-
         font-size: 11px;
         font-weight: 500;
         color: #ffffff;
-        background: rgb(11 109 55);
+        background: rgb(107 107 107);
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
         padding: 3px 8px;
@@ -3172,6 +3178,751 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 </script>
+
+<style id="projects-page-map-clean">
+/* Карта проектов — единый чистый блок, без каскада повторных override-стилей */
+.projects-map-section{
+    position:relative;
+    z-index:34;
+    padding:0 0 0px;
+    scroll-margin-top:18px;
+}
+.projects-map-section > .container{
+    width:min(1600px, calc(100% - 40px));
+    margin:0 auto;
+}
+
+.projects-map-copy{
+    min-width:0;
+    padding:3px 0 0;
+    display:block;
+}
+.projects-map-eyebrow{
+display: block;
+    color: #7f7f7f;
+    font-size: 15px;
+    margin-bottom: 18px;
+    font-weight: 600;
+}
+.projects-map-copy h2{
+    margin:0 0 18px;
+    color:#3b3028;
+    font-size:32px;
+    line-height:1.05;
+    font-weight:700;
+    letter-spacing:-.035em;
+}
+.projects-map-copy > p{
+    margin-top: 18px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #9b9b9b;
+    font-weight: 400;
+    max-width: 550px;
+}
+.projects-map-house-gallery{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:14px;
+    width:100%;
+}
+.projects-map-house-card{
+    min-width:0;
+    background:#fcfcfc;
+    border:1px solid #eaeaea;
+    border-radius:20px;
+    padding:10px;
+    cursor:pointer;
+    user-select:none;
+    transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
+}
+.projects-map-house-card:hover{
+    transform:translateY(-4px);
+    border-color:#ad876d;
+    box-shadow:0 12px 28px rgba(0,0,0,.08);
+}
+.projects-map-house-image{
+    width:100%;
+    height:max-content;
+    overflow:hidden;
+    border-radius:14px;
+    background:#f0f0f0;
+    margin-bottom:12px;
+}
+.projects-map-house-image img{
+    display:block;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:transform .5s ease;
+}
+.projects-map-house-card:hover .projects-map-house-image img{transform:scale(1.04)}
+.projects-map-house-card h3{
+    margin:0 0 5px;
+    color:#3b3028;
+    font-size:16px;
+    line-height:1.25;
+    font-weight:700;
+}
+.projects-map-house-card p{
+    margin:0;
+    color:#8a837d;
+    font-size:11px;
+    line-height:1.45;
+}
+.projects-map-visual{
+    min-width:0;
+    display:block;
+}
+.projects-map-controls{
+    width:100%;
+    margin:0 0 16px;
+}
+.projects-page-filters{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    width:max-content;
+    max-width:100%;
+    margin:0 0 15px;
+    padding:5px;
+    background:#f5f1ed;
+    border:1px solid #e8dfd7;
+    border-radius:15px;
+    box-sizing:border-box;
+}
+.projects-page-filters .filter{
+    appearance:none;
+    -webkit-appearance:none;
+    min-height:42px;
+    padding:11px 17px;
+    border:1px solid transparent;
+    border-radius:11px;
+    background:transparent;
+    color:#6d625a;
+    font:600 13px/1 Inter,Manrope,sans-serif;
+    letter-spacing:-.01em;
+    cursor:pointer;
+    box-shadow:none;
+    transition:background .25s ease,color .25s ease,border-color .25s ease,box-shadow .25s ease,transform .25s ease;
+}
+.projects-page-filters .filter:hover{
+    background:#fff;
+    color:#8a674f;
+    border-color:#e1d4ca;
+    transform:translateY(-1px);
+}
+.projects-page-filters .filter.active{
+    background:#ad876d;
+    border-color:#ad876d;
+    color:#fff;
+    box-shadow:0 5px 14px rgba(91,65,47,.18);
+}
+.projects-page-filters .filter.active:hover{background:#a27a5f;color:#fff}
+.projects-map-meta{
+    display:flex;
+    align-items:flex-end;
+    gap:22px;
+    width:100%;
+    margin-bottom:15px;
+}
+.projects-map-hint{
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+    min-width:0;
+}
+.projects-map-hint strong{
+    color:#3b3028;
+    font-size:17px;
+    line-height:1.2;
+    font-weight:700;
+}
+.projects-map-hint span{
+    color:#9a938d;
+    font-size:12px;
+    line-height:1.45;
+}
+.projects-map-legend-horizontal{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    gap:18px;
+    margin:0;
+    padding:0;
+    flex-shrink:0;
+}
+.projects-map-legend-horizontal > div{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:#5f5751;
+    font-size:12px;
+    line-height:1;
+    font-weight:600;
+    white-space:nowrap;
+}
+.projects-map-legend-horizontal .legend-dot{
+    width:9px;
+    height:9px;
+    flex:0 0 9px;
+    border-radius:50%;
+    border:1px solid rgba(255,255,255,.8);
+    box-shadow:none;
+}
+.projects-map-legend-horizontal .legend-dot-one{background:#9a9a97}
+.projects-map-legend-horizontal .legend-dot-two{background:#ad876d}
+.projects-map-layout.projects-page-map{
+    width:100%;
+    max-width:none;
+    margin:0;
+    padding:8px;
+    background:#f7f5f2;
+    border:1px solid #ece5df;
+    border-radius:23px;
+    box-sizing:border-box;
+    overflow:hidden;
+    text-align:center;
+}
+.projects-page-map .projects-map-image{
+    position:relative;
+    width:100%;
+    line-height:0;
+    border-radius:17px;
+    overflow:hidden;
+}
+.projects-page-map .projects-map-image > img{
+    display:block;
+    width:100%;
+    height:auto;
+    max-width:100%;
+    border-radius:17px;
+}
+.projects-page-map .projects-point{
+    position:absolute;
+    left:0;
+    top:0;
+    width:14px;
+    height:14px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transform:translate(-50%,-50%);
+    cursor:pointer;
+    z-index:5;
+}
+.projects-page-map .projects-point span{
+    position:relative;
+    z-index:2;
+    width:13px;
+    height:13px;
+    min-width:13px;
+    min-height:13px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border:1.5px solid #fff;
+    border-radius:50%;
+    background:#ad876d;
+    box-shadow:0 2px 7px rgba(60,42,29,.18);
+    color:#fff;
+    font:700 6px/1 Inter,Manrope,sans-serif;
+    transition:transform .22s ease,background .22s ease;
+}
+.projects-page-map .projects-point span:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    width:100%;
+    height:100%;
+    border-radius:50%;
+    background:#ad876d;
+    animation:projectPagePulse 2.8s ease-out infinite;
+    z-index:-1;
+}
+.projects-page-map .projects-point[data-floor="1"] span{background:#9a9a97}
+.projects-page-map .projects-point[data-floor="1"] span:after{background:#9a9a97}
+.projects-page-map .projects-point[data-floor="2"] span{background:#ad876d}
+.projects-page-map .projects-point[data-floor="2"] span:after{background:#ad876d}
+.projects-page-map .projects-point:hover span{transform:scale(1.28)}
+.projects-page-map .projects-tooltip{
+    position:absolute;
+    left:14px;
+    top:-12px;
+    padding:7px 10px;
+    border-radius:9px;
+    background:#fff;
+    color:#272421;
+    font:600 10px/1.2 Inter,Manrope,sans-serif;
+    white-space:nowrap;
+    box-shadow:0 10px 28px rgba(0,0,0,.14);
+    opacity:0;
+    transform:translateX(-7px);
+    pointer-events:none;
+    transition:.22s;
+    z-index:40;
+}
+.projects-page-map .projects-point:hover .projects-tooltip{opacity:1;transform:translateX(0)}
+@keyframes projectPagePulse{
+    0%{transform:scale(1);opacity:.32}
+    55%{transform:scale(2.1);opacity:.09}
+    100%{transform:scale(2.6);opacity:0}
+}
+/* Цена строго на большом изображении модалки */
+.projects-main-image-wrap{
+    position:relative;
+    width:100%;
+    overflow:hidden;
+    border-radius:20px;
+    background:#f8f8f8;
+}
+.projects-main-image-wrap #projectsMainImage{
+    display:block;
+    width:100%;
+    height:380px;
+    object-fit:contain;
+    background:#fff;
+    border-radius:20px;
+}
+.projects-main-image-wrap > .projects-price-badge{
+    position:absolute;
+    left:18px;
+    bottom:18px;
+    top:auto;
+    z-index:10;
+    display:block;
+    padding:11px 16px;
+    border-radius:10px;
+    background:#ad876d;
+    color:#fff;
+    font-size:18px;
+    line-height:1;
+    font-weight:700;
+    letter-spacing:-.01em;
+    box-shadow:0 8px 20px rgba(73,48,31,.22);
+    pointer-events:none;
+}
+@media(max-width:1100px){
+    .projects-map-card{gap:30px;padding:38px}
+    .projects-map-house-image{height:135px}
+}
+@media(max-width:800px){
+    .projects-map-section{padding:0 0 28px}
+    .projects-map-section > .container{width:100%}
+    .projects-map-card{
+        grid-template-columns:1fr;
+        gap:28px;
+        padding:30px 24px 28px;
+        border-radius:28px 28px 0 0;
+    }
+    .projects-map-house-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+    .projects-map-house-image{height:125px}
+    .projects-map-meta{align-items:flex-start;flex-direction:column;gap:12px}
+    .projects-map-legend-horizontal{gap:16px}
+    .projects-page-filters{width:100%;display:grid;grid-template-columns:repeat(3,1fr);gap:5px;padding:5px}
+    .projects-page-filters .filter{padding:10px 6px;font-size:12px}
+    .projects-page-map .projects-point span{width:12px;height:12px;min-width:12px;min-height:12px;font-size:5px}
+    .projects-main-image-wrap #projectsMainImage{height:auto;min-height:0}
+    .projects-main-image-wrap > .projects-price-badge{left:12px;bottom:12px;padding:9px 12px;font-size:15px;border-radius:9px}
+}
+@media(max-width:520px){
+    .projects-map-house-gallery{grid-template-columns:1fr}
+}
+</style>
+<section class="projects-map-section" id="projectsMapSection">
+    <div class="projects-map-card">
+
+      <div class="projects-map-copy">
+        <span class="projects-map-eyebrow">Выбор недвижимости</span>
+        <h2>Карта проектов</h2>
+        <p>Изучите все проекты на интерактивной карте и найдите дом, который подходит именно вам. На карте отмечены все доступные варианты, разделённые на два типа: одноэтажные и двухэтажные дома.
+
+Нажимайте на точки на карте, чтобы подробно познакомиться с каждым проектом: посмотреть фотографии дома, узнать его площадь и этажность, а также изучить основные характеристики и особенности планировки.</p>
+
+        <div class="projects-map-house-gallery" aria-label="Проекты домов">
+          <article class="projects-map-house-card" data-map-house="house2">
+            <div class="projects-map-house-image">
+              <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%9E%D0%B4%D0%BD%D0%BE%D1%8D%D1%82%D0%B0%D0%B6%D0%BD%D1%8B%D0%B9.png" alt="Одноэтажный дом">
+            </div>
+            <h3>Одноэтажный дом</h3>
+            <p>134 м² • 3 спальни • Терраса</p>
+          </article>
+
+          <article class="projects-map-house-card" data-map-house="house3">
+            <div class="projects-map-house-image">
+              <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%B4%D0%B2%D1%83%D1%85%D1%8D%D1%82%D0%B0%D0%B6%D0%BD%D1%8B%D0%B92.png" alt="Двухэтажный дом">
+            </div>
+            <h3>Двухэтажный дом</h3>
+            <p>150 м² • 4 спальни • Гараж</p>
+          </article>
+        </div>
+      </div>
+
+      <div class="projects-map-visual">
+        <div class="projects-map-controls">
+          <div class="projects-page-filters" aria-label="Фильтр домов">
+            <button type="button" class="filter active" data-filter="all">Все дома</button>
+            <button type="button" class="filter" data-filter="1">1 этаж</button>
+            <button type="button" class="filter" data-filter="2">2 этажа</button>
+          </div>
+
+          <div class="projects-map-meta">
+            <div class="projects-map-hint">
+              <strong>Доступные дома</strong>
+              <span>Наведите на точку, чтобы увидеть номер и тип дома</span>
+            </div>
+
+            <div class="projects-map-legend projects-map-legend-horizontal" aria-label="Обозначения домов">
+              <div><span class="legend-dot legend-dot-one"></span><span>Одноэтажные</span></div>
+              <div><span class="legend-dot legend-dot-two"></span><span>Двухэтажные</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="projects-map-layout projects-page-map">
+          <div class="projects-map-image">
+                
+                <!-- Картинка задает размеры для всего контейнера -->
+                <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/map/%D0%9A%D0%B0%D1%80%D1%82%D0%B0.png" alt="Карта поселка">
+
+                <div class="projects-point" style="left:38%; top:47%" data-house="house2" data-floor="1" data-area="120" data-number="1">
+                    <span data-point-number="1"></span>
+                    <div class="projects-tooltip">Дом №1 — Одноэтажный дом</div>
+                </div>
+
+                <div class="projects-point" style="left:42%; top:47%" data-house="house2" data-floor="1" data-area="180" data-number="2">
+                    <span data-point-number="2"></span>
+                    <div class="projects-tooltip">Дом №2 — Одноэтажный дом</div>
+                </div>
+
+                <div class="projects-point" style="left:47%; top:45%" data-house="house2" data-floor="1" data-area="220" data-number="3">
+                    <span data-point-number="3"></span>
+                    <div class="projects-tooltip">Дом №3 — Одноэтажный дом</div>
+                </div>
+
+                <div class="projects-point" style="left:48%; top:62%" data-house="house3" data-floor="2" data-area="220" data-number="4">
+                    <span data-point-number="4"></span>
+                    <div class="projects-tooltip">Дом №4 — Двухэтажный дом</div>
+                </div>
+
+                <div class="projects-point" style="left:53%; top:61%" data-house="house3" data-floor="2" data-area="220" data-number="5">
+                    <span data-point-number="5"></span>
+                    <div class="projects-tooltip">Дом №5 — Двухэтажный дом</div>
+                </div>
+
+                <div class="projects-point" style="left:58%; top:60%" data-house="house3" data-floor="2" data-area="220" data-number="6">
+                    <span data-point-number="6"></span>
+                    <div class="projects-tooltip">Дом №6 — Двухэтажный дом</div>
+                </div>
+
+                <div class="projects-point" style="left:62%; top:59%" data-house="house3" data-floor="2" data-area="220" data-number="7">
+                    <span data-point-number="7"></span>
+                    <div class="projects-tooltip">Дом №7 — Двухэтажный дом</div>
+                </div>
+
+                <div class="projects-point" style="left:68%; top:58%" data-house="house3" data-floor="2" data-area="220" data-number="8">
+                    <span data-point-number="8"></span>
+                    <div class="projects-tooltip">Дом №8 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:73%; top:57%" data-house="house3" data-floor="2" data-area="220" data-number="9">
+                    <span data-point-number="9"></span>
+                    <div class="projects-tooltip">Дом №9 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:80%; top:55%" data-house="house3" data-floor="2" data-area="220" data-number="10">
+                    <span data-point-number="10"></span>
+                    <div class="projects-tooltip">Дом №10 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:88%; top:54%" data-house="house3" data-floor="2" data-area="220" data-number="11">
+                    <span data-point-number="11"></span>
+                    <div class="projects-tooltip">Дом №11 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:88%; top:59%" data-house="house2" data-floor="1" data-area="220" data-number="12">
+                    <span data-point-number="12"></span>
+                    <div class="projects-tooltip">Дом №12 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:81%; top:61%" data-house="house2" data-floor="1" data-area="220" data-number="13">
+                    <span data-point-number="13"></span>
+                    <div class="projects-tooltip">Дом №13 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:73%; top:62%" data-house="house2" data-floor="1" data-area="220" data-number="14">
+                    <span data-point-number="14"></span>
+                    <div class="projects-tooltip">Дом №14 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:66%; top:63%" data-house="house2" data-floor="1" data-area="220" data-number="15">
+                    <span data-point-number="15"></span>
+                    <div class="projects-tooltip">Дом №15 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:58%; top:65%" data-house="house2" data-floor="1" data-area="220" data-number="16">
+                    <span data-point-number="16"></span>
+                    <div class="projects-tooltip">Дом №16 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:51%; top:67%" data-house="house2" data-floor="1" data-area="220" data-number="17">
+                    <span data-point-number="17"></span>
+                    <div class="projects-tooltip">Дом №17 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:53%; top:74%" data-house="house3" data-floor="2" data-area="220" data-number="18">
+                    <span data-point-number="18"></span>
+                    <div class="projects-tooltip">Дом №18 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:58%; top:72%" data-house="house3" data-floor="2" data-area="220" data-number="19">
+                    <span data-point-number="19"></span>
+                    <div class="projects-tooltip">Дом №19 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:63%; top:71%" data-house="house3" data-floor="2" data-area="220" data-number="20">
+                    <span data-point-number="20"></span>
+                    <div class="projects-tooltip">Дом №20 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:68%; top:70%" data-house="house3" data-floor="2" data-area="220" data-number="21">
+                    <span data-point-number="21"></span>
+                    <div class="projects-tooltip">Дом №21 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:73%; top:69%" data-house="house3" data-floor="2" data-area="220" data-number="22">
+                    <span data-point-number="22"></span>
+                    <div class="projects-tooltip">Дом №22 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:78%; top:68%" data-house="house3" data-floor="2" data-area="220" data-number="23">
+                    <span data-point-number="23"></span>
+                    <div class="projects-tooltip">Дом №23 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:84%; top:66%" data-house="house3" data-floor="2" data-area="220" data-number="24">
+                    <span data-point-number="24"></span>
+                    <div class="projects-tooltip">Дом №24 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:91%; top:65%" data-house="house3" data-floor="2" data-area="220" data-number="25">
+                    <span data-point-number="25"></span>
+                    <div class="projects-tooltip">Дом №25 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:85%; top:48%" data-house="house2" data-floor="1" data-area="220" data-number="26">
+                    <span data-point-number="26"></span>
+                    <div class="projects-tooltip">Дом №26 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:76%; top:50%" data-house="house2" data-floor="1" data-area="220" data-number="27">
+                    <span data-point-number="27"></span>
+                    <div class="projects-tooltip">Дом №27 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:76%; top:50%" data-house="house2" data-floor="1" data-area="220" data-number="28">
+                    <span data-point-number="28"></span>
+                    <div class="projects-tooltip">Дом №28 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:68%; top:51%" data-house="house2" data-floor="1" data-area="220" data-number="29">
+                    <span data-point-number="29"></span>
+                    <div class="projects-tooltip">Дом №29 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:63%; top:52%" data-house="house2" data-floor="1" data-area="220" data-number="30">
+                    <span data-point-number="30"></span>
+                    <div class="projects-tooltip">Дом №30 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:59%; top:53%" data-house="house2" data-floor="1" data-area="220" data-number="31">
+                    <span data-point-number="31"></span>
+                    <div class="projects-tooltip">Дом №31 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:53%; top:54%" data-house="house2" data-floor="1" data-area="220" data-number="32">
+                    <span data-point-number="32"></span>
+                    <div class="projects-tooltip">Дом №32 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:49%; top:55%" data-house="house2" data-floor="1" data-area="220" data-number="33">
+                    <span data-point-number="33"></span>
+                    <div class="projects-tooltip">Дом №33 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:44%; top:56%" data-house="house2" data-floor="1" data-area="220" data-number="34">
+                    <span data-point-number="34"></span>
+                    <div class="projects-tooltip">Дом №34 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:41%; top:51%" data-house="house3" data-floor="2" data-area="220" data-number="35">
+                    <span data-point-number="35"></span>
+                    <div class="projects-tooltip">Дом №35 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:46%; top:50%" data-house="house3" data-floor="2" data-area="220" data-number="36">
+                    <span data-point-number="36"></span>
+                    <div class="projects-tooltip">Дом №36 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:51%; top:49%" data-house="house3" data-floor="2" data-area="220" data-number="37">
+                    <span data-point-number="37"></span>
+                    <div class="projects-tooltip">Дом №37 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:56%; top:48%" data-house="house3" data-floor="2" data-area="220" data-number="38">
+                    <span data-point-number="38"></span>
+                    <div class="projects-tooltip">Дом №38 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:61%; top:47%" data-house="house3" data-floor="2" data-area="220" data-number="39">
+                    <span data-point-number="39"></span>
+                    <div class="projects-tooltip">Дом №39 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:66%; top:46%" data-house="house3" data-floor="2" data-area="220" data-number="40">
+                    <span data-point-number="40"></span>
+                    <div class="projects-tooltip">Дом №40 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:74%; top:44%" data-house="house3" data-floor="2" data-area="220" data-number="41">
+                    <span data-point-number="41"></span>
+                    <div class="projects-tooltip">Дом №41 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:81%; top:44%" data-house="house3" data-floor="2" data-area="220" data-number="42">
+                    <span data-point-number="42"></span>
+                    <div class="projects-tooltip">Дом №42 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:75%; top:39%" data-house="house2" data-floor="1" data-area="220" data-number="43">
+                    <span data-point-number="43"></span>
+                    <div class="projects-tooltip">Дом №43 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:69%; top:40%" data-house="house2" data-floor="1" data-area="220" data-number="44">
+                    <span data-point-number="44"></span>
+                    <div class="projects-tooltip">Дом №44 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:62%; top:41%" data-house="house2" data-floor="1" data-area="220" data-number="45">
+                    <span data-point-number="45"></span>
+                    <div class="projects-tooltip">Дом №45 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:57%; top:42%" data-house="house2" data-floor="1" data-area="220" data-number="46">
+                    <span data-point-number="46"></span>
+                    <div class="projects-tooltip">Дом №46 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:52%; top:43%" data-house="house2" data-floor="1" data-area="220" data-number="47">
+                    <span data-point-number="47"></span>
+                    <div class="projects-tooltip">Дом №47 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:35%; top:42%" data-house="house3" data-floor="2" data-area="220" data-number="48">
+                    <span data-point-number="48"></span>
+                    <div class="projects-tooltip">Дом №48 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:40%; top:41%" data-house="house3" data-floor="2" data-area="220" data-number="49">
+                    <span data-point-number="49"></span>
+                    <div class="projects-tooltip">Дом №49 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:45%; top:40%" data-house="house3" data-floor="2" data-area="220" data-number="50">
+                    <span data-point-number="50"></span>
+                    <div class="projects-tooltip">Дом №50 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:50%; top:39%" data-house="house3" data-floor="2" data-area="220" data-number="51">
+                    <span data-point-number="51"></span>
+                    <div class="projects-tooltip">Дом №51 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:50%; top:39%" data-house="house3" data-floor="2" data-area="220" data-number="52">
+                    <span data-point-number="52"></span>
+                    <div class="projects-tooltip">Дом №52 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:55%; top:38%" data-house="house3" data-floor="2" data-area="220" data-number="53">
+                    <span data-point-number="53"></span>
+                    <div class="projects-tooltip">Дом №53 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:60%; top:36%" data-house="house3" data-floor="2" data-area="220" data-number="54">
+                    <span data-point-number="54"></span>
+                    <div class="projects-tooltip">Дом №54 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:66%; top:35%" data-house="house3" data-floor="2" data-area="220" data-number="55">
+                    <span data-point-number="55"></span>
+                    <div class="projects-tooltip">Дом №55 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:71%; top:34%" data-house="house3" data-floor="2" data-area="220" data-number="56">
+                    <span data-point-number="56"></span>
+                    <div class="projects-tooltip">Дом №56 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:65%; top:29%" data-house="house2" data-floor="1" data-area="220" data-number="57">
+                    <span data-point-number="57"></span>
+                    <div class="projects-tooltip">Дом №57 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:56%; top:31%" data-house="house2" data-floor="1" data-area="220" data-number="58">
+                    <span data-point-number="58"></span>
+                    <div class="projects-tooltip">Дом №58 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:51%; top:32%" data-house="house2" data-floor="1" data-area="220" data-number="59">
+                    <span data-point-number="59"></span>
+                    <div class="projects-tooltip">Дом №59 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:46%; top:33%" data-house="house2" data-floor="1" data-area="220" data-number="60">
+                    <span data-point-number="60"></span>
+                    <div class="projects-tooltip">Дом №60 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:41%; top:34%" data-house="house2" data-floor="1" data-area="220" data-number="61">
+                    <span data-point-number="61"></span>
+                    <div class="projects-tooltip">Дом №61 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:36%; top:35%" data-house="house2" data-floor="1" data-area="220" data-number="62">
+                    <span data-point-number="62"></span>
+                    <div class="projects-tooltip">Дом №62 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:31%; top:36%" data-house="house2" data-floor="1" data-area="220" data-number="63">
+                    <span data-point-number="63"></span>
+                    <div class="projects-tooltip">Дом №63 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:29%; top:30%" data-house="house3" data-floor="2" data-area="220" data-number="64">
+                    <span data-point-number="64"></span>
+                    <div class="projects-tooltip">Дом №64 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:34%; top:28%" data-house="house3" data-floor="2" data-area="220" data-number="65">
+                    <span data-point-number="65"></span>
+                    <div class="projects-tooltip">Дом №65 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:39%; top:28%" data-house="house3" data-floor="2" data-area="220" data-number="66">
+                    <span data-point-number="66"></span>
+                    <div class="projects-tooltip">Дом №66 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:44%; top:27%" data-house="house3" data-floor="2" data-area="220" data-number="67">
+                    <span data-point-number="67"></span>
+                    <div class="projects-tooltip">Дом №67 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:49%; top:26%" data-house="house3" data-floor="2" data-area="220" data-number="68">
+                    <span data-point-number="68"></span>
+                    <div class="projects-tooltip">Дом №68 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:53%; top:25%" data-house="house3" data-floor="2" data-area="220" data-number="69">
+                    <span data-point-number="69"></span>
+                    <div class="projects-tooltip">Дом №69 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:61%; top:22%" data-house="house3" data-floor="2" data-area="220" data-number="70">
+                    <span data-point-number="70"></span>
+                    <div class="projects-tooltip">Дом №70 — Двухэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:55%; top:17%" data-house="house2" data-floor="1" data-area="220" data-number="71">
+                    <span data-point-number="71"></span>
+                    <div class="projects-tooltip">Дом №71 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:49%; top:19%" data-house="house2" data-floor="1" data-area="220" data-number="72">
+                    <span data-point-number="72"></span>
+                    <div class="projects-tooltip">Дом №72 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:44%; top:20%" data-house="house2" data-floor="1" data-area="220" data-number="73">
+                    <span data-point-number="73"></span>
+                    <div class="projects-tooltip">Дом №73 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:39%; top:21%" data-house="house2" data-floor="1" data-area="220" data-number="74">
+                    <span data-point-number="74"></span>
+                    <div class="projects-tooltip">Дом №74 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:34%; top:22%" data-house="house2" data-floor="1" data-area="220" data-number="75">
+                    <span data-point-number="75"></span>
+                    <div class="projects-tooltip">Дом №75 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:30%; top:23%" data-house="house2" data-floor="1" data-area="220" data-number="76">
+                    <span data-point-number="76"></span>
+                    <div class="projects-tooltip">Дом №76 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:25%; top:24%" data-house="house2" data-floor="1" data-area="220" data-number="77">
+                    <span data-point-number="77"></span>
+                    <div class="projects-tooltip">Дом №77 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:25%; top:18%" data-house="house2" data-floor="1" data-area="220" data-number="78">
+                    <span data-point-number="78"></span>
+                    <div class="projects-tooltip">Дом №78 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:33%; top:15%" data-house="house2" data-floor="1" data-area="220" data-number="79">
+                    <span data-point-number="79"></span>
+                    <div class="projects-tooltip">Дом №79 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:42%; top:13%" data-house="house2" data-floor="1" data-area="220" data-number="80">
+                    <span data-point-number="80"></span>
+                    <div class="projects-tooltip">Дом №80 — Одноэтажный дом</div>
+                </div>
+                <div class="projects-point" style="left:48%; top:11%" data-house="house2" data-floor="1" data-area="220" data-number="81">
+                    <span data-point-number="81"></span>
+                    <div class="projects-tooltip">Дом №81 — Одноэтажный дом</div>
+                </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
 <section class="house-gallery-section" id="houseGallerySection">
     <div class="container">
         
@@ -3244,7 +3995,7 @@ document.addEventListener("DOMContentLoaded", function() {
     border-top-right-radius: 35px;
     box-shadow: 0 -10px 40px rgba(0,0,0,0.04);
     position: relative;
-    z-index: 33;
+    z-index: 35;
 }
 
 .house-gallery-section .container {
@@ -4441,7 +5192,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     </div>
                     <div class="footer-socials">
                         <a href="https://max.ru/u/f9LHodD0cOLl3rR4lsdUmxPGccaeskkOOjA7sZhnfN7I8YDYjVEDwptWSUY" class="footer-social-icon" target="_blank" aria-label="Telegram">
-                            <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/icon/max.png" alt="Telegram">
+                            <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/icon/maxgr.png" alt="MAX">
                         </a>
                     </div>
                 </div>
@@ -4916,7 +5667,7 @@ document.addEventListener("DOMContentLoaded", function() {
     position: absolute;
     right: 10px;
     top: 4px;
-    background: #0b6d37;
+    background: #7f7f7f;
     border: none;
     width: 25px;
     height: 25px;
@@ -4932,7 +5683,7 @@ document.addEventListener("DOMContentLoaded", function() {
     z-index: 10;
 }  
 .policy-box {
-  background: #0b6d37;
+  background: #7f7f7f;
   border-radius: 16px;
 
   padding: 25px;
@@ -5309,7 +6060,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const mobileCards = document.querySelectorAll(".mobile-project-card");
     const mobileFilters = document.querySelectorAll(".mobile-project-filter");
 
-    function openMobileHouse(houseKey) {
+    function openMobileHouse(houseKey, cardFloor) {
         const house = (typeof houses !== "undefined") ? houses[houseKey] : null;
         const houseModal = document.getElementById("projectsHouseModal");
 
@@ -5325,6 +6076,8 @@ document.addEventListener("DOMContentLoaded", function () {
         if (description) description.innerHTML = house.description;
         if (mainImage) mainImage.src = house.images[0];
         if (detailsLink) detailsLink.href = house.link || "#";
+         const mobilePriceBadge = document.getElementById("projectsPriceBadge");
+         if (mobilePriceBadge) mobilePriceBadge.textContent = cardFloor === "2" ? "15 500 000 ₽" : "13 700 000 ₽";
 
         if (thumbs) {
             thumbs.innerHTML = "";
@@ -5354,7 +6107,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         card.addEventListener("click", function () {
-            openMobileHouse(key);
+            openMobileHouse(key, card.dataset.mobileFloor);
         });
     });
 
@@ -5610,5 +6363,375 @@ document.addEventListener("DOMContentLoaded",function(){
  if(close)close.addEventListener("click",closeModal);
  if(modal)modal.addEventListener("click",function(e){if(e.target===modal)closeModal()});
  document.addEventListener("keydown",function(e){if(e.key==="Escape"&&modal&&modal.classList.contains("is-open"))closeModal()});
+});
+</script>
+<script id="projects-page-map-script">
+document.addEventListener("DOMContentLoaded", function () {
+    const pagePoints = document.querySelectorAll("#projectsMapSection .projects-point");
+    const pageFilters = document.querySelectorAll("#projectsMapSection .projects-page-filters .filter");
+    const pageMapSection = document.getElementById("projectsMapSection");
+
+    pagePoints.forEach(function(point){
+        const number = point.dataset.number || "";
+        const label = point.querySelector(".projects-tooltip");
+        const dot = point.querySelector("span");
+        if (dot) dot.setAttribute("data-point-number", number);
+        if (label && !label.textContent.trim().startsWith("Дом №")) {
+            const type = point.dataset.floor === "2" ? "Двухэтажный дом" : "Одноэтажный дом";
+            label.textContent = `Дом №${number} — ${type}`;
+        }
+        point.addEventListener("click", function(){
+            const house = (typeof houses !== "undefined") ? houses[this.dataset.house] : null;
+            const houseModal = document.getElementById("projectsHouseModal");
+            if (!house || !houseModal) return;
+
+            document.getElementById("projectsTitle").innerHTML = `№${this.dataset.number} · ${house.title}`;
+            document.getElementById("projectsDescription").innerHTML = house.description;
+            document.getElementById("projectsMainImage").src = house.images[0];
+            document.getElementById("projectsDetailsLink").href = house.link || "#";
+
+            const priceBadge = document.getElementById("projectsPriceBadge");
+            if (priceBadge) priceBadge.textContent = this.dataset.floor === "2" ? "15 500 000 ₽" : "13 700 000 ₽";
+
+            const thumbs = document.querySelector(".projects-thumbs");
+            if (thumbs) {
+                thumbs.innerHTML = "";
+                house.images.forEach(function(src){
+                    const image = document.createElement("img");
+                    image.src = src;
+                    image.alt = house.title;
+                    image.onclick = function(){ document.getElementById("projectsMainImage").src = this.src; };
+                    thumbs.appendChild(image);
+                });
+            }
+            houseModal.style.display = "flex";
+        });
+    });
+
+    pageFilters.forEach(function(filter){
+        filter.addEventListener("click", function(){
+            const selected = this.dataset.filter || "all";
+            pageFilters.forEach(function(btn){ btn.classList.toggle("active", btn === filter); });
+            pagePoints.forEach(function(point){
+                point.style.display = (selected === "all" || point.dataset.floor === selected) ? "flex" : "none";
+            });
+        });
+    });
+
+    document.querySelectorAll("#projectsMapSection .projects-map-house-card").forEach(function(card){
+        card.addEventListener("click", function(){
+            const houseKey = this.dataset.mapHouse;
+            const house = (typeof houses !== "undefined") ? houses[houseKey] : null;
+            const houseModal = document.getElementById("projectsHouseModal");
+            if (!house || !houseModal) return;
+
+            document.getElementById("projectsTitle").innerHTML = house.title;
+            document.getElementById("projectsDescription").innerHTML = house.description;
+            document.getElementById("projectsMainImage").src = house.images[0];
+            document.getElementById("projectsDetailsLink").href = house.link || "#";
+
+            const priceBadge = document.getElementById("projectsPriceBadge");
+            if (priceBadge) priceBadge.textContent = houseKey === "house3" ? "15 500 000 ₽" : "13 700 000 ₽";
+
+            const thumbs = document.querySelector(".projects-thumbs");
+            if (thumbs) {
+                thumbs.innerHTML = "";
+                house.images.forEach(function(src){
+                    const image = document.createElement("img");
+                    image.src = src;
+                    image.alt = house.title;
+                    image.onclick = function(){ document.getElementById("projectsMainImage").src = this.src; };
+                    thumbs.appendChild(image);
+                });
+            }
+            houseModal.style.display = "flex";
+        });
+    });
+
+    if (pageMapSection) {
+        pageMapSection.querySelectorAll("img").forEach(function(img){ img.draggable = false; });
+    }
+});
+</script>
+
+<style id="projects-map-final-fix">
+
+#projectsMapSection .projects-map-card {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    gap: 54px !important;
+    align-items: center !important;
+
+    width: 100% !important;
+    margin: 0 !important;
+
+    padding: 30px 35px 30px 30px !important;
+
+    background: #fff !important;
+    border-radius: 42px 42px 0 0 !important;
+    box-shadow: 0 -10px 35px rgba(0,0,0,.04) !important;
+
+    box-sizing: border-box !important;
+    overflow: hidden;
+}
+#projectsMapSection .projects-map-copy,
+#projectsMapSection .projects-map-visual {
+    min-width: 0 !important;
+    width: 100% !important;
+}
+@media (min-width: 1601px) {
+    #projectsMapSection .projects-map-card {
+        padding-left: max(30px, calc((100vw - 1600px) / 2 + 30px)) !important;
+        padding-right: max(35px, calc((100vw - 1600px) / 2 + 35px)) !important;
+    }
+}
+
+#projectsMapSection .projects-map-visual {
+    grid-column: 2 !important;
+    grid-row: 1 !important;
+    order: 0 !important;
+    min-width: 0 !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+}
+
+#projectsMapSection .projects-page-map {
+    width: min(100%, 760px) !important;
+    max-width: 760px !important;
+    margin: 0 !important;
+    padding: 8px !important;
+    box-sizing: border-box !important;
+    border-radius: 22px !important;
+}
+
+#projectsMapSection .projects-page-map .projects-map-image {
+    width: 100% !important;
+    position: relative !important;
+    overflow: visible !important;
+}
+
+#projectsMapSection .projects-page-map .projects-map-image > img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+}
+
+/* Маленькие точки + мягкий постоянный импульс */
+#projectsMapSection .projects-point span {
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    min-height: 18px !important;
+    font-size: 8px !important;
+    line-height: 18px !important;
+}
+
+#projectsMapSection .projects-point::before {
+    content: "" !important;
+    position: absolute !important;
+    width: 18px !important;
+    height: 18px !important;
+    left: 0 !important;
+    top: 0 !important;
+    border-radius: 50% !important;
+    background: rgba(173, 135, 109, .34) !important;
+    transform: translate(-50%, -50%) scale(.8) !important;
+    animation: projectPointPulseSoft 2.4s ease-out infinite !important;
+    pointer-events: none !important;
+    z-index: -1 !important;
+}
+
+@keyframes projectPointPulseSoft {
+    0% { opacity: .55; transform: translate(-50%, -50%) scale(.75); }
+    65% { opacity: 0; transform: translate(-50%, -50%) scale(2.35); }
+    100% { opacity: 0; transform: translate(-50%, -50%) scale(2.35); }
+}
+
+#projectsMapSection .projects-point:hover span {
+    transform: scale(1.22) !important;
+}
+
+#projectsHouseModal .projects-main-image-wrap {
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+#projectsHouseModal .projects-main-image-wrap > #projectsPriceBadge,
+#projectsHouseModal .projects-main-image-wrap > .projects-price-badge {
+    position: absolute !important;
+    left: 18px !important;
+    bottom: 18px !important;
+    top: auto !important;
+    z-index: 20 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 12px 16px !important;
+    background: #ad876d !important;
+    color: #fff !important;
+    border-radius: 10px !important;
+    font-size: 18px !important;
+    line-height: 1 !important;
+    font-weight: 700 !important;
+    box-shadow: 0 8px 20px rgba(73,48,31,.22) !important;
+    pointer-events: none !important;
+}
+
+@media (max-width: 1100px) and (min-width: 769px) {
+    #projectsMapSection .projects-map-card {
+        grid-template-columns: minmax(270px, .78fr) minmax(420px, 1.22fr) !important;
+        gap: 30px !important;
+        padding: 34px !important;
+    }
+}
+
+@media (max-width: 768px) {
+    #projectsMapSection .projects-map-card {
+        grid-template-columns: 1fr !important;
+        gap: 26px !important;
+    }
+    #projectsMapSection .projects-map-copy {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+    }
+    #projectsMapSection .projects-map-visual {
+        grid-column: 1 !important;
+        grid-row: 2 !important;
+        justify-content: stretch !important;
+    }
+    #projectsMapSection .projects-page-map {
+        width: 100% !important;
+        max-width: none !important;
+    }
+}
+</style>
+
+<style id="projects-map-final-polish">
+#projectsMapSection .projects-map-card{
+    align-items:start !important;
+}
+
+#projectsMapSection .projects-map-copy{
+    align-self:start !important;
+    justify-content:flex-start !important;
+    align-items:flex-start !important;
+    padding-top:0 !important;
+}
+
+#projectsMapSection .projects-map-copy h2{
+    color:#000 !important;
+}
+
+
+#projectsMapSection .projects-map-legend{
+    margin-top:30px !important;
+    padding-top:0 !important;
+    color:#4f433b !important;
+}
+
+#projectsMapSection .projects-map-legend small{
+    color:#8c8077 !important;
+}
+
+#projectsMapSection .projects-map-visual{
+    align-self:start !important;
+    align-items:flex-start !important;
+    justify-content:flex-start !important;
+    display:flex !important;
+    flex-direction:column !important;
+    width:100% !important;
+}
+
+/* Фильтры теперь непосредственно над картой */
+#projectsMapSection .projects-page-filters{
+    order:0 !important;
+    margin:0 0 14px 0 !important;
+    align-self:flex-start !important;
+    width:max-content !important;
+    max-width:100% !important;
+}
+
+#projectsMapSection .projects-page-map{
+    order:1 !important;
+    width:100% !important;
+    max-width:760px !important;
+    align-self:flex-start !important;
+}
+
+/* Делаем точки действительно небольшими, чтобы не перекрывали дома */
+#projectsMapSection .projects-point{
+    width:14px !important;
+    height:14px !important;
+}
+
+#projectsMapSection .projects-point span{
+    width:13px !important;
+    height:13px !important;
+    min-width:13px !important;
+    min-height:13px !important;
+    border-width:1.5px !important;
+    font-size:6px !important;
+    line-height:13px !important;
+    box-shadow:0 2px 7px rgba(60,42,29,.2) !important;
+}
+
+#projectsMapSection .projects-point::before{
+    width:13px !important;
+    height:13px !important;
+    animation:projectPointPulseTiny 2.6s ease-out infinite !important;
+}
+
+#projectsMapSection .projects-point:hover span{
+    transform:scale(1.3) !important;
+}
+
+@keyframes projectPointPulseTiny{
+    0%{opacity:.42;transform:translate(-50%,-50%) scale(.8)}
+    65%{opacity:0;transform:translate(-50%,-50%) scale(2.1)}
+    100%{opacity:0;transform:translate(-50%,-50%) scale(2.1)}
+}
+
+@media(max-width:1100px) and (min-width:769px){
+    #projectsMapSection .projects-page-map{
+        max-width:none !important;
+    }
+}
+
+@media(max-width:768px){
+    #projectsMapSection .projects-map-copy{
+        align-self:stretch !important;
+    }
+    #projectsMapSection .projects-map-visual{
+        width:100% !important;
+    }
+    #projectsMapSection .projects-page-filters{
+        width:100% !important;
+        margin-bottom:12px !important;
+    }
+    #projectsMapSection .projects-page-map{
+        width:100% !important;
+        max-width:none !important;
+    }
+}
+@media (max-width: 768px) {
+    .projects-map-section {
+        display: none !important;
+    }
+}
+</style>
+
+<script id="projects-map-move-filters">
+document.addEventListener("DOMContentLoaded", function(){
+    const section = document.getElementById("projectsMapSection");
+    if(!section) return;
+
+    const filters = section.querySelector(".projects-page-filters");
+    const visual = section.querySelector(".projects-map-visual");
+    const map = section.querySelector(".projects-page-map");
+
+    if(filters && visual && map){
+        visual.insertBefore(filters, map);
+    }
 });
 </script>
