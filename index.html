@@ -26,7 +26,33 @@
             <a href="#houseGallerySection">Галерея</a>
             <a href="#site-footer">Контакты</a>
         </nav>
+<div class="desktop-phones">
 
+    <a href="tel:+74852337660" class="desktop-phone">
+        <span>+7 (4852) 33-76-60</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M22 16.92V20a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 11.2 18.8 
+            19.5 19.5 0 0 1 5.2 12.8 19.8 19.8 0 0 1 2 4.18 
+            2 2 0 0 1 4 2h3.09a2 2 0 0 1 2 1.72l.35 2.46a2 2 0 0 1-.57 
+            1.72L7.09 11.7a16 16 0 0 0 5.21 5.21l1.8-1.78a2 2 0 0 1 
+            1.72-.57l2.46.35A2 2 0 0 1 22 16.92z"
+            fill="currentColor"/>
+        </svg>
+    </a>
+
+    <a href="tel:+79109737660" class="desktop-phone">
+        <span>+7 (910) 973-76-60</span>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+            <path d="M22 16.92V20a2 2 0 0 1-2.18 2A19.8 19.8 0 0 1 11.2 18.8 
+            19.5 19.5 0 0 1 5.2 12.8 19.8 19.8 0 0 1 2 4.18 
+            2 2 0 0 1 4 2h3.09a2 2 0 0 1 2 1.72l.35 2.46a2 2 0 0 1-.57 
+            1.72L7.09 11.7a16 16 0 0 0 5.21 5.21l1.8-1.78a2 2 0 0 1 
+            1.72-.57l2.46.35A2 2 0 0 1 22 16.92z"
+            fill="currentColor"/>
+        </svg>
+    </a>
+
+</div>
    
 <button class="burger-btn" id="burgerBtn" aria-label="Меню">
     <span></span>
@@ -147,6 +173,36 @@ body{
 
 .menu a:hover {
     color: #ad876d;
+}
+    .desktop-phones {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-left: auto;
+    margin-right: 25px;
+}
+
+.desktop-phone {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: #111;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1;
+    white-space: nowrap;
+}
+
+.desktop-phone svg {
+    order: 2;
+}
+
+
+@media (max-width: 900px) {
+    .desktop-phones {
+        display: none;
+    }
 }
 .burger-btn {
     display: none;
@@ -293,20 +349,6 @@ body{
     transform: translateY(-9px) rotate(-45deg);
 }
 
-.phone {
-    margin-left: auto;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    color: #1f1f1f;
-    font-weight: 600;
-}
-
-.phone svg {
-    color: #0c7c41;
-}
-
 .btn {
     display: flex;
     align-items: center;
@@ -336,61 +378,6 @@ body{
 
 .header.scrolled .container {
     height: 82px;
-}
-.desktop-phones{
-
-    display:flex;
-    flex-direction:column;
-    gap:4px;
-
-    margin-left:20px;
-
-}
-
-
-.desktop-phone{
-
-    display:flex;
-    align-items:center;
-
-    gap:6px;
-
-    color:#1f1f1f;
-    text-decoration:none;
-
-    font-size:13px;
-    font-weight:600;
-
-    white-space:nowrap;
-
-}
-
-
-.desktop-phone svg{
-
-    width:14px;
-    height:14px;
-
-    color:#0c7c41;
-
-}
-
-
-.desktop-phone:hover{
-
-    color:#ad876d;
-
-}
-
-
-@media(max-width:992px){
-
-    .desktop-phones{
-
-        display:none;
-
-    }
-
 }
 @media(max-width: 992px) {
     .menu {
