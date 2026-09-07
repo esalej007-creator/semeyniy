@@ -360,7 +360,61 @@ body{
 .header.scrolled .container {
     height: 82px;
 }
+.desktop-phones{
 
+    display:flex;
+    flex-direction:column;
+    gap:4px;
+
+    margin-left:20px;
+
+}
+
+
+.desktop-phone{
+
+    display:flex;
+    align-items:center;
+
+    gap:6px;
+
+    color:#1f1f1f;
+    text-decoration:none;
+
+    font-size:13px;
+    font-weight:600;
+
+    white-space:nowrap;
+
+}
+
+
+.desktop-phone svg{
+
+    width:14px;
+    height:14px;
+
+    color:#0c7c41;
+
+}
+
+
+.desktop-phone:hover{
+
+    color:#ad876d;
+
+}
+
+
+@media(max-width:992px){
+
+    .desktop-phones{
+
+        display:none;
+
+    }
+
+}
 @media(max-width: 992px) {
     .menu {
         display: none; 
@@ -485,65 +539,6 @@ body{
     background-color: #116b39;
     color: #ffffff;
 }
-    .desktop-phones{
-
-    display:flex;
-    flex-direction:column;
-    gap:5px;
-    margin-left:auto;
-
-}
-
-
-.desktop-phone{
-
-    display:flex;
-    align-items:center;
-    gap:7px;
-
-    color:#1f1f1f;
-    text-decoration:none;
-
-    font-size:13px;
-    font-weight:600;
-
-    white-space:nowrap;
-
-    transition:.25s;
-
-}
-
-
-.desktop-phone svg{
-
-    width:15px;
-    height:15px;
-
-    fill:#0c7c41;
-
-    flex-shrink:0;
-
-}
-
-
-.desktop-phone:hover{
-
-    color:#ad876d;
-
-}
-
-
-
-/* полностью скрываем на мобильном */
-
-@media(max-width:992px){
-
-    .desktop-phones{
-
-        display:none;
-
-    }
-
 }
 </style>
 <script>
