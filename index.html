@@ -5090,151 +5090,120 @@ text-decoration: none;
 }
 
 </style>
-<!-- ===================== ГАЛЕРЕЯ ===================== -->
+```html
+<section class="house-gallery-section" id="houseGallerySection">
+    <div class="container">
+        
+        <div class="house-gallery-header">
+            <h2 class="house-gallery-title">Галерея</h2>
+            
+            <div class="house-header-actions">
+                <a href="#" class="btn projects-open house-map-btn">
+                    Карта коттеджного квартала
+                </a>
+                
+                <div class="house-gallery-nav">
+                    <button class="house-gallery-btn house-prev-btn" aria-label="Назад" type="button">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M15 18l-6-6 6-6"/>
+                        </svg>
+                    </button>
 
-<section class="house-gallery-section">
-
-    <div class="house-gallery-header">
-        <h2>Жизнь в квартале</h2>
-
-        <div class="house-gallery-nav">
-            <button class="house-gallery-btn house-prev-btn" type="button" aria-label="Назад">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M15 18l-6-6 6-6"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"/>
-                </svg>
-            </button>
-
-            <button class="house-gallery-btn house-next-btn" type="button" aria-label="Вперёд">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M9 18l6-6-6-6"
-                          fill="none"
-                          stroke="currentColor"
-                          stroke-width="2"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"/>
-                </svg>
-            </button>
+                    <button class="house-gallery-btn house-next-btn" aria-label="Вперед" type="button">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
         </div>
-    </div>
 
 
-    <div class="house-gallery-wrap">
+        <div class="house-gallery-wrap">
+            <div class="house-gallery-track" id="houseGalleryTrack">
+                
+                <div
+                    class="house-gallery-item"
+                    data-modal-image="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%9F%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D0%BA%D0%B01.png"
+                    data-modal-title="Благоустройство и площадки"
+                >
+                    <div class="house-img-container">
+                        <img
+                            src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%9F%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D0%BA%D0%B01.png"
+                            alt="Игровая площадка"
+                        >
+                    </div>
 
-        <div class="house-gallery-track" id="houseGalleryTrack">
-
-            <!-- КАРТОЧКА 1 -->
-            <div
-                class="house-gallery-item"
-                data-modal-image="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/house/blagoustroystvo.jpg"
-                data-modal-title="Благоустройство и площадки"
-            >
-                <div class="house-img-container">
-                    <img
-                        src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/house/blagoustroystvo.jpg"
-                        alt="Благоустройство и площадки"
-                    >
+                    <h3 class="house-item-title">Благоустройство и площадки</h3>
+                    <p class="house-item-desc">Ограждения • Зонирование по возрастам • Отдых для детей и родителей</p>
                 </div>
 
-                <h3 class="house-item-title">
-                    Благоустройство и площадки
-                </h3>
 
-                <p class="house-item-desc">
-                    Ограждения • Зонирование по возрастам • Отдых для детей и родителей
-                </p>
-            </div>
+                <div
+                    class="house-gallery-item"
+                    data-modal-image="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/house/%D0%A3%D0%BB%D0%B8%D1%86%D0%B0-%D0%B8-%D0%B4%D0%BE%D0%BC%D0%B01.png"
+                    data-modal-title="Уютные и безопасные улицы"
+                >
+                    <div class="house-img-container">
+                        <img
+                            src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/house/%D0%A3%D0%BB%D0%B8%D1%86%D0%B0-%D0%B8-%D0%B4%D0%BE%D0%BC%D0%B01.png"
+                            alt="Игровая площадка"
+                        >
+                    </div>
 
-
-            <!-- КАРТОЧКА 2 -->
-            <div
-                class="house-gallery-item"
-                data-modal-image="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/house/streets.jpg"
-                data-modal-title="Уютные и безопасные улицы"
-            >
-                <div class="house-img-container">
-                    <img
-                        src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/house/streets.jpg"
-                        alt="Уютные и безопасные улицы"
-                    >
+                    <h3 class="house-item-title">Уютные и безопасные улицы</h3>
+                    <p class="house-item-desc">Улицы квартала удобные и безопасные , широкие и асфальтированные проезды, просторные тротуары, освещение для безопасности в темное время суток.</p>
                 </div>
 
-                <h3 class="house-item-title">
-                    Уютные и безопасные улицы
-                </h3>
 
-                <p class="house-item-desc">
-                    Улицы квартала удобные и безопасные, широкие и асфальтированные проезды, просторные тротуары, освещение для безопасности в темное время суток.
-                </p>
-            </div>
+                <div
+                    class="house-gallery-item"
+                    data-modal-image="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%98%D0%B3%D1%80%D0%BE%D0%B2%D0%B0%D1%8F.png"
+                    data-modal-title="Детская и игровая площадка"
+                >
+                    <div class="house-img-container">
+                        <img
+                            src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%98%D0%B3%D1%80%D0%BE%D0%B2%D0%B0%D1%8F.png"
+                            alt="Игровая площадка"
+                        >
+                    </div>
 
-
-            <!-- КАРТОЧКА 3 -->
-            <div
-                class="house-gallery-item"
-                data-modal-image="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/house/playground.jpg"
-                data-modal-title="Детская и игровая площадка"
-            >
-                <div class="house-img-container">
-                    <img
-                        src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/house/playground.jpg"
-                        alt="Детская и игровая площадка"
-                    >
+                    <h3 class="house-item-title">Детская и игровая площадка</h3>
+                    <p class="house-item-desc">Безопасное покрытие • Зонирование по возрастам • Отдых для родителей</p>
                 </div>
 
-                <h3 class="house-item-title">
-                    Детская и игровая площадка
-                </h3>
 
-                <p class="house-item-desc">
-                    Безопасное покрытие • Зонирование по возрастам • Отдых для родителей
-                </p>
-            </div>
+                <div
+                    class="house-gallery-item"
+                    data-modal-image="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%92%D0%BE%D1%80%D0%BA%D0%B0%D1%83%D1%82-%D0%B7%D0%BE%D0%BD%D0%B0.png"
+                    data-modal-title="Воркаут зона и зона отдыха"
+                >
+                    <div class="house-img-container">
+                        <img
+                            src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%92%D0%BE%D1%80%D0%BA%D0%B0%D1%83%D1%82-%D0%B7%D0%BE%D0%BD%D0%B0.png"
+                            alt="Воркаут зона"
+                        >
+                    </div>
 
-
-            <!-- КАРТОЧКА 4 -->
-            <div
-                class="house-gallery-item"
-                data-modal-image="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/house/workout.jpg"
-                data-modal-title="Воркаут зона и зона отдыха"
-            >
-                <div class="house-img-container">
-                    <img
-                        src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/house/workout.jpg"
-                        alt="Воркаут зона и зона отдыха"
-                    >
+                    <h3 class="house-item-title">Воркаут зона и зона отдыха</h3>
+                    <p class="house-item-desc">Уличные тренажеры • Лаунж-пространство • Спортивная площадка</p>
                 </div>
 
-                <h3 class="house-item-title">
-                    Воркаут зона и зона отдыха
-                </h3>
-
-                <p class="house-item-desc">
-                    Уличные тренажеры • Лаунж-пространство • Спортивная площадка
-                </p>
             </div>
-
         </div>
-    </div>
 
+    </div>
 </section>
 
 
-<!-- ===================== МОДАЛКА ГАЛЕРЕИ ===================== -->
+<!-- =========================================================
+     МОДАЛЬНОЕ ОКНО ГАЛЕРЕИ
+     ========================================================= -->
 
-<div
-    class="project-image-modal"
-    id="projectImageModal"
-    aria-hidden="true"
->
+<div class="project-image-modal" id="projectImageModal">
 
     <div class="project-image-modal-content">
 
-        <!-- КРЕСТИК -->
         <button
             type="button"
             class="project-modal-close"
@@ -5245,39 +5214,18 @@ text-decoration: none;
         </button>
 
 
-        <!-- ЛЕВАЯ СТРЕЛКА -->
+        <!-- СТРЕЛКА НАЗАД -->
         <button
             type="button"
             class="project-modal-arrow project-modal-prev"
             id="projectModalPrev"
             aria-label="Предыдущее изображение"
         >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none">
                 <path
                     d="M15 18l-6-6 6-6"
-                    fill="none"
                     stroke="currentColor"
-                    stroke-width="2.5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                />
-            </svg>
-        </button>
-
-
-        <!-- ПРАВАЯ СТРЕЛКА -->
-        <button
-            type="button"
-            class="project-modal-arrow project-modal-next"
-            id="projectModalNext"
-            aria-label="Следующее изображение"
-        >
-            <svg viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                    d="M9 18l6-6-6-6"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2.5"
+                    stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                 />
@@ -5295,16 +5243,31 @@ text-decoration: none;
                 >
             </div>
 
-
             <div class="project-image-modal-info">
-
                 <h3 id="projectImageModalTitle"></h3>
-
                 <p id="projectImageModalDesc"></p>
-
             </div>
 
         </div>
+
+
+        <!-- СТРЕЛКА ВПЕРЕД -->
+        <button
+            type="button"
+            class="project-modal-arrow project-modal-next"
+            id="projectModalNext"
+            aria-label="Следующее изображение"
+        >
+            <svg viewBox="0 0 24 24" fill="none">
+                <path
+                    d="M9 18l6-6-6-6"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                />
+            </svg>
+        </button>
 
     </div>
 
@@ -5314,69 +5277,113 @@ text-decoration: none;
 <style>
 
 /* =========================================================
-   ГАЛЕРЕЯ
+   ТВОИ ИСХОДНЫЕ СТИЛИ ГАЛЕРЕИ — НЕ МЕНЯЛ
    ========================================================= */
 
 .house-gallery-section {
-    width: 100%;
+    background: #ffffff;
+    padding: 30px 0 80px 0;
+    border-top-left-radius: 35px;
+    border-top-right-radius: 35px;
+    box-shadow: 0 -10px 40px rgba(0,0,0,0.04);
     position: relative;
+    z-index: 35;
+}
+
+.house-gallery-section .container {
+    width: min(1600px, calc(100% - 40px));
+    margin: auto;
 }
 
 .house-gallery-header {
-    width: 100%;
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
     gap: 20px;
-    margin-bottom: 25px;
+    flex-wrap: wrap;
 }
 
-.house-gallery-header h2 {
+.house-gallery-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #000; 
     margin: 0;
+}
+
+.house-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.house-map-btn {
+    padding: 12px 24px;
+    font-size: 15px;
+    border-radius: 8px;
+    white-space: nowrap;
 }
 
 .house-gallery-nav {
     display: flex;
-    align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .house-gallery-btn {
     width: 48px;
     height: 48px;
-    border: none;
     border-radius: 50%;
+    border: 1px solid #dcdcdc;
     background: #ffffff;
+    color: #ad876d;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    transition: all .2s ease;
-    box-shadow: 0 4px 15px rgba(0,0,0,.10);
-}
-
-.house-gallery-btn svg {
-    width: 24px;
-    height: 24px;
+    transition: all 0.25s ease;
 }
 
 .house-gallery-btn:hover {
-    transform: scale(1.06);
+    background: #7f7f7f;
+    color: #ffffff;
+    border-color: #7f7f7f;
+    transform: translateY(-2px);
 }
 
 .house-gallery-wrap {
-    width: 100%;
+    position: relative;
     overflow: hidden;
 }
 
+.house-gallery-wrap::before,
+.house-gallery-wrap::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 80px;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.house-gallery-wrap::before {
+    left: 0;
+    background: linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+}
+
+.house-gallery-wrap::after {
+    right: 0;
+    background: linear-gradient(270deg, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+}
+
 .house-gallery-track {
-    width: 100%;
     display: flex;
     gap: 24px;
     overflow-x: auto;
     scroll-behavior: smooth;
-    scrollbar-width: none;
-    padding-bottom: 10px;
+    scrollbar-width: none; 
+    -ms-overflow-style: none;
+    padding: 10px 4px;
 }
 
 .house-gallery-track::-webkit-scrollbar {
@@ -5384,199 +5391,108 @@ text-decoration: none;
 }
 
 .house-gallery-item {
-    flex: 0 0 calc((100% - 72px) / 4);
-    min-width: 260px;
+    flex: 0 0 380px;
+    background: #fcfcfc;
+    border-radius: 20px;
+    padding: 16px;
+    border: 1px solid #eaeaea;
     cursor: pointer;
-    transition: transform .25s ease;
+    transition: all 0.3s ease;
 }
 
 .house-gallery-item:hover {
-    transform: translateY(-4px);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    border-color: #ad876d;
 }
 
 .house-img-container {
     width: 100%;
-    aspect-ratio: 1.35 / 1;
-    border-radius: 18px;
+    height: 260px;
+    border-radius: 14px;
     overflow: hidden;
-    background: #f3f3f3;
+    background: #f0f0f0;
+    margin-bottom: 16px;
 }
 
 .house-img-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
-    transition: transform .35s ease;
+    transition: transform 0.5s ease;
 }
 
 .house-gallery-item:hover .house-img-container img {
-    transform: scale(1.04);
+    transform: scale(1.06);
 }
 
 .house-item-title {
-    margin: 15px 0 7px;
-    font-size: 20px;
-    line-height: 1.25;
+    font-size: 18px;
+    font-weight: 700;
+    color: #000;
+    margin: 0 0 6px 0;
 }
 
 .house-item-desc {
+    font-size: 13px;
+    color: #777777;
     margin: 0;
-    color: #858585;
-    font-size: 14px;
-    line-height: 1.5;
+    font-weight: 400;
 }
 
 
 /* =========================================================
-   МОДАЛЬНОЕ ОКНО
+   МОДАЛКА
    ========================================================= */
 
 .project-image-modal {
+    display: none;
     position: fixed;
     inset: 0;
-    z-index: 99999;
+    z-index: 100000;
 
-    display: flex;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(5px);
+
     align-items: center;
     justify-content: center;
 
-    padding: 40px;
-
-    background: rgba(0, 0, 0, .78);
-
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-
-    transition:
-        opacity .25s ease,
-        visibility .25s ease;
+    padding: 20px;
 }
 
-.project-image-modal.active {
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
+.project-image-modal.is-open {
+    display: flex;
 }
-
-
-/* =========================================================
-   КОНТЕЙНЕР МОДАЛКИ
-   ========================================================= */
 
 .project-image-modal-content {
+    background: #fff;
+
+    width: 100%;
+    max-width: 900px;
+
+    border-radius: 24px;
+
+    padding: 35px;
+
     position: relative;
 
-    width: min(1180px, calc(100vw - 80px));
-    height: min(720px, calc(100vh - 80px));
+    box-shadow: 0 25px 50px rgba(0,0,0,0.2);
 
-    max-height: calc(100vh - 80px);
-
-    background: #ffffff;
-    border-radius: 22px;
-
-    overflow: hidden;
-
-    box-shadow: 0 20px 70px rgba(0,0,0,.35);
-
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
-}
-
-
-/* =========================================================
-   ТЕЛО МОДАЛКИ
-   ========================================================= */
-
-.project-image-modal-body {
-    width: 100%;
-    height: 100%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    min-width: 0;
-}
-
-
-/* =========================================================
-   КАРТИНКА
-   ========================================================= */
-
-.project-image-modal-image-wrap {
-    flex: 1 1 auto;
-
-    width: 100%;
-    height: 100%;
-
-    min-width: 0;
-    min-height: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 45px 70px 45px 70px;
-
-    background: #ffffff;
-}
-
-#projectImageModalImg {
-    display: block;
-
-    width: auto;
-    height: auto;
-
-    max-width: 100%;
-    max-height: 100%;
-
-    object-fit: contain;
-
-    border-radius: 10px;
-}
-
-
-/* =========================================================
-   ТЕКСТ СПРАВА
-   ========================================================= */
-
-.project-image-modal-info {
-    flex: 0 0 310px;
-
-    width: 310px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    padding: 50px 40px;
-
-    background: #ffffff;
-
-    border-left: 1px solid #eeeeee;
+    animation: houseScaleIn 0.3s ease;
 
     box-sizing: border-box;
 }
 
-.project-image-modal-info h3 {
-    margin: 0 0 15px;
+@keyframes houseScaleIn {
+    from {
+        transform: scale(0.92);
+        opacity: 0;
+    }
 
-    font-size: 28px;
-    line-height: 1.2;
-
-    color: #222222;
-}
-
-.project-image-modal-info p {
-    margin: 0;
-
-    color: #858585;
-
-    font-size: 16px;
-    line-height: 1.6;
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
 
 
@@ -5587,40 +5503,105 @@ text-decoration: none;
 .project-modal-close {
     position: absolute;
 
-    top: 18px;
-    right: 18px;
+    top: 20px;
+    right: 20px;
 
-    z-index: 20;
-
-    width: 44px;
-    height: 44px;
+    background: #116b39;
+    color: #fff;
 
     border: none;
+
+    width: 32px;
+    height: 32px;
+
     border-radius: 50%;
 
-    background: rgba(255,255,255,.95);
+    font-size: 20px;
 
-    color: #222;
-
-    font-size: 32px;
-    line-height: 1;
+    cursor: pointer;
 
     display: flex;
     align-items: center;
     justify-content: center;
 
-    cursor: pointer;
+    transition: 0.2s;
 
-    box-shadow: 0 4px 15px rgba(0,0,0,.12);
-
-    transition:
-        transform .2s ease,
-        background .2s ease;
+    z-index: 20;
 }
 
 .project-modal-close:hover {
-    transform: scale(1.08);
-    background: #ffffff;
+    transform: rotate(90deg);
+}
+
+
+/* =========================================================
+   СОДЕРЖИМОЕ МОДАЛКИ
+   ========================================================= */
+
+.project-image-modal-body {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+
+/* =========================================================
+   ИЗОБРАЖЕНИЕ
+   ========================================================= */
+
+.project-image-modal-image-wrap {
+    flex: 1.2;
+
+    height: 400px;
+
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f7f7f7;
+}
+
+.project-image-modal-image-wrap img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =========================================================
+   ТЕКСТ
+   ========================================================= */
+
+.project-image-modal-info {
+    flex: 1;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.project-image-modal-info h3 {
+    font-size: 26px;
+    color: #116b39;
+
+    margin: 0 0 15px 0;
+
+    font-weight: 700;
+}
+
+.project-image-modal-info p {
+    font-size: 15px;
+    color: #555;
+
+    line-height: 1.6;
+
+    margin: 0;
 }
 
 
@@ -5632,19 +5613,19 @@ text-decoration: none;
     position: absolute;
 
     top: 50%;
+
     transform: translateY(-50%);
 
-    z-index: 15;
+    width: 46px;
+    height: 46px;
 
-    width: 54px;
-    height: 54px;
-
-    border: none;
     border-radius: 50%;
 
-    background: rgba(255,255,255,.96);
+    border: 1px solid #dcdcdc;
 
-    color: #222222;
+    background: #ffffff;
+
+    color: #116b39;
 
     display: flex;
     align-items: center;
@@ -5652,36 +5633,31 @@ text-decoration: none;
 
     cursor: pointer;
 
-    box-shadow: 0 5px 20px rgba(0,0,0,.16);
+    z-index: 15;
 
-    transition:
-        transform .2s ease,
-        background .2s ease;
+    box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+
+    transition: all 0.2s ease;
 }
 
 .project-modal-arrow:hover {
-    background: #ffffff;
+    background: #116b39;
+    color: #ffffff;
+
+    transform: translateY(-50%) scale(1.06);
 }
 
 .project-modal-arrow svg {
-    width: 28px;
-    height: 28px;
+    width: 22px;
+    height: 22px;
 }
 
 .project-modal-prev {
-    left: 18px;
+    left: 12px;
 }
 
 .project-modal-next {
-    right: 18px;
-}
-
-.project-modal-prev:hover {
-    transform: translateY(-50%) scale(1.08);
-}
-
-.project-modal-next:hover {
-    transform: translateY(-50%) scale(1.08);
+    right: 12px;
 }
 
 
@@ -5689,130 +5665,52 @@ text-decoration: none;
    МОБИЛЬНАЯ ВЕРСИЯ
    ========================================================= */
 
-@media (max-width: 850px) {
+@media(max-width: 850px) {
 
     .house-gallery-item {
-        flex: 0 0 78%;
-        min-width: 0;
+        flex: 0 0 360px;
     }
 
-    .project-image-modal {
-        padding: 15px;
+    .house-header-actions {
+        width: 100%;
+        justify-content: space-between;
     }
 
     .project-image-modal-content {
-        width: calc(100vw - 30px);
-        height: calc(100vh - 30px);
-
-        max-height: calc(100vh - 30px);
-
-        border-radius: 18px;
+        max-width: 100%;
+        padding: 25px;
     }
 
     .project-image-modal-body {
         flex-direction: column;
-        overflow-y: auto;
+        gap: 20px;
     }
 
     .project-image-modal-image-wrap {
-        flex: 0 0 auto;
-
+        height: 250px;
         width: 100%;
-        height: 55vh;
-
-        min-height: 300px;
-
-        padding: 55px 45px 20px;
-    }
-
-    #projectImageModalImg {
-        max-width: 100%;
-        max-height: 100%;
+        flex: none;
     }
 
     .project-image-modal-info {
-        flex: 0 0 auto;
-
         width: 100%;
-
-        padding: 20px 30px 30px;
-
-        border-left: none;
-        border-top: 1px solid #eeeeee;
     }
 
     .project-image-modal-info h3 {
-        font-size: 23px;
-    }
-
-    .project-image-modal-info p {
-        font-size: 14px;
+        font-size: 22px;
     }
 
     .project-modal-arrow {
-        width: 46px;
-        height: 46px;
-    }
-
-    .project-modal-arrow svg {
-        width: 24px;
-        height: 24px;
-    }
-
-    .project-modal-prev {
-        left: 10px;
-    }
-
-    .project-modal-next {
-        right: 10px;
-    }
-
-    .project-modal-close {
-        top: 10px;
-        right: 10px;
-
-        width: 40px;
-        height: 40px;
-    }
-}
-
-
-/* =========================================================
-   ОЧЕНЬ МАЛЕНЬКИЕ ЭКРАНЫ
-   ========================================================= */
-
-@media (max-width: 550px) {
-
-    .house-gallery-header {
-        align-items: flex-start;
-    }
-
-    .house-gallery-item {
-        flex: 0 0 88%;
-    }
-
-    .house-gallery-btn {
         width: 42px;
         height: 42px;
     }
 
-    .project-image-modal-image-wrap {
-        height: 48vh;
-        min-height: 240px;
-
-        padding: 55px 40px 15px;
+    .project-modal-prev {
+        left: 8px;
     }
 
-    .project-image-modal-info {
-        padding: 18px 22px 25px;
-    }
-
-    .project-image-modal-info h3 {
-        font-size: 21px;
-    }
-
-    .project-image-modal-info p {
-        font-size: 14px;
+    .project-modal-next {
+        right: 8px;
     }
 }
 
@@ -5821,95 +5719,94 @@ text-decoration: none;
 
 <script>
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
 
     /* =====================================================
        ГАЛЕРЕЯ
        ===================================================== */
 
     const track = document.getElementById("houseGalleryTrack");
+    const prevBtn = document.querySelector(".house-prev-btn");
+    const nextBtn = document.querySelector(".house-next-btn");
 
     const galleryItems = Array.from(
         document.querySelectorAll(".house-gallery-item")
     );
-
-    const galleryPrev = document.querySelector(".house-prev-btn");
-    const galleryNext = document.querySelector(".house-next-btn");
 
 
     /* =====================================================
        ВЕРХНИЕ СТРЕЛКИ ГАЛЕРЕИ
        ===================================================== */
 
-    if (track) {
+    if (track && prevBtn && nextBtn) {
 
-        if (galleryPrev) {
-            galleryPrev.addEventListener("click", function () {
+        const scrollAmount = 400;
 
-                track.scrollBy({
-                    left: -400,
-                    behavior: "smooth"
-                });
+        prevBtn.addEventListener("click", function(e) {
 
+            e.preventDefault();
+            e.stopPropagation();
+
+            track.scrollBy({
+                left: -scrollAmount,
+                behavior: "smooth"
             });
-        }
 
+        });
 
-        if (galleryNext) {
-            galleryNext.addEventListener("click", function () {
+        nextBtn.addEventListener("click", function(e) {
 
-                track.scrollBy({
-                    left: 400,
-                    behavior: "smooth"
-                });
+            e.preventDefault();
+            e.stopPropagation();
 
+            track.scrollBy({
+                left: scrollAmount,
+                behavior: "smooth"
             });
-        }
+
+        });
 
     }
 
 
     /* =====================================================
-       ЭЛЕМЕНТЫ МОДАЛКИ
+       МОДАЛКА
        ===================================================== */
 
-    const modal = document.getElementById("projectImageModal");
+    const imageModal =
+        document.getElementById("projectImageModal");
 
-    const modalImage = document.getElementById(
-        "projectImageModalImg"
-    );
+    const imageModalImg =
+        document.getElementById("projectImageModalImg");
 
-    const modalTitle = document.getElementById(
-        "projectImageModalTitle"
-    );
+    const imageModalTitle =
+        document.getElementById("projectImageModalTitle");
 
-    const modalDesc = document.getElementById(
-        "projectImageModalDesc"
-    );
+    const imageModalDesc =
+        document.getElementById("projectImageModalDesc");
 
-    const modalClose = document.getElementById(
-        "projectImageModalClose"
-    );
+    const modalClose =
+        document.getElementById("projectImageModalClose");
 
-    const modalPrev = document.getElementById(
-        "projectModalPrev"
-    );
+    const modalPrev =
+        document.getElementById("projectModalPrev");
 
-    const modalNext = document.getElementById(
-        "projectModalNext"
-    );
+    const modalNext =
+        document.getElementById("projectModalNext");
 
 
-    let currentGalleryIndex = 0;
+    let currentIndex = 0;
 
 
     /* =====================================================
-       ПОКАЗАТЬ КАРТОЧКУ В МОДАЛКЕ
+       ПОКАЗАТЬ КАРТОЧКУ
        ===================================================== */
 
     function showGalleryItem(index) {
 
-        if (!galleryItems.length) return;
+        if (!galleryItems.length || !imageModal) {
+            return;
+        }
 
         if (index < 0) {
             index = galleryItems.length - 1;
@@ -5919,74 +5816,64 @@ document.addEventListener("DOMContentLoaded", function () {
             index = 0;
         }
 
-        currentGalleryIndex = index;
+        currentIndex = index;
 
-        const item = galleryItems[currentGalleryIndex];
+        const item = galleryItems[currentIndex];
 
-        if (!item) return;
+        const modalImage =
+            item.getAttribute("data-modal-image") || "";
+
+        const modalTitle =
+            item.getAttribute("data-modal-title") || "";
+
+        const descElement =
+            item.querySelector(".house-item-desc");
+
+        const description =
+            descElement
+                ? descElement.textContent.trim()
+                : "";
 
 
         /* КАРТИНКА */
 
-        const imageUrl = item.dataset.modalImage || "";
-
-        if (modalImage) {
-            modalImage.src = imageUrl;
-
-            modalImage.alt =
-                item.dataset.modalTitle || "";
+        if (imageModalImg) {
+            imageModalImg.src = modalImage;
+            imageModalImg.alt = modalTitle;
         }
 
 
         /* ЗАГОЛОВОК */
 
-        const title =
-            item.dataset.modalTitle ||
-            (
-                item.querySelector(".house-item-title")
-                ? item.querySelector(".house-item-title").textContent.trim()
-                : ""
-            );
-
-        if (modalTitle) {
-            modalTitle.textContent = title;
+        if (imageModalTitle) {
+            imageModalTitle.textContent = modalTitle;
         }
 
 
         /* ОПИСАНИЕ */
 
-        const descriptionElement =
-            item.querySelector(".house-item-desc");
-
-        const description =
-            descriptionElement
-                ? descriptionElement.textContent.trim()
-                : "";
-
-        if (modalDesc) {
-            modalDesc.textContent = description;
+        if (imageModalDesc) {
+            imageModalDesc.textContent = description;
         }
 
 
-        /* ОТКРЫВАЕМ */
+        /* ОТКРЫТЬ */
 
-        if (modal) {
-            modal.classList.add("active");
-            modal.setAttribute("aria-hidden", "false");
+        imageModal.classList.add("is-open");
 
-            document.body.style.overflow = "hidden";
-        }
+        document.body.classList.add("project-modal-open");
+        document.body.style.overflow = "hidden";
 
     }
 
 
     /* =====================================================
-       ОТКРЫТИЕ ПО КЛИКУ НА КАРТОЧКУ
+       КЛИК ПО КАРТОЧКЕ
        ===================================================== */
 
-    galleryItems.forEach(function (item, index) {
+    galleryItems.forEach(function(item, index) {
 
-        item.addEventListener("click", function () {
+        item.addEventListener("click", function() {
 
             showGalleryItem(index);
 
@@ -5996,63 +5883,55 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =====================================================
-       СЛЕДУЮЩАЯ КАРТОЧКА
+       СЛЕДУЮЩЕЕ
        ===================================================== */
 
-    function showNextGalleryItem() {
+    function nextGalleryItem() {
 
-        showGalleryItem(
-            currentGalleryIndex + 1
-        );
+        showGalleryItem(currentIndex + 1);
 
     }
 
 
     /* =====================================================
-       ПРЕДЫДУЩАЯ КАРТОЧКА
+       ПРЕДЫДУЩЕЕ
        ===================================================== */
 
-    function showPrevGalleryItem() {
+    function prevGalleryItem() {
 
-        showGalleryItem(
-            currentGalleryIndex - 1
-        );
+        showGalleryItem(currentIndex - 1);
 
     }
 
 
     /* =====================================================
-       СТРЕЛКИ В МОДАЛКЕ
+       СТРЕЛКИ ВНУТРИ МОДАЛКИ
        ===================================================== */
 
     if (modalPrev) {
 
-        modalPrev.addEventListener(
-            "click",
-            function (event) {
+        modalPrev.addEventListener("click", function(e) {
 
-                event.stopPropagation();
+            e.preventDefault();
+            e.stopPropagation();
 
-                showPrevGalleryItem();
+            prevGalleryItem();
 
-            }
-        );
+        });
 
     }
 
 
     if (modalNext) {
 
-        modalNext.addEventListener(
-            "click",
-            function (event) {
+        modalNext.addEventListener("click", function(e) {
 
-                event.stopPropagation();
+            e.preventDefault();
+            e.stopPropagation();
 
-                showNextGalleryItem();
+            nextGalleryItem();
 
-            }
-        );
+        });
 
     }
 
@@ -6061,70 +5940,47 @@ document.addEventListener("DOMContentLoaded", function () {
        ЗАКРЫТИЕ
        ===================================================== */
 
-    function closeGalleryModal() {
+    function closeImageModal() {
 
-        if (!modal) return;
+        if (!imageModal) {
+            return;
+        }
 
-        modal.classList.remove("active");
+        imageModal.classList.remove("is-open");
 
-        modal.setAttribute("aria-hidden", "true");
-
+        document.body.classList.remove("project-modal-open");
         document.body.style.overflow = "";
-
-        /*
-         * Очищаем картинку после небольшой задержки,
-         * чтобы при следующем открытии не было старого изображения.
-         */
-
-        setTimeout(function () {
-
-            if (!modal.classList.contains("active")) {
-
-                if (modalImage) {
-                    modalImage.src = "";
-                }
-
-            }
-
-        }, 250);
 
     }
 
 
     if (modalClose) {
 
-        modalClose.addEventListener(
-            "click",
-            function (event) {
+        modalClose.addEventListener("click", function(e) {
 
-                event.stopPropagation();
+            e.preventDefault();
+            e.stopPropagation();
 
-                closeGalleryModal();
+            closeImageModal();
 
-            }
-        );
+        });
 
     }
 
 
     /* =====================================================
-       КЛИК ПО ТЕМНОМУ ФОНУ
+       ЗАКРЫТИЕ ПО ФОНУ
        ===================================================== */
 
-    if (modal) {
+    if (imageModal) {
 
-        modal.addEventListener(
-            "click",
-            function (event) {
+        imageModal.addEventListener("click", function(e) {
 
-                if (
-                    event.target === modal
-                ) {
-                    closeGalleryModal();
-                }
-
+            if (e.target === imageModal) {
+                closeImageModal();
             }
-        );
+
+        });
 
     }
 
@@ -6133,83 +5989,48 @@ document.addEventListener("DOMContentLoaded", function () {
        КЛАВИАТУРА
        ===================================================== */
 
-    document.addEventListener(
-        "keydown",
-        function (event) {
+    document.addEventListener("keydown", function(e) {
 
-            if (
-                !modal ||
-                !modal.classList.contains("active")
-            ) {
-                return;
-            }
+        if (
+            !imageModal ||
+            !imageModal.classList.contains("is-open")
+        ) {
+            return;
+        }
 
 
-            if (event.key === "ArrowLeft") {
+        if (e.key === "ArrowLeft") {
 
-                event.preventDefault();
+            e.preventDefault();
 
-                showPrevGalleryItem();
-
-            }
-
-
-            if (event.key === "ArrowRight") {
-
-                event.preventDefault();
-
-                showNextGalleryItem();
-
-            }
-
-
-            if (event.key === "Escape") {
-
-                event.preventDefault();
-
-                closeGalleryModal();
-
-            }
+            prevGalleryItem();
 
         }
-    );
 
 
-    /* =====================================================
-       НЕ ДАЕМ КЛИКУ ПО СТРЕЛКАМ ГАЛЕРЕИ
-       ОТКРЫТЬ МОДАЛКУ
-       ===================================================== */
+        if (e.key === "ArrowRight") {
 
-    if (galleryPrev) {
+            e.preventDefault();
 
-        galleryPrev.addEventListener(
-            "click",
-            function (event) {
+            nextGalleryItem();
 
-                event.stopPropagation();
-
-            }
-        );
-
-    }
+        }
 
 
-    if (galleryNext) {
+        if (e.key === "Escape") {
 
-        galleryNext.addEventListener(
-            "click",
-            function (event) {
+            e.preventDefault();
 
-                event.stopPropagation();
+            closeImageModal();
 
-            }
-        );
+        }
 
-    }
+    });
 
 });
 
 </script>
+```
 
 
 <footer class="site-footer" id="site-footer">
