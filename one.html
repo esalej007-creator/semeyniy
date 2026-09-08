@@ -1241,9 +1241,9 @@ document.addEventListener("keydown", (e) => {
         <a href="#" class="btn-white" id="openConsultModal">
             Получить консультацию
         </a>
-        <a href="#" class="btn-white" id="">
-            Ипотека
-        </a>
+<a href="#" class="btn-white" data-popup="it-popup">
+    Ипотека
+</a>
     </div>
 </div>	
         <div class="house-specs-card">
@@ -1294,7 +1294,7 @@ document.addEventListener("keydown", (e) => {
 
     </div>
 </section>
-<div id="popup-family" class="popup">
+<div id="it-popup" class="popup">
   <div class="popup-content">
     <button class="modal-close-icon">&times;</button>
 
@@ -1634,52 +1634,68 @@ body { font-family: 'TildaSans', system-ui, -apple-system, sans-serif; }
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  function qsa(root, sel) { return Array.from((root || document).querySelectorAll(sel)); }
 
-  // 1. Открытие модалки по клику на карточки
-  qsa(document, '.card').forEach(card => {
-    card.addEventListener('click', (e) => {
-      e.preventDefault();
-      const popupId = 'popup-' + card.dataset.popup;
-      const popup = document.getElementById(popupId);
-      if (popup) popup.classList.add('show');
-    });
-  });
-
-  // 2. Открытие по id="openpopup-it"
-  const openPopupIt = document.getElementById('openpopup-it');
-  const popupFamily = document.getElementById('popup-family');
-  if (openPopupIt && popupFamily) {
-    openPopupIt.addEventListener('click', function (e) {
-      e.preventDefault();
-      popupFamily.classList.add('show');
-    });
+  function qsa(root, sel) {
+    return Array.from((root || document).querySelectorAll(sel));
   }
 
-  // 3. Универсальное открытие по ссылкам href="#popup-..."
+  qsa(document, '.card').forEach(card => {
+    card.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const popupId = 'popup-' + card.dataset.popup;
+      const popup = document.getElementById(popupId);
+
+      if (popup) {
+        popup.classList.add('show');
+      }
+    });
+  });
+  qsa(document, '[data-popup]').forEach(button => {
+    button.addEventListener('click', function (e) {
+      e.preventDefault();
+
+      const popupId = this.getAttribute('data-popup');
+      const popup = document.getElementById(popupId);
+
+      if (popup) {
+        popup.classList.add('show');
+      }
+    });
+  });
   qsa(document, 'a[href^="#popup-"]').forEach(link => {
     link.addEventListener('click', function (e) {
       e.preventDefault();
+
       const popupId = this.getAttribute('href').substring(1);
       const popup = document.getElementById(popupId);
-      if (popup) popup.classList.add('show');
+
+      if (popup) {
+        popup.classList.add('show');
+      }
     });
   });
 
-  // 4. Закрытие по крестику
   qsa(document, '.modal-close-icon').forEach(btn => {
-    btn.addEventListener('click', function() {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+
       const modal = this.closest('.popup');
-      if (modal) modal.classList.remove('show');
+
+      if (modal) {
+        modal.classList.remove('show');
+      }
     });
   });
 
-  // 5. Закрытие при клике на оверлей
   qsa(document, '.popup').forEach(popup => {
-    popup.addEventListener('click', e => {
-      if (e.target === popup) popup.classList.remove('show');
+    popup.addEventListener('click', function (e) {
+      if (e.target === popup) {
+        popup.classList.remove('show');
+      }
     });
   });
+
 });
 </script>
 
@@ -4465,9 +4481,9 @@ text-decoration: none;
             Контакты
         </a>
 
-        <a href="#" class="projects-house-btn" id="openpopup-it">
-            Ипотека
-        </a>
+<a href="#" class="projects-house-btn" data-popup="it-popup">
+    Ипотека
+</a>
     </div>
 
 
@@ -4516,7 +4532,6 @@ text-decoration: none;
         <div class="projects-map-layout projects-page-map">
           <div class="projects-map-image">
                 
-                <!-- Картинка задает размеры для всего контейнера -->
                 <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/map/%D0%9A%D0%B0%D1%80%D1%82%D0%B0.png" alt="Карта поселка">
 
                 <div class="projects-point" style="left:38%; top:47%" data-house="house2" data-floor="1" data-area="120" data-number="1">
