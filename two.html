@@ -1261,12 +1261,11 @@ document.addEventListener("keydown", (e) => {
         <a href="#" class="btn-white" id="openConsultModal">
             Получить консультацию
         </a>
-        <a href="#" class="btn-white" id="openpopup-it">
-            Ипотека
-        </a>
+<a href="#" class="btn-white" data-popup="it-popup">
+    Ипотека
+</a>
     </div>
 </div>	
-        <!-- Правая колонка: Характеристики дома -->
         <div class="house-specs-card">
             <h3>Характеристики дома</h3>
             <ul class="specs-list">
@@ -1330,7 +1329,7 @@ document.addEventListener("keydown", (e) => {
 
     </div>
 </section>
-<div id="popup-family" class="popup">
+<div id="it-popup" class="popup">
   <div class="popup-content">
     <button class="modal-close-icon">&times;</button>
 
@@ -1358,7 +1357,6 @@ document.addEventListener("keydown", (e) => {
 
         <hr class="contact-separator">
 
-        <!-- Заголовок на скруглённой фирменной плашке -->
         <div class="title-wrapper">
           <h2 class="vacancy-title">Льготы для покупателей</h2>
         </div>
@@ -1705,20 +1703,22 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // 4. Закрытие по крестику
-  qsa(document, '.modal-close-icon').forEach(btn => {
+   document.querySelectorAll('.modal-close-icon').forEach(btn => {
     btn.addEventListener('click', function() {
       const modal = this.closest('.popup');
       if (modal) modal.classList.remove('show');
     });
   });
 
-  // 5. Закрытие при клике на оверлей
-  qsa(document, '.popup').forEach(popup => {
-    popup.addEventListener('click', e => {
-      if (e.target === popup) popup.classList.remove('show');
+  // Закрытие по оверлею
+  document.querySelectorAll('.popup').forEach(popup => {
+    popup.addEventListener('click', function(e) {
+      if (e.target === popup) {
+        popup.classList.remove('show');
+      }
     });
   });
+
 });
 </script>
 
@@ -4523,9 +4523,9 @@ text-decoration: none;
             Контакты
         </a>
 
-        <a href="#" class="projects-house-btn" id="openpopup-it">
-            Ипотека
-        </a>
+<a href="#" class="projects-house-btn" data-popup="it-popup">
+    Ипотека
+</a>
     </div>
 
 
