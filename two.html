@@ -1671,48 +1671,63 @@ body { font-family: 'TildaSans', system-ui, -apple-system, sans-serif; }
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  function qsa(root, sel) { return Array.from((root || document).querySelectorAll(sel)); }
 
-  // 1. Открытие модалки по клику на карточки
+  function qsa(root, sel) {
+    return Array.from((root || document).querySelectorAll(sel));
+  }
   qsa(document, '.card').forEach(card => {
-    card.addEventListener('click', (e) => {
+    card.addEventListener('click', function (e) {
       e.preventDefault();
+
       const popupId = 'popup-' + card.dataset.popup;
       const popup = document.getElementById(popupId);
-      if (popup) popup.classList.add('show');
+
+      if (popup) {
+        popup.classList.add('show');
+      }
     });
   });
 
-  // 2. Открытие по id="openpopup-it"
-  const openPopupIt = document.getElementById('openpopup-it');
-  const popupFamily = document.getElementById('popup-family');
-  if (openPopupIt && popupFamily) {
-    openPopupIt.addEventListener('click', function (e) {
+  qsa(document, '[data-popup]').forEach(button => {
+    button.addEventListener('click', function (e) {
       e.preventDefault();
-      popupFamily.classList.add('show');
-    });
-  }
 
-  // 3. Универсальное открытие по ссылкам href="#popup-..."
+      const popupId = this.getAttribute('data-popup');
+      const popup = document.getElementById(popupId);
+
+      if (popup) {
+        popup.classList.add('show');
+      }
+    });
+  });
+
   qsa(document, 'a[href^="#popup-"]').forEach(link => {
     link.addEventListener('click', function (e) {
       e.preventDefault();
+
       const popupId = this.getAttribute('href').substring(1);
       const popup = document.getElementById(popupId);
-      if (popup) popup.classList.add('show');
+
+      if (popup) {
+        popup.classList.add('show');
+      }
     });
   });
 
-   document.querySelectorAll('.modal-close-icon').forEach(btn => {
-    btn.addEventListener('click', function() {
+  qsa(document, '.modal-close-icon').forEach(btn => {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+
       const modal = this.closest('.popup');
-      if (modal) modal.classList.remove('show');
+
+      if (modal) {
+        modal.classList.remove('show');
+      }
     });
   });
 
-  // Закрытие по оверлею
-  document.querySelectorAll('.popup').forEach(popup => {
-    popup.addEventListener('click', function(e) {
+  qsa(document, '.popup').forEach(popup => {
+    popup.addEventListener('click', function (e) {
       if (e.target === popup) {
         popup.classList.remove('show');
       }
