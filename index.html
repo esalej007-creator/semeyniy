@@ -5097,7 +5097,6 @@ text-decoration: none;
             <h2 class="house-gallery-title">Галерея</h2>
             
             <div class="house-header-actions">
-                <!-- Кнопка "Карта коттеджного квартала" в стиле сайта -->
                 <a href="#" class="btn projects-open house-map-btn">
                     Карта коттеджного квартала
                 </a>
@@ -5123,7 +5122,8 @@ text-decoration: none;
                 
                 <div class="house-gallery-item"
                      data-modal-image="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%9F%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D0%BA%D0%B01.png"
-                     data-modal-title="Благоустройство и площадки">
+                     data-modal-title="Благоустройство и площадки"
+                     data-modal-desc="Ограждения • Зонирование по возрастам • Отдых для детей и родителей">
 
                     <div class="house-img-container">
                         <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%9F%D0%BB%D0%BE%D1%89%D0%B0%D0%B4%D0%BA%D0%B01.png"
@@ -5139,7 +5139,10 @@ text-decoration: none;
 
                 <div class="house-gallery-item"
                      data-modal-image="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/house/%D0%A3%D0%BB%D0%B8%D1%86%D0%B0-%D0%B8-%D0%B4%D0%BE%D0%BC%D0%B01.png"
-                     data-modal-title="Уютные и безопасные улицы">
+                     data-modal-title="Уютные и безопасные улицы"
+                    data-modal-desc="Улицы квартала удобные и безопасные , широкие
+                        и асфальтированные проезды, просторные тротуары,
+                        освещение для безопасности в темное время суток.">
 
                     <div class="house-img-container">
                         <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/house/%D0%A3%D0%BB%D0%B8%D1%86%D0%B0-%D0%B8-%D0%B4%D0%BE%D0%BC%D0%B01.png"
@@ -5157,7 +5160,8 @@ text-decoration: none;
 
                 <div class="house-gallery-item"
                      data-modal-image="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%98%D0%B3%D1%80%D0%BE%D0%B2%D0%B0%D1%8F.png"
-                     data-modal-title="Детская и игровая площадка">
+                     data-modal-title="Детская и игровая площадка"
+                    data-modal-desc="Безопасное покрытие • Зонирование по возрастам • Отдых для родителей">
 
                     <div class="house-img-container">
                         <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%98%D0%B3%D1%80%D0%BE%D0%B2%D0%B0%D1%8F.png"
@@ -5173,7 +5177,8 @@ text-decoration: none;
 
                 <div class="house-gallery-item"
                      data-modal-image="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%92%D0%BE%D1%80%D0%BA%D0%B0%D1%83%D1%82-%D0%B7%D0%BE%D0%BD%D0%B0.png"
-                     data-modal-title="Воркаут зона и зона отдыха">
+                     data-modal-title="Воркаут зона и зона отдыха"
+                    data-modal-desc="Уличные тренажеры • Лаунж-пространство • Спортивная площадка">
 
                     <div class="house-img-container">
                         <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/project/%D0%92%D0%BE%D1%80%D0%BA%D0%B0%D1%83%D1%82-%D0%B7%D0%BE%D0%BD%D0%B0.png"
@@ -5564,7 +5569,13 @@ text-decoration: none;
         right: 5px;
     }
 }
-
+.project-image-modal-desc {
+    font-size: 13px;
+    color: #777777;
+    line-height: 1.5;
+    margin: -5px 0 0 0;
+    font-weight: 400;
+}
 </style>
 
 
@@ -5656,13 +5667,6 @@ document.addEventListener("DOMContentLoaded", function() {
             function showModalImage(index) {
 
                 if (!galleryItems.length) return;
-
-                /*
-                 * Зацикливаем галерею:
-                 * после последнего → первое
-                 * перед первым → последнее
-                 */
-
                 if (index < 0) {
                     index = galleryItems.length - 1;
                 }
@@ -5680,6 +5684,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 const modalTitle =
                     item.getAttribute("data-modal-title") || "";
+                const modalDesc =
+    item.getAttribute("data-modal-desc") || "";
 
                 const imageModalImg =
                     document.getElementById("projectImageModalImg");
@@ -5698,7 +5704,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (imageModalTitle) {
                     imageModalTitle.textContent = modalTitle;
                 }
+const imageModalDesc =
+    document.getElementById("projectImageModalDesc");
 
+if (imageModalDesc) {
+    imageModalDesc.textContent = modalDesc;
+}
 
 
                 imageModal.classList.add("is-open");
@@ -5840,8 +5851,7 @@ document.addEventListener("DOMContentLoaded", function() {
     <div class="container">
         
         <div class="footer-grid">
-            
-            <!-- Левая колонка -->
+        
             <div class="footer-col-left">
                 <a href="/" class="footer-logo">
                     <img src="https://s3.twcstorage.ru/df06c409-d71b78f0-64cf-4b11-a85a-d2bdbccb2f77/%D0%96%D0%9A/logo-cap1.png" alt="ЖК Семейный берег">
@@ -7479,10 +7489,11 @@ body.project-modal-open{overflow:hidden}
 <div class="project-image-modal" id="projectImageModal" aria-hidden="true">
   <div class="project-image-modal-content" role="dialog" aria-modal="true" aria-labelledby="projectImageModalTitle">
     <button type="button" class="project-image-modal-close" id="projectImageModalClose" aria-label="Закрыть"></button>
-    <figure class="project-image-modal-figure">
-      <img id="projectImageModalImg" src="" alt="">
-      <figcaption id="projectImageModalTitle"></figcaption>
-    </figure>
+<figure class="project-image-modal-figure">
+  <img id="projectImageModalImg" src="" alt="">
+  <figcaption id="projectImageModalTitle"></figcaption>
+  <div id="projectImageModalDesc" class="project-image-modal-desc"></div>
+</figure>
   </div>
 </div>
 <script>
