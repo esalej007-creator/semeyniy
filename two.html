@@ -8190,16 +8190,6 @@ document.addEventListener("DOMContentLoaded", function () {
 body.project-modal-open{overflow:hidden}
 @media(max-width:600px){#projectImageModal{padding:16px}.project-image-modal-content{padding:8px;border-radius:18px}.project-image-modal-close{top:-10px;right:-6px;width:34px;height:34px}#projectImageModalImg{max-height:calc(90vh - 60px);border-radius:12px}#projectImageModalTitle{font-size:16px;margin:10px 6px 4px}}
 </style>
-<div class="project-image-modal" id="projectImageModal" aria-hidden="true">
-  <div class="project-image-modal-content" role="dialog" aria-modal="true" aria-labelledby="projectImageModalTitle">
-    <button type="button" class="project-image-modal-close" id="projectImageModalClose" aria-label="Закрыть"></button>
-   <figure class="project-image-modal-figure">
-  <img id="projectImageModalImg" src="" alt="">
-  <figcaption id="projectImageModalTitle"></figcaption>
-  <div id="projectImageModalDesc" class="project-image-modal-desc"></div>
-</figure>
-  </div>
-</div>
 <script>
 document.addEventListener("DOMContentLoaded",function(){
  const modal=document.getElementById("projectImageModal");
@@ -8657,3 +8647,13 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 });
 </script>
+    <div class="project-image-modal" id="projectImageModal" aria-hidden="true">
+  <div class="project-image-modal-content" role="dialog" aria-modal="true" aria-labelledby="projectImageModalTitle">
+    <button type="button" class="project-image-modal-close" id="projectImageModalClose" aria-label="Закрыть"></button>
+   <figure class="project-image-modal-figure">
+  <img id="projectImageModalImg" src="" alt="">
+  <figcaption id="projectImageModalTitle"></figcaption>
+  <div id="projectImageModalDesc" class="project-image-modal-desc"></div>
+</figure>
+  </div>
+</div>
